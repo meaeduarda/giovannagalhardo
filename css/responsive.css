@@ -1,0 +1,240 @@
+/* ============================================
+   RESPONSIVE CSS - Mobile First
+   FONTE: Poppins em todos os breakpoints
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 44px;
+    }
+    
+    h2 {
+        font-size: 32px;
+    }
+    
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .pain-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .pain-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    
+    .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .menu ul {
+        gap: 20px;
+    }
+    
+    .hero .grid-2 {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .hero-trust {
+        justify-content: center;
+    }
+    
+    .hero-text h1 {
+        font-size: 44px;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cta-content h2 {
+        font-size: 30px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    section {
+        padding: 50px 0;
+    }
+    
+    .menu {
+        display: none;
+    }
+    
+    .contact-info {
+        display: none;
+    }
+    
+    .mobile-toggle {
+        display: flex;
+    }
+    
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .pain-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pain-cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 24px;
+    }
+    
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        font-size: 32px;
+    }
+    
+    h2 {
+        font-size: 26px;
+    }
+    
+    .hero-text h1 {
+        font-size: 32px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .hero-trust {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .btn-primary, .btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .floating-badge {
+        display: none;
+    }
+    
+    .about-stats {
+        justify-content: center;
+    }
+    
+    .about-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer .grid-4 {
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .footer-col ul li {
+        text-align: center;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-content h2 {
+        font-size: 24px;
+    }
+    
+    .plan-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 28px;
+    }
+    
+    .section-header p {
+        font-size: 16px;
+    }
+    
+    .about-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-number {
+        font-size: 28px;
+    }
+    
+    .testimonial {
+        padding: 20px;
+    }
+    
+    .pain-item {
+        padding: 20px;
+    }
+    
+    .pain-highlight p {
+        font-size: 16px;
+    }
+    
+    .courses-highlight p {
+        font-size: 16px;
+    }
+    
+    .pain-card {
+        padding: 24px 16px 28px;
+    }
+    
+    .pain-card-icon i {
+        font-size: 44px;
+    }
+    
+    .pain-card-title {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,158 @@
+/* ============================================
+   BASE CSS - Landing Page de Conversão
+   FONTES: Fredoka (títulos) + Poppins (textos)
+   ============================================ */
+
+/* CSS Variables - Cores reais do template */
+:root {
+    --purple: #5144A6;
+    --yellow: #F2BE22;
+    --blue: #6CA6D9;
+    --green: #6CD34D;
+    --orange: #FF8A3D;
+    --pink: #C05C80;
+    --text-dark: #2C2C2C;
+    --text-light: #6B6B6B;
+    --bg-light: #F5F7FB;
+    --white: #FFFFFF;
+    --shadow-sm: 0 10px 30px rgba(0,0,0,0.05);
+    --shadow-md: 0 20px 40px rgba(0,0,0,0.1);
+    --radius-sm: 12px;
+    --radius-md: 16px;
+    --radius-lg: 30px;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BASE - Poppins para textos */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--text-dark);
+    background-color: var(--white);
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    overflow-x: hidden;
+}
+
+/* TÍTULOS - Fredoka (igual ao template) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-size: 56px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+h1 .highlight {
+    color: var(--yellow);
+}
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* PARÁGRAFOS - Poppins 400 */
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* LINKS */
+a {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* LISTAS */
+ul, ol {
+    list-style: none;
+}
+
+ul li, ol li {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+/* IMAGENS */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* SECTION SPACING */
+section {
+    padding: 80px 0;
+}
+
+/* SECTION HEADER */
+.section-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-header p {
+    color: var(--text-light);
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* TAGS ESPECIAIS */
+.offer-tag {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--purple);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.urgency-badge {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--purple);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: 'Fredoka', sans-serif;
+}
