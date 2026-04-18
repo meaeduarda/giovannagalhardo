@@ -1,9 +1,6 @@
 /* ============================================
-   BASE CSS - Landing Page de Conversão
-   FONTES: Fredoka (títulos) + Poppins (textos)
-   ============================================ */
-
-/* CSS Variables - Cores reais do template */
+   BASE CSS 
+*/
 :root {
     --purple: #5144A6;
     --yellow: #F2BE22;
@@ -22,7 +19,7 @@
     --radius-lg: 30px;
 }
 
-/* Reset */
+/* Reset - GARANTE QUE NÃO HAJA MARGENS/PADDINGS QUE CAUSEM FRESTAS BRANCAS */
 * {
     margin: 0;
     padding: 0;
@@ -38,6 +35,9 @@ body {
     line-height: 1.6;
     letter-spacing: 0.2px;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 /* TÍTULOS - Fredoka */
@@ -106,11 +106,13 @@ img {
     display: block;
 }
 
-/* CONTAINER */
+/* CONTAINER - CENTRALIZADOR COM LARGURA MÁXIMA */
 .container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
 }
 
 /* SECTION SPACING */

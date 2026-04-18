@@ -81,6 +81,39 @@
         width: 70px;
         height: 70px;
     }
+
+    /* ========== EBOOKS PREMIUM - TABLET ========== */
+    .premium-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .section-header-light h2 {
+        font-size: 34px;
+    }
+    
+    .card-image-area img {
+        height: 170px;
+    }
+    
+    .circle-badge {
+        width: 50px;
+        height: 50px;
+        font-size: 10px;
+    }
+    
+    .icon-circle {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .icon-circle i {
+        font-size: 24px;
+    }
+    
+    .ebooks-premium {
+        border-radius: 0 0 30px 30px / 0 0 20px 20px;
+    }
 }
 
 /* Mobile */
@@ -220,6 +253,73 @@
         width: 60px;
         height: 60px;
     }
+
+    /* ========== EBOOKS PREMIUM - MOBILE ========== */
+    .ebooks-premium {
+        padding: 50px 0 70px;
+    }
+    
+    .premium-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .section-header-light h2 {
+        font-size: 28px;
+    }
+    
+    .section-header-light p {
+        font-size: 15px;
+    }
+    
+    .card-image-area img {
+        height: 160px;
+    }
+    
+    .card-content h3 {
+        font-size: 17px;
+    }
+    
+    .new-price {
+        font-size: 20px;
+    }
+    
+    .circle-badge {
+        width: 48px;
+        height: 48px;
+        font-size: 10px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .btn-buy {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+    
+    .ebook-link {
+        font-size: 16px;
+    }
+    
+    .footer-ebook {
+        padding: 12px;
+    }
+    
+    .ebooks-bonus-light {
+        margin-top: 20px;
+        padding: 14px 18px;
+    }
+    
+    .ebooks-bonus-light p {
+        font-size: 13px;
+    }
+    
+    .ebooks-premium {
+        border-radius: 0 0 20px 20px / 0 0 15px 15px;
+    }
 }
 
 /* Menu responsivo */
@@ -308,5 +408,52 @@
     
     .pain-card-title {
         font-size: 20px;
+    }
+
+    /* ========== EBOOKS PREMIUM - SMALL MOBILE ========== */
+    .section-header-light h2 {
+        font-size: 24px;
+    }
+    
+    .card-content {
+        padding: 16px 16px 0 16px;
+    }
+    
+    .icon-circle {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .icon-circle i {
+        font-size: 20px;
+    }
+    
+    .btn-buy {
+        margin-bottom: 16px;
+    }
+    
+    .footer-ebook {
+        margin-bottom: 16px;
+    }
+}
+
+/* Tablet - mostra 2 cards */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .ebooks-swiper .swiper-slide {
+        width: calc(50% - 15px) !important;
+    }
+}
+
+/* Desktop pequeno - mostra 3 cards */
+@media (min-width: 1025px) and (max-width: 1300px) {
+    .ebooks-swiper .swiper-slide {
+        width: calc(33.33% - 16px) !important;
+    }
+}
+
+/* Desktop grande - mostra 4 cards */
+@media (min-width: 1301px) {
+    .ebooks-swiper .swiper-slide {
+        width: calc(25% - 18px) !important;
     }
 }

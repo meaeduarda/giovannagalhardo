@@ -1,5 +1,6 @@
 /* ============================================
    COMPONENTS CSS - Botões, Cards, Hero, Serviços
+   COM CORREÇÃO DE ZOOM E FUNDO 100%
    ============================================ */
 
 /* ========== BOTÕES - Poppins 600 ========== */
@@ -805,4 +806,410 @@
 .ebooks-bonus i {
     margin-right: 8px;
     color: var(--yellow);
+}
+
+/* ============================================ */
+/* EBOOKS PREMIUM 
+/* ============================================ */
+
+.ebooks-premium {
+    position: relative;
+    width: 100%;
+    background-color: #5839a6;
+    padding: 80px 0 100px;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+/* Curvatura suave na base */
+.ebooks-premium::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 50% 50% 0 0 / 30px 30px 0 0;
+    z-index: 1;
+}
+
+/* Ondas SVG */
+.wave-top {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 1;
+}
+
+.wave-top svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Header da seção - textos brancos */
+.section-header-light {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.offer-tag-light {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: #F2BE22;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    font-family: 'Fredoka', sans-serif;
+    backdrop-filter: blur(4px);
+}
+
+.section-header-light h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+}
+
+.section-header-light p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* Grid de cards - RESPONSIVA */
+.premium-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* Card individual - SEM COR DE FUNDO (a cor vai no .card-content) */
+.premium-card {
+    background-color: transparent;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.premium-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.3);
+}
+
+/* CONTAINER DA IMAGEM NO TOPO */
+.card-image-top {
+    width: 100%;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.premium-card:hover .card-image-top img {
+    transform: scale(1.05);
+}
+
+/* BADGE CIRCULAR SOBRE A IMAGEM */
+.badge-round {
+    position: absolute;
+    bottom: -15px;
+    right: 15px;
+    width: 55px;
+    height: 55px;
+    background-color: #F2BE22;
+    color: #5839a6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.2;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 3px solid white;
+}
+
+/* CORES DO CONTEÚDO DO CARD (FUNDO COLORIDO) */
+.card-blue .card-content { background-color: #2EA7FF; }
+.card-green .card-content { background-color: #6CD34D; }
+.card-orange .card-content { background-color: #FF8A3D; }
+.card-pink .card-content { background-color: #C05C80; }
+.card-yellow .card-content {background-color: #d4e060;}
+
+
+/* CONTEÚDO DO CARD - FUNDO COLORIDO */
+.card-content {
+    padding: 20px 20px 0 20px;
+    border-radius: 0 0 24px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: left;
+}
+
+/* Ícone com círculo branco */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.icon-circle i {
+    font-size: 28px;
+    color: white;
+}
+
+/* Títulos e textos dentro do card colorido */
+.card-content h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.card-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+/* Preços */
+.price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.old-price {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: line-through;
+}
+
+.new-price {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+}
+
+/* Botão Comprar Agora - BRANCO */
+.btn-buy {
+    display: inline-block;
+    background: white;
+    color: #5839a6;
+    padding: 10px 16px;
+    border-radius: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-buy i {
+    margin-right: 6px;
+}
+
+.btn-buy:hover {
+    background: #5839a6;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* FOOTER DO EBOOK - BLOCO BRANCO ARREDONDADO */
+.footer-ebook {
+    background-color: rgba(255, 255, 255, 0.95);
+    margin-top: auto;
+    padding: 14px;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.premium-card:hover .footer-ebook {
+    background-color: white;
+}
+
+/* Link do ebook */
+.ebook-link {
+    text-decoration: none;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    display: block;
+    transition: all 0.3s;
+}
+
+/* Cores dos links por tema */
+.card-blue .ebook-link { color: #2EA7FF; }
+.card-green .ebook-link { color: #6CD34D; }
+.card-orange .ebook-link { color: #FF8A3D; }
+.card-pink .ebook-link { color: #C05C80; }
+
+.ebook-link:hover {
+    text-decoration: underline;
+    transform: scale(1.02);
+}
+
+/* Bônus */
+.ebooks-bonus-light {
+    text-align: center;
+    margin-top: 30px;
+    padding: 18px 24px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 60px;
+    backdrop-filter: blur(4px);
+    position: relative;
+    z-index: 2;
+}
+
+.ebooks-bonus-light p {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    font-weight: 500;
+    color: #FFFFFF;
+    font-size: 15px;
+}
+
+.ebooks-bonus-light i {
+    margin-right: 8px;
+    color: #F2BE22;
+    font-size: 18px;
+}
+/* ============================================ */
+/* SWIPER CARROSSEL PARA EBOOKS */
+/* ============================================ */
+
+/* Container principal do carrossel */
+.ebooks-swiper {
+    width: 100%;
+    padding: 20px 0 60px 0;
+    position: relative;
+}
+
+/* Slide individual */
+.ebooks-swiper .swiper-slide {
+    height: auto;
+    display: flex;
+}
+
+/* Cards dentro do slide ocupam 100% da altura */
+.ebooks-swiper .swiper-slide .premium-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Setas de navegação */
+.ebooks-swiper .swiper-button-prev,
+.ebooks-swiper .swiper-button-next {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.ebooks-swiper .swiper-button-prev:hover,
+.ebooks-swiper .swiper-button-next:hover {
+    background: var(--yellow);
+}
+
+.ebooks-swiper .swiper-button-prev:after,
+.ebooks-swiper .swiper-button-next:after {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.ebooks-swiper .swiper-button-prev:hover:after,
+.ebooks-swiper .swiper-button-next:hover:after {
+    color: var(--purple);
+}
+
+/* Paginação (bolinhas) */
+.ebooks-swiper .swiper-pagination {
+    bottom: 0;
+}
+
+.ebooks-swiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
+.ebooks-swiper .swiper-pagination-bullet-active {
+    background: var(--yellow);
+    width: 24px;
+    border-radius: 10px;
+}
+
+/* Ajuste para mobile das setas */
+@media (max-width: 768px) {
+    .ebooks-swiper .swiper-button-prev,
+    .ebooks-swiper .swiper-button-next {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .ebooks-swiper .swiper-button-prev:after,
+    .ebooks-swiper .swiper-button-next:after {
+        font-size: 14px;
+    }
+    
+    .ebooks-swiper {
+        padding: 20px 0 50px 0;
+    }
 }
