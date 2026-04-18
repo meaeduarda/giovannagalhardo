@@ -1,10 +1,39 @@
 // ============================================
-// MAIN JS - Mobile Menu, Cookie Modal, Smooth Scroll
+// MAIN JS - Mobile Menu, Cookie Modal, Smooth Scroll, Swiper
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ========== MOBILE MENU - ATUALIZADO ==========
+    // ========== INICIALIZAÇÃO DO SWIPER ==========
+    function initSwiper() {
+        if (typeof Swiper !== 'undefined') {
+            const heroSwiper = new Swiper('.hero-swiper', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                effect: 'slide',
+                speed: 800,
+            });
+            console.log('Swiper inicializado com sucesso!');
+        } else {
+            console.log('Aguardando Swiper carregar...');
+            setTimeout(initSwiper, 100);
+        }
+    }
+    
+    initSwiper();
+    
+    // ========== MOBILE MENU ==========
     const mobileToggle = document.querySelector('.mobile-toggle');
     const menu = document.querySelector('.menu');
     
@@ -14,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileToggle.classList.toggle('active');
         menu.classList.toggle('active');
         
-        // Animação do toggle (X)
         const spans = mobileToggle.querySelectorAll('span');
         if (menu.classList.contains('active')) {
             if (spans[0]) spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
@@ -31,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileToggle.addEventListener('click', toggleMobileMenu);
     }
     
-    // Fechar menu ao clicar em um link
+    // Fechar menu ao clicar em link
     document.querySelectorAll('.menu a').forEach(link => {
         link.addEventListener('click', () => {
             if (window.innerWidth <= 900 && menu) {
@@ -60,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         block: 'start'
                     });
                     
-                    // Close mobile menu after click
                     if (window.innerWidth <= 900 && menu && menu.classList.contains('active')) {
                         toggleMobileMenu();
                     }
@@ -106,13 +133,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (navbar) {
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
-                // Troca a logo para a versão roxa quando scrollado
                 if (logoImg) {
                     logoImg.src = 'assets/logoggpurple1.png';
                 }
             } else {
                 navbar.classList.remove('scrolled');
-                // Volta para a logo original quando no topo
                 if (logoImg) {
                     logoImg.src = 'assets/logogg6.png';
                 }
@@ -121,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     window.addEventListener('scroll', handleNavbarScroll);
-    handleNavbarScroll(); // Call on load to check initial state
+    handleNavbarScroll();
     
     // ========== COOKIE MODAL ==========
     const cookieModal = document.getElementById('cookieModal');
@@ -141,7 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (cookieModal) {
             cookieModal.classList.add('CookiePolicyModal--hide');
         }
-        console.log('Cookies aceitos');
     }
     
     function handleCookieDecline() {
@@ -149,7 +173,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (cookieModal) {
             cookieModal.classList.add('CookiePolicyModal--hide');
         }
-        console.log('Cookies recusados');
     }
     
     if (acceptBtn) {
@@ -161,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ========== ANIMATION ON SCROLL ==========
-    const animatedElements = document.querySelectorAll('.card, .course-card, .service-category, .testimonial, .plan');
+    const animatedElements = document.querySelectorAll('.card, .service-category, .testimonial, .plan-card');
     
     animatedElements.forEach(element => {
         element.style.opacity = '0';
@@ -183,21 +206,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll();
-    
-    // ========== STICKY HEADER SHADOW ==========
-    const header = document.querySelector('.navbar');
-    
-    function headerScroll() {
-        if (header) {
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
-            } else {
-                header.style.boxShadow = 'none';
-            }
-        }
-    }
-    
-    window.addEventListener('scroll', headerScroll);
     
     console.log('Site Giovanna Galhardo carregado com sucesso!');
 });

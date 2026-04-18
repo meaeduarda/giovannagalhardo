@@ -1,6 +1,5 @@
 /* ============================================
    RESPONSIVE CSS - Mobile First
-   FONTE: Poppins em todos os breakpoints
    ============================================ */
 
 /* Tablet */
@@ -22,21 +21,8 @@
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .pain-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .pain-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-    }
-    
     .plans-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .menu ul {
-        gap: 20px;
     }
     
     .hero .grid-2 {
@@ -72,6 +58,29 @@
     .cta-content h2 {
         font-size: 30px;
     }
+    
+    /* Cards flutuantes - Tablet */
+    .pain-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    
+    .pain-card {
+        padding: 35px 20px 40px;
+    }
+    
+    .hero {
+        padding: 80px 0 180px;
+    }
+    
+    .floating-cards {
+        margin-top: -120px;
+    }
+    
+    .card-icon-img {
+        width: 70px;
+        height: 70px;
+    }
 }
 
 /* Mobile */
@@ -84,10 +93,6 @@
         display: none;
     }
     
-    .contact-info {
-        display: none;
-    }
-    
     .mobile-toggle {
         display: flex;
     }
@@ -97,18 +102,6 @@
     .grid-4 {
         grid-template-columns: 1fr;
         gap: 20px;
-    }
-    
-    .pain-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .pain-cards-grid {
-        grid-template-columns: 1fr;
-        max-width: 380px;
-        margin-left: auto;
-        margin-right: auto;
-        gap: 24px;
     }
     
     .plans-grid {
@@ -190,6 +183,93 @@
         max-width: 400px;
         margin: 0 auto;
     }
+    
+    /* Cards flutuantes - Mobile */
+    .pain-cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 24px;
+    }
+    
+    .hero {
+        padding: 60px 0 160px;
+    }
+    
+    .hero::after {
+        height: 60px;
+        border-top-left-radius: 50% 60px;
+        border-top-right-radius: 50% 60px;
+        bottom: -30px;
+    }
+    
+    .floating-cards {
+        margin-top: -100px;
+    }
+    
+    .pain-points {
+        margin-top: 60px;
+    }
+    
+    .pain-card-title {
+        font-size: 24px;
+    }
+    
+    .card-icon-img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Menu responsivo */
+@media (max-width: 900px) {
+    .menu {
+        display: none;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        width: 100%;
+        background: #efefef;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 30px 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        border-bottom: 6px solid #5b3df5;
+        z-index: 999;
+    }
+    
+    .navbar.scrolled .menu.active {
+        background: #5144A6;
+        border-bottom-color: #F2BE22;
+    }
+    
+    .navbar.scrolled .menu.active a {
+        color: #FFFFFF;
+    }
+    
+    .navbar.scrolled .menu.active a.active {
+        color: #F2BE22;
+    }
+    
+    .menu a {
+        font-family: 'Fredoka', sans-serif;
+        font-size: 18px;
+        padding: 8px 0;
+    }
+    
+    .menu.active {
+        display: flex;
+    }
+    
+    .mobile-toggle {
+        display: flex;
+    }
+    
+    .whatsapp-link span {
+        display: inline;
+    }
 }
 
 /* Small Mobile */
@@ -214,10 +294,6 @@
         padding: 20px;
     }
     
-    .pain-item {
-        padding: 20px;
-    }
-    
     .pain-highlight p {
         font-size: 16px;
     }
@@ -228,10 +304,6 @@
     
     .pain-card {
         padding: 24px 16px 28px;
-    }
-    
-    .pain-card-icon i {
-        font-size: 44px;
     }
     
     .pain-card-title {

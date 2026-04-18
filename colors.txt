@@ -1,0 +1,6 @@
+#D9309E - rosa
+#5144A6 - roxo 
+#6CA6D9 - azul 
+#F2BE22 - amarelo 
+#F2A81D - mostarda 
+#C05C80 - rosa pastel

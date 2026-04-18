@@ -10,10 +10,14 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/base.css">
@@ -27,13 +31,9 @@
     <!-- HEADER - NAVBAR PIXEL PERFECT -->
     <header class="navbar">
         <div class="nav-inner">
-
-            <!-- Logo com imagem (sem subtítulo) -->
             <div class="logo">
                 <img src="assets/logogg6.png" alt="Giovanna Galhardo" class="logo-img">
             </div>
-
-            <!-- Menu -->
             <nav class="menu">
                 <a href="#home" class="active">Início</a>
                 <a href="#sobre">Sobre</a>
@@ -43,55 +43,205 @@
                 <a href="#servicos">Atendimento</a>
                 <a href="#contato">Contato</a>
             </nav>
-
-            <!-- WhatsApp -->
             <div class="right">
                 <a href="https://wa.me/5581995235494" class="whatsapp-link" target="_blank">
                     <i class="fab fa-whatsapp"></i> <span>(81) 99523-5494</span>
                 </a>
             </div>
-
-            <!-- Mobile Toggle -->
             <div class="mobile-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-
         </div>
     </header>
 
     <!-- ============================================ -->
-    <!-- HERO - FOCO EM CONVERSÃO -->
+    <!-- HERO - CARROSSEL COM SWIPER -->
     <!-- ============================================ -->
     <section class="hero" id="home">
         <div class="deco-circle-1"></div>
         <div class="deco-dots-1"></div>
-        <div class="container grid-2">
-            <div class="hero-text">
-                <div class="hero-badge"><i class="fas fa-bullhorn"></i> Últimas vagas disponíveis</div>
-                <h1>Seu filho pode evoluir mais rápido com os estímulos certos — e você pode <span
-                        class="highlight">começar hoje em casa</span></h1>
-                <p>Aprenda com uma fisioterapeuta especializada como estimular o desenvolvimento do seu filho com
-                    segurança, orientação e acompanhamento profissional.</p>
-                <div class="hero-buttons">
-                    <a href="https://wa.me/5581995235494" class="btn-primary btn-large" target="_blank"><i
-                            class="fas fa-calendar-alt"></i> Agende uma consultoria →</a>
-                    <a href="#ebooks" class="btn-outline"><i class="fas fa-book"></i> Ver cursos e materiais →</a>
+
+        <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="container grid-2">
+                        <div class="hero-text">
+                            <div class="hero-badge"><i class="fas fa-bullhorn"></i> Últimas vagas disponíveis</div>
+                            <h1>Seu filho pode evoluir mais rápido com os estímulos certos — e você pode <span
+                                    class="highlight">começar hoje em casa</span></h1>
+                            <p>Aprenda com uma fisioterapeuta especializada como estimular o desenvolvimento do seu
+                                filho com segurança, orientação e acompanhamento profissional.</p>
+                            <div class="hero-buttons">
+                                <a href="https://wa.me/5581995235494" class="btn-primary btn-large" target="_blank"><i
+                                        class="fas fa-calendar-alt"></i> Agende uma consultoria →</a>
+                                <a href="#ebooks" class="btn-outline btn-light"><i class="fas fa-book"></i> Ver cursos e
+                                    materiais →</a>
+                            </div>
+                            <div class="hero-trust">
+                                <span><i class="fas fa-check-circle"></i> +500 mães atendidas</span>
+                                <span><i class="fas fa-star"></i> Avaliação 5 estrelas</span>
+                                <span><i class="fas fa-graduation-cap"></i> 10+ anos de experiência</span>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <div class="image-wrapper">
+                                <img src="https://placehold.co/500x500/FFD43B/5B3FD3?text=M%C3%A3e+e+Filho"
+                                    alt="Mãe e filho em estimulação">
+                                <div class="floating-badge badge-1"><i class="fas fa-chart-line"></i> Resultados reais
+                                </div>
+                                <div class="floating-badge badge-2"><i class="fas fa-heart"></i> Atendimento humanizado
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="hero-trust">
-                    <span><i class="fas fa-check-circle"></i> +500 mães atendidas</span>
-                    <span><i class="fas fa-star"></i> Avaliação 5 estrelas</span>
-                    <span><i class="fas fa-graduation-cap"></i> 10+ anos de experiência</span>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="container grid-2">
+                        <div class="hero-text">
+                            <div class="hero-badge"><i class="fas fa-star"></i> Destaque da semana</div>
+                            <h1>Transforme a rotina do seu filho com <span class="highlight">atividades lúdicas e
+                                    eficazes</span></h1>
+                            <p>Método comprovado que une diversão e desenvolvimento neuropsicomotor para crianças com
+                                atraso ou autismo.</p>
+                            <div class="hero-buttons">
+                                <a href="https://wa.me/5581995235494" class="btn-primary btn-large" target="_blank"><i
+                                        class="fas fa-calendar-alt"></i> Agende uma consultoria →</a>
+                                <a href="#cursos" class="btn-outline btn-light"><i class="fas fa-graduation-cap"></i>
+                                    Conheça os planos →</a>
+                            </div>
+                            <div class="hero-trust">
+                                <span><i class="fas fa-smile"></i> +800 famílias impactadas</span>
+                                <span><i class="fas fa-trophy"></i> Método exclusivo</span>
+                                <span><i class="fas fa-clock"></i> Resultados em 30 dias</span>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <div class="image-wrapper">
+                                <img src="https://placehold.co/500x500/FFD43B/5B3FD3?text=Crian%C3%A7a+Brinando"
+                                    alt="Criança brincando e aprendendo">
+                                <div class="floating-badge badge-1"><i class="fas fa-chart-line"></i> Evolução garantida
+                                </div>
+                                <div class="floating-badge badge-2"><i class="fas fa-heart"></i> Suporte humanizado
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="container grid-2">
+                        <div class="hero-text">
+                            <div class="hero-badge"><i class="fas fa-gift"></i> Oferta especial</div>
+                            <h1>Pacote completo de <span class="highlight">estimulação infantil</span> com 30% de
+                                desconto</h1>
+                            <p>Ebooks + cursos + consultoria com acompanhamento personalizado para o seu filho.</p>
+                            <div class="hero-buttons">
+                                <a href="https://wa.me/5581995235494" class="btn-primary btn-large" target="_blank"><i
+                                        class="fab fa-whatsapp"></i> Garantir minha vaga →</a>
+                                <a href="#ebooks" class="btn-outline btn-light"><i class="fas fa-book"></i> Ver
+                                    materiais →</a>
+                            </div>
+                            <div class="hero-trust">
+                                <span><i class="fas fa-shield-alt"></i> Garantia de 7 dias</span>
+                                <span><i class="fas fa-lock"></i> Compra segura</span>
+                                <span><i class="fas fa-infinity"></i> Acesso vitalício</span>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <div class="image-wrapper">
+                                <img src="https://placehold.co/500x500/FFD43B/5B3FD3?text=Kit+Estimula%C3%A7%C3%A3o"
+                                    alt="Kit de estimulação">
+                                <div class="floating-badge badge-1"><i class="fas fa-fire"></i> 30% OFF</div>
+                                <div class="floating-badge badge-2"><i class="fas fa-gift"></i> Bônus exclusivos</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="image-wrapper">
-                    <img src="https://placehold.co/500x500/FFD43B/5B3FD3?text=M%C3%A3e+e+Filho"
-                        alt="Mãe e filho em estimulação">
-                    <div class="floating-badge badge-1"><i class="fas fa-chart-line"></i> Resultados reais</div>
-                    <div class="floating-badge badge-2"><i class="fas fa-heart"></i> Atendimento humanizado</div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CARDS FLUTUANTES (SOBREPOSTOS AO HERO) -->
+    <!-- ============================================ -->
+    <section class="floating-cards">
+        <div class="container">
+            <div class="pain-cards-grid">
+                <!-- Card 1 - Azul -->
+                <div class="pain-card pain-card-blue">
+                    <div class="pain-card-icon">
+                        <img src="https://placehold.co/80x80/FFFFFF/2DA8FF?text=🐣" alt="Baby icon" class="card-icon-img">
+                    </div>
+                    <h3 class="pain-card-title">Baby little stars</h3>
+                    <p class="pain-card-sub">Early development of children 1-2 years</p>
+                    <div class="pain-card-divider"></div>
+                    <p class="pain-card-text">Seu filho ainda não atingiu marcos importantes do desenvolvimento?</p>
                 </div>
+
+                <!-- Card 2 - Verde -->
+                <div class="pain-card pain-card-green">
+                    <div class="pain-card-icon">
+                        <img src="https://placehold.co/80x80/FFFFFF/8BC34A?text=⭐" alt="Stars icon" class="card-icon-img">
+                    </div>
+                    <h3 class="pain-card-title">Little stars</h3>
+                    <p class="pain-card-sub">Activities for children from 2 years</p>
+                    <div class="pain-card-divider"></div>
+                    <p class="pain-card-text">Você sente que poderia estar fazendo mais, mas não sabe como</p>
+                </div>
+
+                <!-- Card 3 - Laranja -->
+                <div class="pain-card pain-card-orange">
+                    <div class="pain-card-icon">
+                        <img src="https://placehold.co/80x80/FFFFFF/FF7A2F?text=👣" alt="First steps icon" class="card-icon-img">
+                    </div>
+                    <h3 class="pain-card-title">First steps</h3>
+                    <p class="pain-card-sub">Activities for children from 3 years</p>
+                    <div class="pain-card-divider"></div>
+                    <p class="pain-card-text">Já procurou ajuda, mas ainda se sente insegura</p>
+                </div>
+
+                <!-- Card 4 - Rosa -->
+                <div class="pain-card pain-card-pink">
+                    <div class="pain-card-icon">
+                        <img src="https://placehold.co/80x80/FFFFFF/D633A6?text=🧠" alt="Einstein icon" class="card-icon-img">
+                    </div>
+                    <h3 class="pain-card-title">Little Einsteins</h3>
+                    <p class="pain-card-sub">Group for children from 4 to 6 years</p>
+                    <div class="pain-card-divider"></div>
+                    <p class="pain-card-text">Tem medo de perder tempo precioso no desenvolvimento do seu filho</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CONTEÚDO NORMAL (TÍTULO + TEXTO) -->
+    <!-- ============================================ -->
+    <section class="pain-points" id="dor">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-frown"></i> Você se identifica com isso?</h2>
+                <p>Se alguma dessas situações parece familiar, você está no lugar certo</p>
+            </div>
+
+            <div class="pain-cta">
+                <div class="pain-highlight">
+                    <p><i class="fas fa-heart" style="color: #FF4FB3;"></i> Se você respondeu "sim" para qualquer um
+                        desses pontos, <strong>você não está sozinha</strong> — e existe um caminho seguro para mudar
+                        isso.</p>
+                </div>
+                <a href="https://wa.me/5581995235494" class="btn-primary" target="_blank"><i
+                        class="fab fa-whatsapp"></i> Quero saber como posso ajudar meu filho →</a>
             </div>
         </div>
     </section>
@@ -140,75 +290,6 @@
                     <img src="https://placehold.co/300x300/FF8A3D/white?text=Consultoria" alt="Consultoria online">
                     <img src="https://placehold.co/300x300/FF4FB3/white?text=Evolução" alt="Evolução do paciente">
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!-- DOR - ESSENCIAL PARA TRÁFEGO PAGO (LAYOUT NOVO BASEADO NA IMAGEM) -->
-    <!-- ============================================ -->
-    <section class="pain-points" id="dor">
-        <div class="container">
-            <div class="section-header">
-                <h2><i class="fas fa-frown"></i> Você se identifica com isso?</h2>
-                <p>Se alguma dessas situações parece familiar, você está no lugar certo</p>
-            </div>
-            
-            <!-- NOVO LAYOUT: Cards no estilo "Wake a Genius in a Child" (4 cards lado a lado) -->
-            <div class="pain-cards-grid">
-                <!-- Card 1 -->
-                <div class="pain-card">
-                    <div class="pain-card-icon">
-                        <i class="fas fa-child"></i>
-                    </div>
-                    <h3 class="pain-card-title">Baby little stars</h3>
-                    <p class="pain-card-sub">Early development of children 1-2 years</p>
-                    <div class="pain-card-divider"></div>
-                    <p class="pain-card-text">Seu filho ainda não atingiu marcos importantes do desenvolvimento?</p>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="pain-card">
-                    <div class="pain-card-icon">
-                        <i class="fas fa-question-circle"></i>
-                    </div>
-                    <h3 class="pain-card-title">Little stars</h3>
-                    <p class="pain-card-sub">Activities for children from 2 years</p>
-                    <div class="pain-card-divider"></div>
-                    <p class="pain-card-text">Você sente que poderia estar fazendo mais, mas não sabe como</p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="pain-card">
-                    <div class="pain-card-icon">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </div>
-                    <h3 class="pain-card-title">First steps</h3>
-                    <p class="pain-card-sub">Activities for children from 3 years</p>
-                    <div class="pain-card-divider"></div>
-                    <p class="pain-card-text">Já procurou ajuda, mas ainda se sente insegura</p>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="pain-card">
-                    <div class="pain-card-icon">
-                        <i class="fas fa-hourglass-half"></i>
-                    </div>
-                    <h3 class="pain-card-title">Little Einsteins</h3>
-                    <p class="pain-card-sub">Group for children from 4 to 6 years</p>
-                    <div class="pain-card-divider"></div>
-                    <p class="pain-card-text">Tem medo de perder tempo precioso no desenvolvimento do seu filho</p>
-                </div>
-            </div>
-
-            <div class="pain-cta">
-                <div class="pain-highlight">
-                    <p><i class="fas fa-heart" style="color: #FF4FB3;"></i> Se você respondeu "sim" para qualquer um
-                        desses pontos, <strong>você não está sozinha</strong> — e existe um caminho seguro para mudar
-                        isso.</p>
-                </div>
-                <a href="https://wa.me/5581995235494" class="btn-primary" target="_blank"><i
-                        class="fab fa-whatsapp"></i> Quero saber como posso ajudar meu filho →</a>
             </div>
         </div>
     </section>
@@ -546,6 +627,9 @@
         </div>
     </div>
 
+    <!-- Swiper JS (DEVE VIR PRIMEIRO) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Main JS (DEPOIS) -->
     <script src="js/main.js"></script>
 </body>
 

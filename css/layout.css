@@ -2,9 +2,6 @@
    LAYOUT CSS - Grids, Flex, Header, Footer
    ============================================ */
 
-/* Import da fonte Poppins para a navbar */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
 /* Flex Utilities */
 .flex-between {
     display: flex;
@@ -32,277 +29,185 @@
     gap: 24px;
 }
 
-/* ========== NAVBAR PIXEL PERFECT - Fonte Fredoka ========== */
+/* ========== NAVBAR ========== */
 .navbar {
-  width: 100%;
-  background: #efefef;
-  border-bottom: 6px solid #5144A6;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: all 0.3s ease;
+    width: 100%;
+    background: #efefef;
+    border-bottom: 6px solid #5144A6;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 /* Navbar scrolled state */
 .navbar.scrolled {
-background: #7B6ED6;
-color: #FFFFFF;
-box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    background: #7B6ED6;
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .navbar.scrolled .menu a {
-  color: #FFFFFF;
+    color: #FFFFFF;
 }
 
 .navbar.scrolled .menu a::after {
-  background: #F2BE22;
+    background: #F2BE22;
 }
 
 .navbar.scrolled .menu a.active {
-  color: #F2BE22;
+    color: #F2BE22;
 }
 
 .navbar.scrolled .menu a:hover {
-  color: #F2BE22;
+    color: #F2BE22;
 }
 
 .navbar.scrolled .right a {
-  color: #FFFFFF;
+    color: #FFFFFF;
 }
 
 .navbar.scrolled .whatsapp-link {
-  background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .navbar.scrolled .whatsapp-link:hover {
-  background: #25D366;
-  color: white;
+    background: #25D366;
+    color: white;
 }
 
 .navbar.scrolled .mobile-toggle span {
-  background: #FFFFFF;
+    background: #FFFFFF;
 }
 
 .nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 12px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-/* ===== LOGO com troca de imagem no scroll ===== */
+/* Logo */
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
 }
 
 .logo-img {
-  height: 70px;
-  width: auto;
-  display: block;
-  transition: all 0.3s ease;
+    height: 70px;
+    width: auto;
+    display: block;
+    transition: all 0.3s ease;
 }
 
-/* ===== MENU CENTRAL - Fonte Fredoka ===== */
+/* Menu */
 .menu {
-  display: flex;
-  gap: 32px;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
 }
 
 .menu a {
-  text-decoration: none;
-  font-family: 'Fredoka', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  color: #5144A6;
-  letter-spacing: 0.2px;
-  transition: all 0.2s ease;
-  position: relative;
-  padding: 4px 0;
+    text-decoration: none;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #5144A6;
+    letter-spacing: 0.2px;
+    transition: all 0.2s ease;
+    position: relative;
+    padding: 4px 0;
 }
 
-/* HOVER */
 .menu a:hover {
-  color: #6CA6D9;
-  opacity: 1;
+    color: #6CA6D9;
 }
 
-/* Linha ativa no hover */
 .menu a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #5b3df5;
-  transition: width 0.25s ease;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #5b3df5;
+    transition: width 0.25s ease;
 }
 
 .menu a:hover::after,
 .menu a.active::after {
-  width: 100%;
+    width: 100%;
 }
 
-/* Link ativo */
 .menu a.active {
-  color: #5b3df5;
-  font-weight: 600;
+    color: #5b3df5;
+    font-weight: 600;
 }
 
-/* ===== DIREITA (WhatsApp) ===== */
+/* Right (WhatsApp) */
 .right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
 }
 
 .right a {
-  font-family: 'Fredoka', sans-serif;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  color: #4b2bbd;
-  transition: 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+    font-family: 'Fredoka', sans-serif;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4b2bbd;
+    transition: 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .whatsapp-link {
-  background: rgba(108, 211, 77, 0.12);
-  padding: 6px 14px;
-  border-radius: 30px;
+    background: rgba(108, 211, 77, 0.12);
+    padding: 6px 14px;
+    border-radius: 30px;
 }
 
 .whatsapp-link i {
-  font-size: 16px;
-  color: #25D366;
+    font-size: 16px;
+    color: #25D366;
 }
 
 .whatsapp-link:hover {
-  background: #25D366;
-  color: white;
+    background: #25D366;
+    color: white;
 }
 
 .whatsapp-link:hover i {
-  color: white;
+    color: white;
 }
 
-/* ===== MOBILE TOGGLE ===== */
+/* Mobile Toggle */
 .mobile-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 4px;
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
 }
 
 .mobile-toggle span {
-  width: 25px;
-  height: 3px;
-  background: #4b2bbd;
-  border-radius: 3px;
-  transition: 0.3s;
+    width: 25px;
+    height: 3px;
+    background: #4b2bbd;
+    border-radius: 3px;
+    transition: 0.3s;
 }
 
-/* Scrolled mobile toggle */
 .navbar.scrolled .mobile-toggle span {
-  background: #FFFFFF;
-}
-
-/* ========== RESPONSIVO ========== */
-@media (max-width: 1024px) {
-  .menu {
-    gap: 20px;
-  }
-  
-  .whatsapp-link span {
-    display: none;
-  }
-  
-  .whatsapp-link {
-    padding: 6px 10px;
-  }
-}
-
-@media (max-width: 900px) {
-  .menu {
-    display: none;
-    position: absolute;
-    top: 74px;
-    left: 0;
-    width: 100%;
-    background: #efefef;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 30px 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    border-bottom: 6px solid #5b3df5;
-    z-index: 999;
-  }
-  
-  /* Mobile menu quando navbar está scrolled */
-  .navbar.scrolled .menu.active {
-    background: #5144A6;
-    border-bottom-color: #F2BE22;
-  }
-  
-  .navbar.scrolled .menu.active a {
-    color: #FFFFFF;
-  }
-  
-  .navbar.scrolled .menu.active a.active {
-    color: #F2BE22;
-  }
-  
-  .menu a {
-    font-family: 'Fredoka', sans-serif;
-    font-size: 18px;
-    padding: 8px 0;
-  }
-  
-  .menu.active {
-    display: flex;
-  }
-  
-  .mobile-toggle {
-    display: flex;
-  }
-  
-  .whatsapp-link span {
-    display: inline;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-inner {
-    padding: 10px 16px;
-  }
-  
-  .logo-img {
-    height: 40px;
-  }
-  
-  .whatsapp-link span {
-    display: none;
-  }
-  
-  .whatsapp-link {
-    padding: 6px 10px;
-  }
-  
-  .menu a {
-    font-size: 16px;
-  }
+    background: #FFFFFF;
 }
 
 /* ========== FOOTER ========== */
