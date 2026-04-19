@@ -584,9 +584,9 @@
     color: var(--purple);
     padding: 6px 16px;
     border-radius: 30px;
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'Fredoka', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .plan-header {
