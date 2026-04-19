@@ -141,8 +141,8 @@ section {
     color: var(--purple);
     padding: 6px 16px;
     border-radius: 30px;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
     margin-bottom: 16px;
     font-family: 'Fredoka', sans-serif;
 }
@@ -153,8 +153,8 @@ section {
     color: var(--purple);
     padding: 8px 20px;
     border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
     margin-bottom: 20px;
     font-family: 'Fredoka', sans-serif;
 }
