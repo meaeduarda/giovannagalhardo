@@ -20,6 +20,9 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+    <!-- AOS CSS (animações) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
@@ -29,7 +32,7 @@
 
 <body>
 
-    <!-- HEADER - NAVBAR PIXEL PERFECT -->
+    <!-- HEADER - NAVBAR -->
     <header class="navbar">
         <div class="nav-inner">
             <div class="logo">
@@ -38,8 +41,7 @@
             <nav class="menu">
                 <a href="#home" class="active">Início</a>
                 <a href="#sobre">Sobre</a>
-                <a href="#dor">Dúvidas</a>
-                <a href="#ebooks">Materiais</a>
+                <a href="#ebooks">Ebooks</a>
                 <a href="#cursos">Cursos</a>
                 <a href="#servicos">Atendimento</a>
                 <a href="#contato">Contato</a>
@@ -52,18 +54,15 @@
         </div>
     </header>
 
-    <!-- HERO - CARROSSEL COM SWIPER -->
-
+    <!-- HERO - COM SLIDE 2 EXATAMENTE IGUAL AO IMAGE.PNG -->
     <section class="hero" id="home">
-        <div class="deco-circle-1"></div>
-        <div class="deco-dots-1"></div>
-
         <div class="swiper hero-swiper">
             <div class="swiper-wrapper">
-                <!-- Slide 1 -->
+                <!-- Slide 1 - Banner estático -->
                 <div class="swiper-slide">
-                    <div class="container grid-2">
-                        <div class="hero-text">
+                    <div class="slide-background slide-bg-1 parallax-bg"></div>
+                    <div class="container">
+                        <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
                             <div class="hero-badge"><i class="fas fa-bullhorn"></i> Últimas vagas disponíveis</div>
                             <h1>Seu filho pode evoluir mais rápido com os estímulos certos — e você pode <span
                                     class="highlight">começar hoje em casa</span></h1>
@@ -72,8 +71,8 @@
                             <div class="hero-buttons">
                                 <a href="https://wa.me/5581995235494" class="btn-primary btn-large" target="_blank"><i
                                         class="fas fa-calendar-alt"></i> Agende uma consultoria →</a>
-                                <a href="#ebooks" class="btn-outline btn-light"><i class="fas fa-book"></i> Ver cursos e
-                                    materiais →</a>
+                                <a href="#ebooks" class="btn-outline-white"><i class="fas fa-book"></i> Ver cursos e
+                                    Ebooks →</a>
                             </div>
                             <div class="hero-trust">
                                 <span><i class="fas fa-check-circle"></i> +500 mães atendidas</span>
@@ -81,79 +80,51 @@
                                 <span><i class="fas fa-graduation-cap"></i> 10+ anos de experiência</span>
                             </div>
                         </div>
-                        <div class="hero-image">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/500x500/FFD43B/5B3FD3?text=M%C3%A3e+e+Filho"
-                                    alt="Mãe e filho em estimulação">
-                                <div class="floating-badge badge-1"><i class="fas fa-chart-line"></i> Resultados reais
-                                </div>
-                                <div class="floating-badge badge-2"><i class="fas fa-heart"></i> Atendimento humanizado
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
-                <!-- Slide 2 -->
+                <!-- Slide 2 - EXATAMENTE IGUAL AO MODELO image.png -->
                 <div class="swiper-slide">
-                    <div class="container grid-2">
-                        <div class="hero-text">
-                            <div class="hero-badge"><i class="fas fa-star"></i> Destaque da semana</div>
-                            <h1>Transforme a rotina do seu filho com <span class="highlight">atividades lúdicas e
-                                    eficazes</span></h1>
-                            <p>Método comprovado que une diversão e desenvolvimento neuropsicomotor para crianças com
-                                atraso ou autismo.</p>
+                    <div class="slide-bg-video-custom"></div>
+                    <div class="container">
+                        <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
+                            <div class="hero-badge"><i class="fas fa-play-circle"></i> Veja como funciona meu trabalho</div>
+                            <h1>Assista esse vídeo rápido e entenda como <span class="highlight">posso ajudar no desenvolvimento</span> do seu filho.</h1>
                             <div class="hero-buttons">
-                                <a href="https://wa.me/5581995235494" class="btn-primary btn-large" target="_blank"><i
-                                        class="fas fa-calendar-alt"></i> Agende uma consultoria →</a>
-                                <a href="#cursos" class="btn-outline btn-light"><i class="fas fa-graduation-cap"></i>
-                                    Conheça os planos →</a>
+                                <button class="btn-primary btn-large" id="openVideoModalBtn">
+                                    <i class="fas fa-play"></i> Assistir vídeo →
+                                </button>
+                                <a href="#sobre" class="btn-outline-white"><i class="fas fa-info-circle"></i> Saiba mais</a>
                             </div>
                             <div class="hero-trust">
-                                <span><i class="fas fa-smile"></i> +800 famílias impactadas</span>
-                                <span><i class="fas fa-trophy"></i> Método exclusivo</span>
-                                <span><i class="fas fa-clock"></i> Resultados em 30 dias</span>
-                            </div>
-                        </div>
-                        <div class="hero-image">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/500x500/FFD43B/5B3FD3?text=Crian%C3%A7a+Brinando"
-                                    alt="Criança brincando e aprendendo">
-                                <div class="floating-badge badge-1"><i class="fas fa-chart-line"></i> Evolução garantida
-                                </div>
-                                <div class="floating-badge badge-2"><i class="fas fa-heart"></i> Suporte humanizado
-                                </div>
+                                <span><i class="fas fa-check-circle"></i> Método comprovado</span>
+                                <span><i class="fas fa-star"></i> +500 mães atendidas</span>
+                                <span><i class="fas fa-clock"></i> Resultados rápidos</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Slide 3 -->
+                <!-- Slide 3 - Prova Social / Resultados -->
                 <div class="swiper-slide">
-                    <div class="container grid-2">
-                        <div class="hero-text">
-                            <div class="hero-badge"><i class="fas fa-gift"></i> Oferta especial</div>
-                            <h1>Pacote completo de <span class="highlight">estimulação infantil</span> com 30% de
-                                desconto</h1>
-                            <p>Ebooks + cursos + consultoria com acompanhamento personalizado para o seu filho.</p>
+                    <div class="slide-background slide-bg-3 parallax-bg"></div>
+                    <div class="container">
+                        <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
+                            <div class="hero-badge"><i class="fas fa-chart-line"></i> Resultados reais</div>
+                            <h1>Evolução comprovada: <span class="highlight">antes e depois</span> com nosso método
+                            </h1>
+                            <p>Veja depoimentos e resultados de crianças que passaram pelo nosso acompanhamento
+                                especializado.</p>
                             <div class="hero-buttons">
-                                <a href="https://wa.me/5581995235494" class="btn-primary btn-large" target="_blank"><i
-                                        class="fab fa-whatsapp"></i> Garantir minha vaga →</a>
-                                <a href="#ebooks" class="btn-outline btn-light"><i class="fas fa-book"></i> Ver
-                                    materiais →</a>
+                                <a href="#depoimentos" class="btn-primary btn-large"><i class="fas fa-star"></i> Ver
+                                    resultados →</a>
+                                <a href="#ebooks" class="btn-outline-white"><i class="fas fa-graduation-cap"></i>
+                                    Começar agora</a>
                             </div>
                             <div class="hero-trust">
                                 <span><i class="fas fa-shield-alt"></i> Garantia de 7 dias</span>
                                 <span><i class="fas fa-lock"></i> Compra segura</span>
                                 <span><i class="fas fa-infinity"></i> Acesso vitalício</span>
-                            </div>
-                        </div>
-                        <div class="hero-image">
-                            <div class="image-wrapper">
-                                <img src="https://placehold.co/500x500/FFD43B/5B3FD3?text=Kit+Estimula%C3%A7%C3%A3o"
-                                    alt="Kit de estimulação">
-                                <div class="floating-badge badge-1"><i class="fas fa-fire"></i> 30% OFF</div>
-                                <div class="floating-badge badge-2"><i class="fas fa-gift"></i> Bônus exclusivos</div>
                             </div>
                         </div>
                     </div>
@@ -166,12 +137,27 @@
         </div>
     </section>
 
-    <!-- CARDS FLUTUANTES (SOBREPOSTOS AO HERO) -->
+    <!-- MODAL DE VÍDEO COM VÍDEO FICTÍCIO PROFISSIONAL -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-modal-close">&times;</span>
+            <div class="video-container">
+                <iframe id="videoIframe" width="100%" height="400" 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1"
+                    title="Vídeo Giovanna Galhardo - Método de Estimulação Infantil" 
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- CARDS FLUTUANTES (com stagger animation) -->
     <section class="floating-cards">
         <div class="container">
             <div class="pain-cards-grid">
-                <!-- Card 1 - Azul -->
-                <div class="pain-card pain-card-blue">
+                <div class="pain-card pain-card-blue" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
                     <div class="pain-card-icon">
                         <img src="assets/card-icon-img-1.png" alt="Marcos do Desenvolvimento Infantil"
                             class="card-icon-img">
@@ -181,8 +167,7 @@
                     <p class="pain-card-text">Seu filho ainda não atingiu marcos importantes do desenvolvimento?</p>
                 </div>
 
-                <!-- Card 2 - Verde -->
-                <div class="pain-card pain-card-green">
+                <div class="pain-card pain-card-green" data-aos="fade-up" data-aos-delay="150" data-aos-duration="600">
                     <div class="pain-card-icon">
                         <img src="assets/card-icon-img-2.png" alt="Estimular o Desenvolvimento" class="card-icon-img">
                     </div>
@@ -191,8 +176,7 @@
                     <p class="pain-card-text">Você sente que poderia estar fazendo mais, mas não sabe como?</p>
                 </div>
 
-                <!-- Card 3 - Laranja -->
-                <div class="pain-card pain-card-orange">
+                <div class="pain-card pain-card-orange" data-aos="fade-up" data-aos-delay="300" data-aos-duration="600">
                     <div class="pain-card-icon">
                         <img src="assets/card-icon-img-3.png" alt="Acompanhamento Profissional" class="card-icon-img">
                     </div>
@@ -201,8 +185,7 @@
                     <p class="pain-card-text">Já procurou ajuda, mas ainda se sente insegura?</p>
                 </div>
 
-                <!-- Card 4 - Rosa -->
-                <div class="pain-card pain-card-pink">
+                <div class="pain-card pain-card-pink" data-aos="fade-up" data-aos-delay="450" data-aos-duration="600">
                     <div class="pain-card-icon">
                         <img src="assets/card-icon-img-4.png" alt="Intervenção no Tempo Certo" class="card-icon-img">
                     </div>
@@ -213,35 +196,35 @@
             </div>
         </div>
     </section>
+
+    <!-- SEÇÃO "VOCÊ SE IDENTIFICA COM ISSO?" -->
     <section class="pain-points" id="dor">
         <div class="container">
-            <div class="section-header">
-                <h2> Você se identifica com isso?</h2>
+            <div class="section-header" data-aos="fade-up">
+                <h2>Você se identifica com isso?</h2>
                 <p>Se alguma dessas situações parece familiar, você está no lugar certo</p>
             </div>
-
-            <div class="pain-cta">
-                <div class="pain-highlight">
-                    <p> Se você respondeu "sim" para qualquer um
+            <div class="pain-cta" data-aos="fade-up" data-aos-delay="200">
+                <div class="pain-highlight scale-animation">
+                    <p>Se você respondeu "sim" para qualquer um
                         desses pontos, <strong>você não está sozinha</strong> — e existe um caminho seguro para mudar
                         isso.</p>
                 </div>
-                <a href="https://wa.me/5581995235494" class="btn-primary" target="_blank"><i
+                <a href="https://wa.me/5581995235494" class="btn-primary pulse-hover" target="_blank"><i
                         class="fab fa-whatsapp"></i> Quero saber como posso ajudar meu filho →</a>
             </div>
         </div>
     </section>
 
-    <!-- SOBRE  -->
-
+    <!-- SOBRE - COM 4 FOTOS DA PROFISSIONAL (grid 2x2) -->
     <section class="about" id="sobre">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2>Quem vai te orientar nessa jornada</h2>
                 <p>Conheça a profissional por trás do método</p>
             </div>
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text" data-aos="fade-right">
                     <p><strong>Olá, eu me chamo Giovanna Galhardo,</strong> sou fisioterapeuta e atuo na prevenção,
                         diagnóstico e tratamento de disfunções físicas e no desenvolvimento funcional de crianças e
                         adultos.</p>
@@ -269,18 +252,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-gallery">
-                    <img src="https://placehold.co/300x300/4AA3FF/white?text=Atendimento" alt="Atendimento Giovanna">
-                    <img src="https://placehold.co/300x300/6CD34D/white?text=Estimulação" alt="Estimulação infantil">
-                    <img src="https://placehold.co/300x300/FF8A3D/white?text=Consultoria" alt="Consultoria online">
-                    <img src="https://placehold.co/300x300/FF4FB3/white?text=Evolução" alt="Evolução do paciente">
+                <div class="about-gallery" data-aos="fade-left">
+                    <img src="assets/giovanna1.jpg" alt="Giovanna atendendo criança" class="gallery-img hover-zoom"
+                        onerror="this.src='https://placehold.co/300x300/4AA3FF/white?text=Atendimento'">
+                    <img src="assets/giovanna2.jpg" alt="Giovanna sorrindo" class="gallery-img hover-zoom"
+                        onerror="this.src='https://placehold.co/300x300/6CD34D/white?text=Profissional'">
+                    <img src="assets/giovanna3.jpg" alt="Giovanna em ambiente clínico" class="gallery-img hover-zoom"
+                        onerror="this.src='https://placehold.co/300x300/FF8A3D/white?text=Consultoria'">
+                    <img src="assets/giovanna4.jpg" alt="Giovanna com brinquedo terapêutico" class="gallery-img hover-zoom"
+                        onerror="this.src='https://placehold.co/300x300/FF4FB3/white?text=Evolução'">
                 </div>
             </div>
         </div>
     </section>
-    <!-- EBOOKS - CARROSSEL COM SWIPER -->
+
+    <!-- EBOOKS - CARROSSEL SWIPER -->
     <section class="ebooks-premium" id="ebooks">
-        <!-- ONDA SUPERIOR -->
         <div class="wave-top">
             <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
                 <path d="M0,0 C300,80 600,20 900,40 C1100,55 1300,90 1440,60 L1440,0 L0,0 Z" fill="#FFFFFF"></path>
@@ -288,247 +275,182 @@
         </div>
 
         <div class="container">
-            <div class="section-header-light">
-                <div class="offer-tag-light"><i class="fas fa-fire"></i> Material digital - Acesso imediato</div>
+            <div class="section-header-light" data-aos="fade-up">
+                <div class="offer-tag-light"><i class="fas fa-fire"></i> Ebook digital - Acesso imediato</div>
                 <h2>Comece hoje com orientações práticas</h2>
-                <p>Materiais simples e diretos para você aplicar em casa e já começar a estimular seu filho da forma
+                <p>Ebooks simples e diretos para você aplicar em casa e já começar a estimular seu filho da forma
                     correta</p>
             </div>
-            <!-- CARROSSEL SWIPER -->
+
             <div class="swiper ebooks-swiper">
                 <div class="swiper-wrapper">
-                    <!-- Slide 1 - Card Azul -->
                     <div class="swiper-slide">
-                        <div class="premium-card card-blue">
+                        <div class="ebook-card card-blue hover-lift" data-aos="fade-up" data-aos-delay="0">
                             <div class="card-image-top">
-                                <img src="assets/livro1.png" alt="Estimulação precoce">
-                                <span class="badge-round">3 a 9 meses</span>
+                                <img src="assets/livro_sentar.png" alt="Atividades para sentar">
+                                <span class="badge-round pulse-badge">3 a 9 meses</span>
                             </div>
                             <div class="card-content">
-                                <h3>Atividades para o "sentar" do bebê</h3>
-                                <p>Aprenda exercícios simples para estimular o sentar com segurança</p>
-                                <div class="price-row">
-                                    <span class="new-price">12x de R$ 6,20</span>
+                                <div>
+                                    <div class="icon-circle">
+                                        <i class="fas fa-baby-carriage"></i>
+                                    </div>
+                                    <h3>Atividades para o "sentar" do bebê</h3>
+                                    <p>Aprenda exercícios simples para estimular o sentar com segurança</p>
                                 </div>
-                                <p style="margin: 5px 0 15px; font-size: 14px; color: rgba(255,255,255,0.9);">
-                                    ou R$ 59,90 à vista
-                                </p>
-                                <a href="https://chk.eduzz.com/801EG2ZAW7?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnbqVGA8LK-H9IieTCXEW7oPiJQcMNbXT_jiOKntzs4J9q75cTjG0k7bPOT60_aem_N6xK8LCfhVGsfwe10jsM1A&utm_id=97760_v0_s00_e0_tv6_a1denngm82r7l5"
-                                    class="btn-buy" target="_blank">
-                                    <i class="fas fa-shopping-cart"></i> Comprar agora →
-                                </a>
+                                <div class="price-wrapper">
+                                    <div class="price-row">
+                                        <span class="new-price">12x de R$ 6,20</span>
+                                    </div>
+                                    <p style="margin: 5px 0 15px; font-size: 14px; color: rgba(255,255,255,0.9);">
+                                        ou R$ 59,90 à vista
+                                    </p>
+                                    <a href="https://chk.eduzz.com/801EG2ZAW7" class="btn-buy btn-hover-glow" target="_blank">
+                                        <i class="fas fa-shopping-cart"></i> Comprar agora →
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Slide 2 - Card Verde -->
                     <div class="swiper-slide">
-                        <div class="premium-card card-green">
+                        <div class="ebook-card card-green hover-lift" data-aos="fade-up" data-aos-delay="100">
                             <div class="card-image-top">
-                                <img src="assets/livro2.png" alt="Recém-nascido desenvolvimento">
-                                <span class="badge-round">0 a 3 meses</span>
+                                <img src="assets/livro_neuro.png" alt="Desenvolvimento Neuropsicomotor">
+                                <span class="badge-round pulse-badge">0 a 3 meses</span>
                             </div>
                             <div class="card-content">
-                                <h3>Fase recém nascido: Desenvolvimento Neuropsicomotor</h3>
-                                <p>Aprenda os cuidados essenciais e como estimular o desenvolvimento do bebê desde os
-                                    primeiros dias</p>
-                                <div class="price-row">
-                                    <span class="new-price">12x de R$ 6,20</span>
+                                <div>
+                                    <div class="icon-circle">
+                                        <i class="fas fa-baby"></i>
+                                    </div>
+                                    <h3>Fase recém nascido: Desenvolvimento Neuropsicomotor</h3>
+                                    <p>Aprenda os cuidados essenciais e como estimular o desenvolvimento do bebê</p>
                                 </div>
-                                <p style="margin: 5px 0 15px; font-size: 14px; color: rgba(255,255,255,0.9);">
-                                    ou R$ 59,90 à vista
-                                </p>
-                                <a href="https://chk.eduzz.com/G92ER1J7WE?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn3T3hplzv_HXMyTwicqfFECH0G5PkbTJ8cNLBDr8vdbKXzAXajRgXju3Cw-E_aem_PL9z6OkB42hAj2Fx8yGDMg&utm_id=97760_v0_s00_e0_tv6_a1denngm82r7l5"
-                                    class="btn-buy" target="_blank">
-                                    <i class="fas fa-shopping-cart"></i> Comprar agora →
-                                </a>
+                                <div class="price-wrapper">
+                                    <div class="price-row">
+                                        <span class="new-price">12x de R$ 6,20</span>
+                                    </div>
+                                    <p style="margin: 5px 0 15px; font-size: 14px; color: rgba(255,255,255,0.9);">
+                                        ou R$ 59,90 à vista
+                                    </p>
+                                    <a href="https://chk.eduzz.com/G92ER1J7WE" class="btn-buy btn-hover-glow" target="_blank">
+                                        <i class="fas fa-shopping-cart"></i> Comprar agora →
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Slide 3 - Card Laranja -->
                     <div class="swiper-slide">
-                        <div class="premium-card card-orange">
+                        <div class="ebook-card card-orange hover-lift" data-aos="fade-up" data-aos-delay="200">
                             <div class="card-image-top">
-                                <img src="assets/livro3.png" alt="Desenvolvimento infantil">
-                                <span class="badge-round">Teoria</span>
+                                <img src="assets/livro_desenv_neuro.png" alt="Conceito DNPM">
+                                <span class="badge-round pulse-badge">Teoria</span>
                             </div>
                             <div class="card-content">
-                                <h3>Desenvolvimento Neuropsicomotor: conceito</h3>
-                                <p>Entenda como a criança se desenvolve e aprenda a identificar cada fase com mais
-                                    segurança</p>
-                                <div class="price-row">
-                                    <span class="new-price">6x de R$ 5,61</span>
+                                <div>
+                                    <div class="icon-circle">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <h3>Desenvolvimento Neuropsicomotor: conceito</h3>
+                                    <p>Entenda como a criança se desenvolve e aprenda a identificar cada fase</p>
                                 </div>
-                                <p style="margin: 5px 0 15px; font-size: 14px; color: rgba(255,255,255,0.9);">
-                                    ou R$ 29,90 à vista
-                                </p>
-                                <a href="https://chk.eduzz.com/KW8KYR8B01?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnzyd__IDMCaRrucallYPoHBNTbDGYXRLyA5on0Q_P0_LQjECEe_sUmleXWog_aem_dns1Ht1xXTYo_KTTVOYNyQ&utm_id=97760_v0_s00_e0_tv6_a1denngm82r7l5"
-                                    class="btn-buy" target="_blank">
-                                    <i class="fas fa-shopping-cart"></i> Comprar agora →
-                                </a>
+                                <div class="price-wrapper">
+                                    <div class="price-row">
+                                        <span class="new-price">6x de R$ 5,61</span>
+                                    </div>
+                                    <p style="margin: 5px 0 15px; font-size: 14px; color: rgba(255,255,255,0.9);">
+                                        ou R$ 29,90 à vista
+                                    </p>
+                                    <a href="https://chk.eduzz.com/KW8KYR8B01" class="btn-buy btn-hover-glow" target="_blank">
+                                        <i class="fas fa-shopping-cart"></i> Comprar agora →
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Slide 4 - Card Rosa -->
                     <div class="swiper-slide">
-                        <div class="premium-card card-pink">
+                        <div class="ebook-card card-pink hover-lift" data-aos="fade-up" data-aos-delay="300">
                             <div class="card-image-top">
-                                <img src="assets/livro4.png" alt="Rolar do bebê">
-                                <span class="badge-round">3 a 6 meses</span>
+                                <img src="assets/livro_rolar.png" alt="Atividades para rolar">
+                                <span class="badge-round pulse-badge">3 a 6 meses</span>
                             </div>
                             <div class="card-content">
-                                <h3>Atividades para o "rolar" do bebê</h3>
-                                <p>Aprenda atividades simples para estimular o rolar de forma segura e natural</p>
-                                <div class="price-row">
-                                    <span class="new-price">12x de R$ 6,20</span>
+                                <div>
+                                    <div class="icon-circle">
+                                        <i class="fas fa-child"></i>
+                                    </div>
+                                    <h3>Atividades para o "rolar" do bebê</h3>
+                                    <p>Aprenda atividades simples para estimular o rolar de forma segura e natural</p>
                                 </div>
-                                <p style="margin: 5px 0 15px; font-size: 14px; color: rgba(255,255,255,0.9);">
-                                    ou R$ 59,90 à vista
-                                </p>
-                                <a href="https://chk.eduzz.com/KW8KYQO201?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnr8qXsRfH69h8UeAbpS0A9rEPN6q2_3dpEkK22TO-G9FkTVxvHj2MNuceKvw_aem_56smWWrWLv9yKzfAHnXJtw"
-                                    class="btn-buy" target="_blank">
-                                    <i class="fas fa-shopping-cart"></i> Comprar agora →
-                                </a>
+                                <div class="price-wrapper">
+                                    <div class="price-row">
+                                        <span class="new-price">12x de R$ 6,20</span>
+                                    </div>
+                                    <p style="margin: 5px 0 15px; font-size: 14px; color: rgba(255,255,255,0.9);">
+                                        ou R$ 59,90 à vista
+                                    </p>
+                                    <a href="https://chk.eduzz.com/KW8KYQO201" class="btn-buy btn-hover-glow" target="_blank">
+                                        <i class="fas fa-shopping-cart"></i> Comprar agora →
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Slide 5 - Card Yellow -->
                     <div class="swiper-slide">
-                        <div class="premium-card card-yellow">
+                        <div class="ebook-card card-yellow hover-lift" data-aos="fade-up" data-aos-delay="400">
                             <div class="card-image-top">
-                                <img src="assets/livro5.png" alt="Atividades infantis">
-                                <span class="badge-round">+2 anos</span>
+                                <img src="assets/livro_guia_pratico.png" alt="Guia prático">
+                                <span class="badge-round pulse-badge">+2 anos</span>
                             </div>
                             <div class="card-content">
-                                <h3>Guia prático de atividades infantis</h3>
-                                <p>Atividades simples para estimular o desenvolvimento motor de forma lúdica no dia a
-                                    dia</p>
-
-                                <div class="price-row">
-                                    <span class="new-price">9x de R$ 5,24</span>
+                                <div>
+                                    <div class="icon-circle">
+                                        <i class="fas fa-gamepad"></i>
+                                    </div>
+                                    <h3>Guia prático de atividades infantis</h3>
+                                    <p>Atividades simples para estimular o desenvolvimento motor de forma lúdica</p>
                                 </div>
-
-                                <p style="margin: 5px 0 15px; font-size: 14px; color: rgba(255,255,255,0.9);">
-                                    ou R$ 39,90 à vista
-                                </p>
-
-                                <a href="https://chk.eduzz.com/7977BAP19E?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnQjoYu8GXmc3cbbrQ6Rv67mQfskUwyaLoFMxgoE6NZUwo-H3W_kgTV4Fz-N0_aem_WB_WEey0uv2WFVzEhYWX8Q&utm_id=97760_v0_s00_e0_tv6_a1denngm82r7l5"
-                                    class="btn-buy" target="_blank">
-                                    <i class="fas fa-shopping-cart"></i> Comprar agora →
-                                </a>
+                                <div class="price-wrapper">
+                                    <div class="price-row">
+                                        <span class="new-price">9x de R$ 5,24</span>
+                                    </div>
+                                    <p style="margin: 5px 0 15px; font-size: 14px; color: rgba(255,255,255,0.9);">
+                                        ou R$ 39,90 à vista
+                                    </p>
+                                    <a href="https://chk.eduzz.com/7977BAP19E" class="btn-buy btn-hover-glow" target="_blank">
+                                        <i class="fas fa-shopping-cart"></i> Comprar agora →
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- SETAS DE NAVEGAÇÃO -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
-
-                <!-- PAGINAÇÃO (bolinhas) -->
                 <div class="swiper-pagination"></div>
             </div>
 
-            <!-- Bônus -->
-            <div class="ebooks-bonus-light">
+            <div class="ebooks-bonus-light" data-aos="fade-up">
                 <p><i class="fas fa-gift"></i> Bônus exclusivo: Guia de atividades lúdicas ao comprar 2 ou mais ebooks!
                 </p>
             </div>
         </div>
     </section>
-    <!-- CURSOS - PRODUTO PRINCIPAL -->
-    <section class="courses" id="cursos">
-        <div class="container">
-            <div class="section-header">
-                <div class="offer-tag"><i class="fas fa-graduation-cap"></i> Acompanhamento completo</div>
-                <h2>Acompanhamento completo para evolução real</h2>
-                <p>Para mães que querem sair da dúvida e acompanhar de perto o desenvolvimento do filho com orientação
-                    profissional</p>
-            </div>
 
-            <div class="courses-highlight">
-                <p><i class="fas fa-lightbulb"></i> Aqui você não recebe apenas conteúdo — você recebe <strong>direção,
-                        acompanhamento e segurança.</strong></p>
-            </div>
-
-            <div class="plans-grid">
-                <div class="plan-card">
-                    <div class="plan-header">
-                        <h3>Plano Essencial</h3>
-                        <div class="plan-price">Sob consulta</div>
-                    </div>
-                    <div class="plan-body">
-                        <p class="plan-subtitle">Para quem quer começar com orientação</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> 2 encontros online</li>
-                            <li><i class="fas fa-check"></i> Direcionamento inicial personalizado</li>
-                            <li><i class="fas fa-check"></i> Feedback após 30 dias</li>
-                            <li><i class="fas fa-check"></i> Material complementar</li>
-                        </ul>
-                        <div class="plan-tag"><i class="fas fa-arrow-right"></i> Ideal para dar os primeiros passos com
-                            segurança</div>
-                        <a href="https://wa.me/5581995235494" class="btn-outline btn-block" target="_blank"><i
-                                class="fab fa-whatsapp"></i> Quero saber mais →</a>
-                    </div>
-                </div>
-
-                <div class="plan-card featured">
-                    <div class="featured-badge"><i class="fas fa-fire"></i> Mais escolhido</div>
-                    <div class="plan-header">
-                        <h3>Plano Evolução</h3>
-                        <div class="plan-price">Sob consulta</div>
-                    </div>
-                    <div class="plan-body">
-                        <p class="plan-subtitle">Para acompanhar o progresso</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> 3 encontros online</li>
-                            <li><i class="fas fa-check"></i> Feedback quinzenal</li>
-                            <li><i class="fas fa-check"></i> Aplicação prática supervisionada</li>
-                            <li><i class="fas fa-check"></i> Material exclusivo + suporte</li>
-                        </ul>
-                        <div class="plan-tag"><i class="fas fa-arrow-right"></i> Ideal para mães que querem ver evolução
-                            constante</div>
-                        <a href="https://wa.me/5581995235494" class="btn-primary btn-block" target="_blank"><i
-                                class="fab fa-whatsapp"></i> Quero evoluir com meu filho →</a>
-                    </div>
-                </div>
-
-                <div class="plan-card">
-                    <div class="plan-header">
-                        <h3>Plano Intensivo</h3>
-                        <div class="plan-price">Sob consulta</div>
-                    </div>
-                    <div class="plan-body">
-                        <p class="plan-subtitle">Acompanhamento completo</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> 4 encontros online</li>
-                            <li><i class="fas fa-check"></i> Feedback semanal</li>
-                            <li><i class="fas fa-check"></i> Ajustes contínuos na estratégia</li>
-                            <li><i class="fas fa-check"></i> Materiais premium + grupo vip</li>
-                        </ul>
-                        <div class="plan-tag"><i class="fas fa-arrow-right"></i> Ideal para quem quer acelerar
-                            resultados</div>
-                        <a href="https://wa.me/5581995235494" class="btn-outline btn-block" target="_blank"><i
-                                class="fab fa-whatsapp"></i> Quero acelerar resultados →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVIÇOS - REFORÇO DE AUTORIDADE -->
-
+    <!-- SERVIÇOS (com hover animations) -->
     <section class="services" id="servicos">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2>Atendimento profissional especializado</h2>
-                <p>Além dos materiais e cursos, também realizo atendimentos personalizados</p>
+                <p>Além dos Ebooks e Cursos, também realizo atendimentos personalizados</p>
             </div>
             <div class="services-grid">
-                <div class="service-category">
+                <div class="service-category hover-scale" data-aos="fade-right" data-aos-delay="0">
                     <div class="category-header" style="background: var(--blue);">
                         <span class="emoji"><i class="fas fa-baby"></i></span>
                         <h3>Infantil</h3>
@@ -542,7 +464,7 @@
                         <li><i class="fas fa-check-circle"></i> Pé torto congênito</li>
                     </ul>
                 </div>
-                <div class="service-category">
+                <div class="service-category hover-scale" data-aos="fade-up" data-aos-delay="150">
                     <div class="category-header" style="background: var(--green);">
                         <span class="emoji"><i class="fas fa-user-md"></i></span>
                         <h3>Adulto</h3>
@@ -554,7 +476,7 @@
                         <li><i class="fas fa-check-circle"></i> Terapias holísticas</li>
                     </ul>
                 </div>
-                <div class="service-category">
+                <div class="service-category hover-scale" data-aos="fade-left" data-aos-delay="300">
                     <div class="category-header" style="background: var(--orange);">
                         <span class="emoji"><i class="fas fa-laptop-house"></i></span>
                         <h3>Online</h3>
@@ -570,41 +492,61 @@
         </div>
     </section>
 
-
-    <!-- DEPOIMENTOS - PROVA SOCIAL -->
-
+    <!-- DEPOIMENTOS - COM PRINTS REAIS -->
     <section class="testimonials" id="depoimentos">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2><i class="fas fa-star"></i> Resultados reais de mães que confiaram</h2>
                 <p>Depoimentos de quem já transformou a jornada do seu filho</p>
             </div>
             <div class="testimonials-grid">
-                <div class="testimonial">
+                <div class="testimonial hover-lift" data-aos="fade-up" data-aos-delay="0">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-print">
+                        <img src="assets/print-whatsapp1.png" alt="Print WhatsApp depoimento" class="testimonial-print-img"
+                            onerror="this.style.display='none'">
                     </div>
                     <p>"Eu não sabia como ajudar meu filho e hoje vejo uma evolução enorme. Foi um divisor de águas na
                         nossa vida!"</p>
-                    <div class="author">— Carla M., mãe do Pedro (4 anos)</div>
+                    <div class="author">
+                        <img src="assets/avatar-carla.jpg" alt="Carla M." class="author-avatar"
+                            onerror="this.src='https://placehold.co/50x50/FFD43B/5B3FD3?text=CM'">
+                        <div>
+                            <h5>Carla M.</h5>
+                            <p>mãe do Pedro (4 anos)</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial">
+                <div class="testimonial hover-lift" data-aos="fade-up" data-aos-delay="150">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-print">
+                        <img src="assets/print-whatsapp2.png" alt="Print WhatsApp depoimento" class="testimonial-print-img"
+                            onerror="this.style.display='none'">
                     </div>
                     <p>"O acompanhamento me trouxe segurança e clareza. Em poucos meses, meu filho já apresentou
                         melhoras significativas."</p>
-                    <div class="author">— Juliana R., mãe do Lucas</div>
+                    <div class="author">
+                        <img src="assets/avatar-juliana.jpg" alt="Juliana R." class="author-avatar"
+                            onerror="this.src='https://placehold.co/50x50/6CD34D/white?text=JR'">
+                        <div>
+                            <h5>Juliana R.</h5>
+                            <p>mãe do Lucas (3 anos)</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial">
+                <div class="testimonial hover-lift" data-aos="fade-up" data-aos-delay="300">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -612,24 +554,34 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
+                    <div class="testimonial-print">
+                        <img src="assets/print-whatsapp3.png" alt="Print WhatsApp depoimento" class="testimonial-print-img"
+                            onerror="this.style.display='none'">
+                    </div>
                     <p>"Finalmente encontrei uma profissional que entende as necessidades do meu filho. A evolução foi
                         além do que eu esperava."</p>
-                    <div class="author">— Patrícia S., mãe da Sofia</div>
+                    <div class="author">
+                        <img src="assets/avatar-patricia.jpg" alt="Patrícia S." class="author-avatar"
+                            onerror="this.src='https://placehold.co/50x50/FF8A3D/white?text=PS'">
+                        <div>
+                            <h5>Patrícia S.</h5>
+                            <p>mãe da Sofia (5 anos)</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA FINAL - FORTE -->
-
+    <!-- CTA FINAL -->
     <section class="final-cta">
         <div class="container">
-            <div class="cta-content">
-                <div class="urgency-badge"><i class="fas fa-clock"></i> Vagas limitadas por mês</div>
+            <div class="cta-content" data-aos="fade-up">
+                <div class="urgency-badge pulse-animation"><i class="fas fa-clock"></i> Vagas limitadas por mês</div>
                 <h2>Quanto antes você começar, maiores são as chances de evolução</h2>
                 <p>Não espere mais para dar ao seu filho o suporte que ele precisa</p>
                 <div class="cta-buttons">
-                    <a href="https://wa.me/5581995235494" class="btn-primary btn-large" target="_blank">
+                    <a href="https://wa.me/5581995235494" class="btn-primary btn-large btn-pulse" target="_blank">
                         <i class="fas fa-calendar-alt"></i> Agende uma consultoria →
                     </a>
                 </div>
@@ -638,11 +590,10 @@
     </section>
 
     <!-- FOOTER -->
-
     <footer class="footer" id="contato">
         <div class="container">
             <div class="grid-4">
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="0">
                     <div class="footer-logo">
                         <h3>Giovanna<span>Galhardo</span></h3>
                         <p>Fisioterapeuta Especialista</p>
@@ -654,17 +605,17 @@
                         <p><i class="fab fa-instagram"></i> Instagram: <a href="#">@giovannagalhardo</a></p>
                     </div>
                 </div>
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
                     <h4>Links Rápidos</h4>
                     <ul>
                         <li><a href="#home"><i class="fas fa-chevron-right"></i> Início</a></li>
                         <li><a href="#sobre"><i class="fas fa-chevron-right"></i> Sobre</a></li>
                         <li><a href="#dor"><i class="fas fa-chevron-right"></i> Dúvidas</a></li>
-                        <li><a href="#ebooks"><i class="fas fa-chevron-right"></i> Materiais</a></li>
+                        <li><a href="#ebooks"><i class="fas fa-chevron-right"></i> Ebooks</a></li>
                         <li><a href="#politica"><i class="fas fa-chevron-right"></i> Política de Privacidade</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
                     <h4>Produtos</h4>
                     <ul>
                         <li><a href="#ebooks"><i class="fas fa-chevron-right"></i> Ebooks</a></li>
@@ -673,7 +624,7 @@
                         <li><a href="#servicos"><i class="fas fa-chevron-right"></i> Atendimentos</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
                     <h4>Atendimento</h4>
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i> Presencial: Recife/PE</li>
@@ -683,18 +634,20 @@
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
+            <div class="footer-bottom" data-aos="fade-up">
                 <p>&copy; 2026 Giovanna Galhardo - Fisioterapeuta. Todos os direitos reservados.</p>
                 <div class="footer-social">
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://wa.me/5581995235494" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/5581995235494" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js"></script>
 </body>
 

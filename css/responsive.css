@@ -239,6 +239,7 @@
     
     .floating-cards {
         margin-top: -100px;
+        overflow-x: hidden;
     }
     
     .pain-points {
@@ -434,26 +435,5 @@
     
     .footer-ebook {
         margin-bottom: 16px;
-    }
-}
-
-/* Tablet - mostra 2 cards */
-@media (min-width: 641px) and (max-width: 1024px) {
-    .ebooks-swiper .swiper-slide {
-        width: calc(50% - 15px) !important;
-    }
-}
-
-/* Desktop pequeno - mostra 3 cards */
-@media (min-width: 1025px) and (max-width: 1300px) {
-    .ebooks-swiper .swiper-slide {
-        width: calc(33.33% - 16px) !important;
-    }
-}
-
-/* Desktop grande - mostra 4 cards */
-@media (min-width: 1301px) {
-    .ebooks-swiper .swiper-slide {
-        width: calc(25% - 18px) !important;
     }
 }

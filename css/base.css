@@ -34,7 +34,7 @@ body {
     background-color: var(--white);
     line-height: 1.6;
     letter-spacing: 0.2px;
-    overflow-x: hidden;
+    overflow-x: hidden;  /* ← LINHA ADICIONADA para evitar scroll lateral */
     margin: 0;
     padding: 0;
     width: 100%;

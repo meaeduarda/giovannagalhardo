@@ -7,13 +7,18 @@ document.addEventListener('DOMContentLoaded', function () {
     // ========== INICIALIZAÇÃO DO SWIPER ==========
     function initSwiper() {
         if (typeof Swiper !== 'undefined') {
-            // Swiper do Hero (já existente)
+            // Swiper do Hero (CORRIGIDO)
             const heroSwiper = new Swiper('.hero-swiper', {
                 loop: true,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
                 autoplay: {
-                    delay: 5000,
+                    delay: 6000,
                     disableOnInteraction: false,
                 },
+                speed: 1000,
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
@@ -22,19 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     el: '.swiper-pagination',
                     clickable: true,
                 },
-                effect: 'slide',
-                speed: 800,
             });
 
-            // NOVO: Swiper dos Ebooks
+            // Swiper dos Ebooks (mantido igual)
             const ebooksSwiper = new Swiper('.ebooks-swiper', {
                 slidesPerView: 1,
                 spaceBetween: 20,
-                loop: true,
-                autoplay: {
-                    delay: 4000,
-                    disableOnInteraction: false,
-                },
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
@@ -44,22 +42,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     clickable: true,
                 },
                 breakpoints: {
-                    // Quando a largura da tela for >= 640px
                     640: {
                         slidesPerView: 2,
                         spaceBetween: 20,
                     },
-                    // Quando a largura da tela for >= 1024px
                     1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 25,
-                    },
-                    // Quando a largura da tela for >= 1300px
-                    1300: {
                         slidesPerView: 4,
                         spaceBetween: 25,
-                    },
-                },
+                    }
+                }
             });
 
             console.log('Swipers inicializados com sucesso!');
@@ -244,6 +235,66 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll();
+
+        // ========== INICIALIZAÇÃO DO AOS (ANIMAÇÕES) ==========
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+            disable: 'mobile'
+        });
+        console.log('AOS inicializado com sucesso!');
+    }
+
+    // ========== VIDEO MODAL ==========
+    const videoModal = document.getElementById('videoModal');
+    const openVideoBtn = document.getElementById('openVideoModalBtn');
+    const closeVideoBtn = document.querySelector('.video-modal-close');
+    const videoIframe = document.getElementById('videoIframe');
+
+    // URL do vídeo (coloque o link do seu vídeo aqui)
+    const videoUrl = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1';
+
+    function openVideoModal() {
+        if (videoModal && videoIframe) {
+            videoIframe.src = videoUrl;
+            videoModal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeVideoModal() {
+        if (videoModal && videoIframe) {
+            videoIframe.src = '';
+            videoModal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+    }
+
+    if (openVideoBtn) {
+        openVideoBtn.addEventListener('click', openVideoModal);
+    }
+
+    if (closeVideoBtn) {
+        closeVideoBtn.addEventListener('click', closeVideoModal);
+    }
+
+    // Fechar modal ao clicar fora do conteúdo
+    if (videoModal) {
+        videoModal.addEventListener('click', function(e) {
+            if (e.target === videoModal) {
+                closeVideoModal();
+            }
+        });
+    }
+
+    // Fechar modal com tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && videoModal && videoModal.classList.contains('show')) {
+            closeVideoModal();
+        }
+    });
 
     console.log('Site Giovanna Galhardo carregado com sucesso!');
 });

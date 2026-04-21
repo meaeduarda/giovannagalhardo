@@ -1,6 +1,5 @@
 /* ============================================
    COMPONENTS CSS - Botões, Cards, Hero, Serviços
-   COM CORREÇÃO DE ZOOM E FUNDO 100%
    ============================================ */
 
 /* ========== BOTÕES - Poppins 600 ========== */
@@ -79,194 +78,184 @@
     text-align: center;
 }
 
-/* ========== HERO SECTION COM SWIPER ========== */
+/* ========== HERO CORRIGIDO ========== */
 .hero {
-    background: #5B3FD3;
-    color: var(--white);
     position: relative;
-    z-index: 1;
-    padding: 100px 0 200px;
-    overflow: hidden;
-}
-
-/* Curva de transição */
-.hero::after {
-    content: "";
-    position: absolute;
-    bottom: -50px;
-    left: 0;
+    height: 85vh;
+    min-height: 600px;
     width: 100%;
-    height: 100px;
-    background: white;
-    border-top-left-radius: 50% 100px;
-    border-top-right-radius: 50% 100px;
-    z-index: 5;
+    overflow: hidden;
 }
 
 .hero-swiper {
     width: 100%;
+    height: 100%;
+}
+
+.hero-swiper .swiper-slide {
+    position: relative;
     overflow: hidden;
 }
 
-.swiper-slide {
-    background: transparent;
+.slide-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-    color: var(--yellow);
-    background: rgba(255, 255, 255, 0.2);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    transition: all 0.3s;
+.slide-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(81, 68, 166, 0.85) 0%, rgba(0, 0, 0, 0.6) 100%);
 }
 
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-    background: var(--yellow);
-    color: var(--purple);
+.slide-bg-1 {
+    background-image: url('../assets/banner1giovanna.png');
 }
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.swiper-pagination-bullet {
-    background: rgba(255, 255, 255, 0.5);
-}
-
-.swiper-pagination-bullet-active {
-    background: var(--yellow);
-}
-
-.hero .grid-2 {
-    min-height: 550px;
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    color: var(--white);
+    padding: 40px 0;
 }
 
 .hero-badge {
     display: inline-block;
-    background: rgba(255,255,255,0.15);
-    padding: 6px 16px;
+    background: var(--yellow);
+    color: var(--purple);
+    padding: 8px 20px;
     border-radius: 30px;
-    font-size: 13px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 600;
     margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .hero-badge i {
-    margin-right: 6px;
+    margin-right: 8px;
 }
 
-.hero-text h1 {
-    font-family: 'Fredoka', sans-serif;
-    font-size: 52px;
+.hero-content h1 {
+    font-size: 56px;
+    line-height: 1.2;
     margin-bottom: 20px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
     color: var(--white);
 }
 
-.hero-text p {
+.hero-content h1 .highlight {
+    color: var(--yellow);
+}
+
+.hero-content p {
     font-size: 18px;
     margin-bottom: 30px;
-    opacity: 0.9;
-    line-height: 1.6;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 550px;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 24px;
-    align-items: center;
+    gap: 20px;
     flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.btn-outline-white {
+    border: 2px solid var(--white);
+    background: transparent;
+    color: var(--white);
+    padding: 14px 28px;
+    border-radius: var(--radius-lg);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-outline-white i {
+    margin-right: 8px;
+}
+
+.btn-outline-white:hover {
+    background: var(--white);
+    color: var(--purple);
+    transform: translateY(-2px);
 }
 
 .hero-trust {
     display: flex;
-    gap: 24px;
-    margin-top: 30px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .hero-trust span {
-    font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .hero-trust span i {
-    margin-right: 6px;
     color: var(--yellow);
 }
 
-.hero-image {
+.hero .container {
     position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
-.image-wrapper {
-    position: relative;
+/* Responsivo */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 550px;
+        padding: 60px 0;
+    }
+    
+    .hero-content {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .hero-trust {
+        justify-content: center;
+    }
 }
 
-.image-wrapper img {
-    border-radius: 30px;
-    max-width: 100%;
-}
-
-.floating-badge {
-    position: absolute;
-    background: var(--white);
-    color: var(--text-dark);
-    padding: 8px 16px;
-    border-radius: 40px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    box-shadow: var(--shadow-sm);
-}
-
-.floating-badge i {
-    margin-right: 6px;
-}
-
-.badge-1 {
-    top: -20px;
-    right: -20px;
-    background: var(--yellow);
-    color: var(--purple);
-}
-
-.badge-2 {
-    bottom: 30px;
-    left: -30px;
-    background: var(--pink);
-    color: var(--white);
-}
-
-/* Decorative elements */
-.deco-circle-1 {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 50%;
-    top: -100px;
-    right: -100px;
-}
-
-.deco-dots-1 {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background-image: radial-gradient(rgba(255,255,255,0.1) 2px, transparent 2px);
-    background-size: 20px 20px;
-    bottom: 50px;
-    left: 50px;
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    
+    .hero-content p {
+        font-size: 16px;
+    }
 }
 
 /* ============================================ */
@@ -274,10 +263,11 @@
 /* ============================================ */
 
 .floating-cards {
-    margin-top: -150px;
+    margin-top: -50px;
     position: relative;
     z-index: 10;
     background: transparent;
+    overflow-x: hidden;
 }
 
 .pain-cards-grid {
@@ -809,7 +799,7 @@
 }
 
 /* ============================================ */
-/* EBOOKS PREMIUM 
+/* EBOOKS PREMIUM */
 /* ============================================ */
 
 .ebooks-premium {
@@ -817,11 +807,10 @@
     width: 100%;
     background-color: #5839a6;
     padding: 80px 0 100px;
-    overflow-x: hidden;
+    overflow: hidden;
     margin: 0;
 }
 
-/* Curvatura suave na base */
 .ebooks-premium::after {
     content: '';
     position: absolute;
@@ -834,7 +823,6 @@
     z-index: 1;
 }
 
-/* Ondas SVG */
 .wave-top {
     position: absolute;
     top: -2px;
@@ -850,7 +838,6 @@
     height: auto;
 }
 
-/* Header da seção - textos brancos */
 .section-header-light {
     text-align: center;
     margin-bottom: 50px;
@@ -889,7 +876,6 @@
     font-weight: 400;
 }
 
-/* Grid de cards - RESPONSIVA */
 .premium-cards-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -900,7 +886,6 @@
     width: 100%;
 }
 
-/* Card individual - SEM COR DE FUNDO (a cor vai no .card-content) */
 .premium-card {
     background-color: transparent;
     border-radius: 24px;
@@ -910,6 +895,9 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
+    max-width: 260px;
+    margin: 0 auto;
 }
 
 .premium-card:hover {
@@ -917,10 +905,9 @@
     box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.3);
 }
 
-/* CONTAINER DA IMAGEM NO TOPO */
 .card-image-top {
     width: 100%;
-    height: 180px;
+    height: 280px;
     position: relative;
     overflow: hidden;
 }
@@ -937,7 +924,6 @@
     transform: scale(1.05);
 }
 
-/* BADGE CIRCULAR SOBRE A IMAGEM */
 .badge-round {
     position: absolute;
     bottom: -15px;
@@ -960,15 +946,12 @@
     border: 3px solid white;
 }
 
-/* CORES DO CONTEÚDO DO CARD (FUNDO COLORIDO) */
 .card-blue .card-content { background-color: #2EA7FF; }
 .card-green .card-content { background-color: #6CD34D; }
 .card-orange .card-content { background-color: #FF8A3D; }
 .card-pink .card-content { background-color: #C05C80; }
-.card-yellow .card-content {background-color: #d4e060;}
+.card-yellow .card-content { background-color: #d4e060; }
 
-
-/* CONTEÚDO DO CARD - FUNDO COLORIDO */
 .card-content {
     padding: 20px 20px 0 20px;
     border-radius: 0 0 24px 24px;
@@ -978,7 +961,6 @@
     text-align: left;
 }
 
-/* Ícone com círculo branco */
 .icon-circle {
     width: 60px;
     height: 60px;
@@ -995,7 +977,6 @@
     color: white;
 }
 
-/* Títulos e textos dentro do card colorido */
 .card-content h3 {
     font-family: 'Fredoka', sans-serif;
     font-size: 18px;
@@ -1010,16 +991,16 @@
     font-size: 14px;
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.5;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
-/* Preços */
 .price-row {
     display: flex;
     align-items: baseline;
     gap: 12px;
     margin-bottom: 16px;
     flex-wrap: wrap;
+    margin-top: 8px;
 }
 
 .old-price {
@@ -1036,7 +1017,6 @@
     color: white;
 }
 
-/* Botão Comprar Agora - BRANCO */
 .btn-buy {
     display: inline-block;
     background: white;
@@ -1050,7 +1030,9 @@
     transition: all 0.3s;
     border: none;
     text-align: center;
+    margin-top: 8px;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .btn-buy i {
@@ -1064,7 +1046,11 @@
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
-/* FOOTER DO EBOOK - BLOCO BRANCO ARREDONDADO */
+.price-wrapper {
+    margin-top: auto;
+    width: 100%;
+}
+
 .footer-ebook {
     background-color: rgba(255, 255, 255, 0.95);
     margin-top: auto;
@@ -1079,7 +1065,6 @@
     background-color: white;
 }
 
-/* Link do ebook */
 .ebook-link {
     text-decoration: none;
     font-family: 'Fredoka', sans-serif;
@@ -1089,7 +1074,6 @@
     transition: all 0.3s;
 }
 
-/* Cores dos links por tema */
 .card-blue .ebook-link { color: #2EA7FF; }
 .card-green .ebook-link { color: #6CD34D; }
 .card-orange .ebook-link { color: #FF8A3D; }
@@ -1100,7 +1084,6 @@
     transform: scale(1.02);
 }
 
-/* Bônus */
 .ebooks-bonus-light {
     text-align: center;
     margin-top: 30px;
@@ -1125,37 +1108,54 @@
     color: #F2BE22;
     font-size: 18px;
 }
+
 /* ============================================ */
 /* SWIPER CARROSSEL PARA EBOOKS */
 /* ============================================ */
 
-/* Container principal do carrossel */
 .ebooks-swiper {
     width: 100%;
-    padding: 20px 0 60px 0;
+    padding: 20px 10px 50px 10px;
+    overflow: hidden;
     position: relative;
 }
 
-/* Slide individual */
 .ebooks-swiper .swiper-slide {
     height: auto;
     display: flex;
+    justify-content: center;
 }
 
-/* Cards dentro do slide ocupam 100% da altura */
-.ebooks-swiper .swiper-slide .premium-card {
+.ebook-card {
     width: 100%;
-    height: 100%;
+    max-width: 280px;
+    background-color: transparent;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    margin: 0 auto;
 }
 
-/* Setas de navegação */
+.ebook-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.3);
+}
+
+.ebook-card.card-blue .card-content { background-color: #2EA7FF; }
+.ebook-card.card-green .card-content { background-color: #6CD34D; }
+.ebook-card.card-orange .card-content { background-color: #FF8A3D; }
+.ebook-card.card-pink .card-content { background-color: #C05C80; }
+.ebook-card.card-yellow .card-content { background-color: #d4e060; }
+
 .ebooks-swiper .swiper-button-prev,
 .ebooks-swiper .swiper-button-next {
-    width: 45px;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.2);
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(8px);
     border-radius: 50%;
     transition: all 0.3s ease;
@@ -1168,7 +1168,7 @@
 
 .ebooks-swiper .swiper-button-prev:after,
 .ebooks-swiper .swiper-button-next:after {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: white;
 }
@@ -1178,7 +1178,6 @@
     color: var(--purple);
 }
 
-/* Paginação (bolinhas) */
 .ebooks-swiper .swiper-pagination {
     bottom: 0;
 }
@@ -1195,21 +1194,284 @@
     width: 24px;
     border-radius: 10px;
 }
+/* ============================================
+   ANIMAÇÕES E MICRO-INTERAÇÕES
+   ============================================ */
 
-/* Ajuste para mobile das setas */
+/* Parallax suave no hero */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 @media (max-width: 768px) {
-    .ebooks-swiper .swiper-button-prev,
-    .ebooks-swiper .swiper-button-next {
-        width: 35px;
-        height: 35px;
+    .parallax-bg {
+        background-attachment: scroll;
     }
-    
-    .ebooks-swiper .swiper-button-prev:after,
-    .ebooks-swiper .swiper-button-next:after {
-        font-size: 14px;
+}
+
+/* Hover lift (elevação suave) */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover scale (zoom suave) */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.03);
+}
+
+/* Hover zoom para imagens */
+.hover-zoom {
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão com glow ao hover */
+.btn-hover-glow {
+    transition: all 0.3s ease;
+}
+
+.btn-hover-glow:hover {
+    box-shadow: 0 0 15px rgba(242, 190, 34, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Pulse animation para badges */
+.pulse-badge {
+    animation: pulseBadge 2s infinite;
+}
+
+@keyframes pulseBadge {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(242, 190, 34, 0.4);
     }
-    
-    .ebooks-swiper {
-        padding: 20px 0 50px 0;
+    50% {
+        box-shadow: 0 0 0 8px rgba(242, 190, 34, 0);
     }
+}
+
+/* Pulse animation para botões CTA */
+.pulse-animation {
+    animation: pulseCta 2s infinite;
+}
+
+.btn-pulse {
+    animation: btnPulse 2s infinite;
+}
+
+@keyframes pulseCta {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(242, 190, 34, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(242, 190, 34, 0);
+    }
+}
+
+@keyframes btnPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(242, 190, 34, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(242, 190, 34, 0);
+    }
+}
+
+.pulse-hover:hover {
+    animation: btnPulse 1s infinite;
+}
+
+/* Scale animation para caixa amarela */
+.scale-animation {
+    transition: transform 0.3s ease;
+}
+
+.scale-animation:hover {
+    transform: scale(1.02);
+}
+
+/* Ícones com hover animado */
+.social-icon {
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* Testimonial print images */
+.testimonial-print {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.testimonial-print-img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+    border: 2px solid var(--yellow);
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.author h5 {
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.author p {
+    margin-bottom: 0;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+/* Video Modal */
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.video-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.video-modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.video-modal-close:hover {
+    color: var(--yellow);
+    transform: scale(1.1);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+}
+
+/* AOS custom overrides */
+[data-aos] {
+    pointer-events: auto !important;
+}
+
+/* Gallery grid improvements */
+.about-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.gallery-img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================ */
+/* FUNDO GRADIENTE ROXO/LILÁS PARA SLIDE 2 (image.png) */
+/* ============================================ */
+
+.slide-bg-video-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    z-index: 0;
+}
+
+.slide-bg-video-custom::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.2) 0%, rgba(0,0,0,0.1) 100%);
+    pointer-events: none;
 }
