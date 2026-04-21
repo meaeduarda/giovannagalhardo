@@ -107,16 +107,19 @@
 
 /* ========== HERO CORRIGIDO ========== */
 .hero {
-    position: relative;
-    min-height: 100vh;
-    width: 100%;
+    min-height: 100vh; 
+    min-height: 100svh; 
+    display: flex;
+    align-items: center;
     overflow: hidden;
+    position: relative;
+    margin: 0;
 }
 
-.hero-swiper {
-    width: 100%;
+.hero-swiper, 
+.hero-swiper .swiper-slide {
     height: 100%;
-    min-height: 100vh;
+    min-height: 100svh;
 }
 
 .hero-swiper .swiper-slide {

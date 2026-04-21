@@ -226,8 +226,10 @@
         gap: 24px;
     }
     
-    .hero {
-        padding: 60px 0 160px;
+    @media (max-width: 768px) {
+        .hero {
+            padding: 0 0 160px;  
+        }
     }
     
     .hero::after {

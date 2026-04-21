@@ -352,21 +352,21 @@ document.addEventListener('DOMContentLoaded', function () {
         AOS.init({ duration: 800, once: true, offset: 100, disable: false });
     }
 
-    // ========== FIX PARA O SLIDE 3 - AJUSTE DE ALTURA ==========
-    function fixHeroHeight() {
-        const hero = document.querySelector('.hero');
-        const heroSlides = document.querySelectorAll('.hero-swiper .swiper-slide');
-        if (hero && heroSlides.length) {
-            const windowHeight = window.innerHeight;
-            hero.style.minHeight = windowHeight + 'px';
-            heroSlides.forEach(slide => {
-                slide.style.minHeight = windowHeight + 'px';
-            });
-        }
-    }
-
-    window.addEventListener('resize', fixHeroHeight);
-    fixHeroHeight();
+    // ========== FIX PARA O SLIDE 3 - AJUSTE DE ALTURA (COMENTADO - CAUSAVA BARRA BRANCA) ==========
+    // function fixHeroHeight() {
+    //     const hero = document.querySelector('.hero');
+    //     const heroSlides = document.querySelectorAll('.hero-swiper .swiper-slide');
+    //     if (hero && heroSlides.length) {
+    //         const windowHeight = window.innerHeight;
+    //         hero.style.minHeight = windowHeight + 'px';
+    //         heroSlides.forEach(slide => {
+    //             slide.style.minHeight = windowHeight + 'px';
+    //         });
+    //     }
+    // }
+    //
+    // window.addEventListener('resize', fixHeroHeight);
+    // fixHeroHeight();
 
     console.log('Site Giovanna Galhardo carregado com sucesso!');
 });
