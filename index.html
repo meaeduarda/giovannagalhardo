@@ -54,47 +54,41 @@
         </div>
     </header>
 
-    <!-- HERO - COM SLIDE 2 EXATAMENTE IGUAL AO IMAGE.PNG -->
-    <section class="hero" id="home">
-        <div class="swiper hero-swiper">
-            <div class="swiper-wrapper">
-                <!-- Slide 1 - Banner estático -->
-                <div class="swiper-slide">
-                    <div class="slide-background slide-bg-1 parallax-bg"></div>
-                    <div class="container">
-                        <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
-                            <div class="hero-badge"><i class="fas fa-bullhorn"></i> Últimas vagas disponíveis</div>
-                            <h1>Seu filho pode evoluir mais rápido com os estímulos certos — e você pode <span
-                                    class="highlight">começar hoje em casa</span></h1>
-                            <p>Aprenda com uma fisioterapeuta especializada como estimular o desenvolvimento do seu
-                                filho com segurança, orientação e acompanhamento profissional.</p>
+<!-- HERO - COM 3 SLIDES NOVO PADRÃO -->
+<section class="hero" id="home">
+    <div class="swiper hero-swiper">
+        <div class="swiper-wrapper">
+            
+            <!-- ========== SLIDE 1 - PERFIL INSTAGRAM ========== -->
+            <div class="swiper-slide slide-profile">
+                <div class="slide-background slide-bg-1"></div>
+                <div class="container">
+                    <div class="hero-grid-2col">
+                        <!-- Coluna Esquerda - Texto Principal -->
+                        <div class="hero-text-col" data-aos="fade-right" data-aos-duration="800">
+                            <h1>Seu filho pode evoluir mais rápido com os estímulos certos — e você pode <span class="highlight">começar hoje em casa</span></h1>
+                            <p class="hero-description">Aprenda com uma fisioterapeuta especializada como estimular o desenvolvimento do seu filho com segurança, orientação e acompanhamento profissional.</p>
                             <div class="hero-buttons">
-                                <a href="https://wa.me/5581995235494" class="btn-primary btn-large" target="_blank"><i
-                                        class="fas fa-calendar-alt"></i> Agende uma consultoria →</a>
-                                <a href="#ebooks" class="btn-outline-white"><i class="fas fa-book"></i> Ver cursos e
-                                    Ebooks →</a>
-                            </div>
-                            <div class="hero-trust">
-                                <span><i class="fas fa-check-circle"></i> +500 mães atendidas</span>
-                                <span><i class="fas fa-star"></i> Avaliação 5 estrelas</span>
-                                <span><i class="fas fa-graduation-cap"></i> 10+ anos de experiência</span>
+                                <a href="https://wa.me/5581995235494" class="btn-primary" target="_blank"><i class="fab fa-whatsapp"></i> Agende uma consultoria →</a>
+                                <a href="#ebooks" class="btn-outline-white"><i class="fas fa-book"></i> Ver Ebooks →</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Slide 2 - EXATAMENTE IGUAL AO MODELO image.png -->
-                <div class="swiper-slide">
-                    <div class="slide-bg-video-custom"></div>
-                    <div class="container">
-                        <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
-                            <div class="hero-badge"><i class="fas fa-play-circle"></i> Veja como funciona meu trabalho</div>
-                            <h1>Assista esse vídeo rápido e entenda como <span class="highlight">posso ajudar no desenvolvimento</span> do seu filho.</h1>
+            <!-- ========== SLIDE 2 - VÍDEO COM BOTÃO SOBREPOSTO ========== -->
+            <div class="swiper-slide slide-video">
+                <div class="slide-background slide-bg-2"></div>
+                <div class="container">
+                    <div class="hero-grid-2col">
+                        <!-- Coluna Esquerda - Texto -->
+                        <div class="hero-text-col" data-aos="fade-right" data-aos-duration="800">
+                            <div class="hero-badge"><i class="fas fa-play-circle"></i> Conheça meu trabalho na prática</div>
+                            <h1>Assista ao vídeo e entenda como <span class="highlight">posso ajudar no desenvolvimento</span> do seu filho</h1>
+                            <p class="hero-description">Veja na prática como funciona meu método de estimulação infantil e os resultados que já transformaram a vida de muitas famílias.</p>
                             <div class="hero-buttons">
-                                <button class="btn-primary btn-large" id="openVideoModalBtn">
-                                    <i class="fas fa-play"></i> Assistir vídeo →
-                                </button>
-                                <a href="#sobre" class="btn-outline-white"><i class="fas fa-info-circle"></i> Saiba mais</a>
+                                <a href="#sobre" class="btn-outline-white"><i class="fas fa-user-md"></i> Conheça meu trabalho</a>
                             </div>
                             <div class="hero-trust">
                                 <span><i class="fas fa-check-circle"></i> Método comprovado</span>
@@ -102,51 +96,64 @@
                                 <span><i class="fas fa-clock"></i> Resultados rápidos</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Slide 3 - Prova Social / Resultados -->
-                <div class="swiper-slide">
-                    <div class="slide-background slide-bg-3 parallax-bg"></div>
-                    <div class="container">
-                        <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
-                            <div class="hero-badge"><i class="fas fa-chart-line"></i> Resultados reais</div>
-                            <h1>Evolução comprovada: <span class="highlight">antes e depois</span> com nosso método
-                            </h1>
-                            <p>Veja depoimentos e resultados de crianças que passaram pelo nosso acompanhamento
-                                especializado.</p>
-                            <div class="hero-buttons">
-                                <a href="#depoimentos" class="btn-primary btn-large"><i class="fas fa-star"></i> Ver
-                                    resultados →</a>
-                                <a href="#ebooks" class="btn-outline-white"><i class="fas fa-graduation-cap"></i>
-                                    Começar agora</a>
-                            </div>
-                            <div class="hero-trust">
-                                <span><i class="fas fa-shield-alt"></i> Garantia de 7 dias</span>
-                                <span><i class="fas fa-lock"></i> Compra segura</span>
-                                <span><i class="fas fa-infinity"></i> Acesso vitalício</span>
+                        
+                        <!-- Coluna Direita - Imagem com Botão Play Sobreposto -->
+                        <div class="hero-video-col" data-aos="fade-left" data-aos-duration="800">
+                            <div class="video-overlay-card" id="heroVideoContainer">
+                                <img src="assets/foto_video.png" alt="Thumbnail do vídeo" class="video-thumb" onerror="this.src='https://placehold.co/400x300/5144A6/white?text=Vídeo+Giovanna'">
+                                <button class="play-btn-overlay-large" id="heroVideoBtn">
+                                    <i class="fas fa-play"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-pagination"></div>
+            <!-- ========== SLIDE 3 - DEPOIMENTOS EM PRINT ========== -->
+            <div class="swiper-slide slide-testimonials-print">
+                <div class="slide-background slide-bg-3"></div>
+                <div class="container">
+                    <div class="testimonials-print-content" data-aos="fade-up" data-aos-duration="800">
+                        <h2 class="testimonials-print-title">Histórias reais de quem transformou sua maternidade com carinho e estratégia</h2>
+                        
+                        <div class="testimonials-print-grid">
+                            <div class="print-depo-card" data-aos="fade-up" data-aos-delay="0">
+                                <img src="assets/depoimento1.png" alt="Depoimento 1" onerror="this.src='https://placehold.co/280x400/F2BE22/5144A6?text=Depoimento+1'">
+                            </div>
+                            <div class="print-depo-card" data-aos="fade-up" data-aos-delay="150">
+                                <img src="assets/depoimento2.png" alt="Depoimento 2" onerror="this.src='https://placehold.co/280x400/6CD34D/white?text=Depoimento+2'">
+                            </div>
+                            <div class="print-depo-card" data-aos="fade-up" data-aos-delay="300">
+                                <img src="assets/depoimento3.png" alt="Depoimento 3" onerror="this.src='https://placehold.co/280x400/FF8A3D/white?text=Depoimento+3'">
+                            </div>
+                        </div>
+                        
+                        <div class="testimonials-print-btn" data-aos="fade-up" data-aos-delay="450">
+                            <a href="https://wa.me/5581995235494" class="btn-primary btn-large pulse-hover" target="_blank">
+                                <i class="fas fa-users"></i> Faça parte da comunidade de mães →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
 
     <!-- MODAL DE VÍDEO COM VÍDEO FICTÍCIO PROFISSIONAL -->
     <div id="videoModal" class="video-modal">
         <div class="video-modal-content">
             <span class="video-modal-close">&times;</span>
             <div class="video-container">
-                <iframe id="videoIframe" width="100%" height="400" 
+                <iframe id="videoIframe" width="100%" height="400"
                     src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1"
-                    title="Vídeo Giovanna Galhardo - Método de Estimulação Infantil" 
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    title="Vídeo Giovanna Galhardo - Método de Estimulação Infantil" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                 </iframe>
             </div>
@@ -259,7 +266,8 @@
                         onerror="this.src='https://placehold.co/300x300/6CD34D/white?text=Profissional'">
                     <img src="assets/giovanna3.jpg" alt="Giovanna em ambiente clínico" class="gallery-img hover-zoom"
                         onerror="this.src='https://placehold.co/300x300/FF8A3D/white?text=Consultoria'">
-                    <img src="assets/giovanna4.jpg" alt="Giovanna com brinquedo terapêutico" class="gallery-img hover-zoom"
+                    <img src="assets/giovanna4.jpg" alt="Giovanna com brinquedo terapêutico"
+                        class="gallery-img hover-zoom"
                         onerror="this.src='https://placehold.co/300x300/FF4FB3/white?text=Evolução'">
                 </div>
             </div>
@@ -305,7 +313,8 @@
                                     <p style="margin: 5px 0 15px; font-size: 14px; color: rgba(255,255,255,0.9);">
                                         ou R$ 59,90 à vista
                                     </p>
-                                    <a href="https://chk.eduzz.com/801EG2ZAW7" class="btn-buy btn-hover-glow" target="_blank">
+                                    <a href="https://chk.eduzz.com/801EG2ZAW7" class="btn-buy btn-hover-glow"
+                                        target="_blank">
                                         <i class="fas fa-shopping-cart"></i> Comprar agora →
                                     </a>
                                 </div>
@@ -334,7 +343,8 @@
                                     <p style="margin: 5px 0 15px; font-size: 14px; color: rgba(255,255,255,0.9);">
                                         ou R$ 59,90 à vista
                                     </p>
-                                    <a href="https://chk.eduzz.com/G92ER1J7WE" class="btn-buy btn-hover-glow" target="_blank">
+                                    <a href="https://chk.eduzz.com/G92ER1J7WE" class="btn-buy btn-hover-glow"
+                                        target="_blank">
                                         <i class="fas fa-shopping-cart"></i> Comprar agora →
                                     </a>
                                 </div>
@@ -363,7 +373,8 @@
                                     <p style="margin: 5px 0 15px; font-size: 14px; color: rgba(255,255,255,0.9);">
                                         ou R$ 29,90 à vista
                                     </p>
-                                    <a href="https://chk.eduzz.com/KW8KYR8B01" class="btn-buy btn-hover-glow" target="_blank">
+                                    <a href="https://chk.eduzz.com/KW8KYR8B01" class="btn-buy btn-hover-glow"
+                                        target="_blank">
                                         <i class="fas fa-shopping-cart"></i> Comprar agora →
                                     </a>
                                 </div>
@@ -392,7 +403,8 @@
                                     <p style="margin: 5px 0 15px; font-size: 14px; color: rgba(255,255,255,0.9);">
                                         ou R$ 59,90 à vista
                                     </p>
-                                    <a href="https://chk.eduzz.com/KW8KYQO201" class="btn-buy btn-hover-glow" target="_blank">
+                                    <a href="https://chk.eduzz.com/KW8KYQO201" class="btn-buy btn-hover-glow"
+                                        target="_blank">
                                         <i class="fas fa-shopping-cart"></i> Comprar agora →
                                     </a>
                                 </div>
@@ -421,7 +433,8 @@
                                     <p style="margin: 5px 0 15px; font-size: 14px; color: rgba(255,255,255,0.9);">
                                         ou R$ 39,90 à vista
                                     </p>
-                                    <a href="https://chk.eduzz.com/7977BAP19E" class="btn-buy btn-hover-glow" target="_blank">
+                                    <a href="https://chk.eduzz.com/7977BAP19E" class="btn-buy btn-hover-glow"
+                                        target="_blank">
                                         <i class="fas fa-shopping-cart"></i> Comprar agora →
                                     </a>
                                 </div>
@@ -509,8 +522,8 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="testimonial-print">
-                        <img src="assets/print-whatsapp1.png" alt="Print WhatsApp depoimento" class="testimonial-print-img"
-                            onerror="this.style.display='none'">
+                        <img src="assets/print-whatsapp1.png" alt="Print WhatsApp depoimento"
+                            class="testimonial-print-img" onerror="this.style.display='none'">
                     </div>
                     <p>"Eu não sabia como ajudar meu filho e hoje vejo uma evolução enorme. Foi um divisor de águas na
                         nossa vida!"</p>
@@ -532,8 +545,8 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="testimonial-print">
-                        <img src="assets/print-whatsapp2.png" alt="Print WhatsApp depoimento" class="testimonial-print-img"
-                            onerror="this.style.display='none'">
+                        <img src="assets/print-whatsapp2.png" alt="Print WhatsApp depoimento"
+                            class="testimonial-print-img" onerror="this.style.display='none'">
                     </div>
                     <p>"O acompanhamento me trouxe segurança e clareza. Em poucos meses, meu filho já apresentou
                         melhoras significativas."</p>
@@ -555,8 +568,8 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="testimonial-print">
-                        <img src="assets/print-whatsapp3.png" alt="Print WhatsApp depoimento" class="testimonial-print-img"
-                            onerror="this.style.display='none'">
+                        <img src="assets/print-whatsapp3.png" alt="Print WhatsApp depoimento"
+                            class="testimonial-print-img" onerror="this.style.display='none'">
                     </div>
                     <p>"Finalmente encontrei uma profissional que entende as necessidades do meu filho. A evolução foi
                         além do que eu esperava."</p>
@@ -640,7 +653,8 @@
                     <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
                     <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://wa.me/5581995235494" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/5581995235494" target="_blank" class="social-icon"><i
+                            class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>

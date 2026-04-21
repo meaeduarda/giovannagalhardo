@@ -15,6 +15,7 @@
     border: none;
     cursor: pointer;
     text-align: center;
+    color: var(--purple);
 }
 
 .btn-primary i {
@@ -24,6 +25,8 @@
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background: #e6b01a;
+    color: var(--purple);
 }
 
 .btn-link {
@@ -78,99 +81,6 @@
     text-align: center;
 }
 
-/* ========== HERO CORRIGIDO ========== */
-.hero {
-    position: relative;
-    height: 85vh;
-    min-height: 600px;
-    width: 100%;
-    overflow: hidden;
-}
-
-.hero-swiper {
-    width: 100%;
-    height: 100%;
-}
-
-.hero-swiper .swiper-slide {
-    position: relative;
-    overflow: hidden;
-}
-
-.slide-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.slide-background::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(81, 68, 166, 0.85) 0%, rgba(0, 0, 0, 0.6) 100%);
-}
-
-.slide-bg-1 {
-    background-image: url('../assets/banner1giovanna.png');
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 650px;
-    color: var(--white);
-    padding: 40px 0;
-}
-
-.hero-badge {
-    display: inline-block;
-    background: var(--yellow);
-    color: var(--purple);
-    padding: 8px 20px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.hero-badge i {
-    margin-right: 8px;
-}
-
-.hero-content h1 {
-    font-size: 56px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    color: var(--white);
-}
-
-.hero-content h1 .highlight {
-    color: var(--yellow);
-}
-
-.hero-content p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 550px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-}
-
 .btn-outline-white {
     border: 2px solid var(--white);
     background: transparent;
@@ -195,15 +105,109 @@
     transform: translateY(-2px);
 }
 
+/* ========== HERO CORRIGIDO ========== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-swiper {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.hero-swiper .swiper-slide {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* ========== BACKGROUNDS CORRIGIDOS - RESPONSIVOS ========== */
+.slide-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.slide-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(81, 68, 166, 0.85) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.slide-bg-1 {
+    background-image: url('../assets/banner1fisiogio.png');
+    background-position: 70% center;
+}
+
+.slide-bg-2 {
+    background-image: url('../assets/banner3fisiogio.png');
+    background-position: center;
+}
+
+.slide-bg-3 {
+    background-image: url('../assets/banner3fisiogio.png');
+    background-position: center;
+}
+
+/* Grid 2 colunas do Hero */
+.hero-grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    padding: 100px 0;
+}
+
+/* Coluna de texto do Hero */
+.hero-text-col h1 {
+    color: white;
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text-col h1 .highlight {
+    color: var(--yellow);
+}
+
+.hero-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
 .hero-trust {
     display: flex;
-    gap: 30px;
+    gap: 24px;
     flex-wrap: wrap;
 }
 
 .hero-trust span {
-    font-size: 14px;
     color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -213,55 +217,213 @@
     color: var(--yellow);
 }
 
-.hero .container {
-    position: relative;
-    z-index: 2;
-    height: 100%;
+.hero-badge {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--purple);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-badge i {
+    margin-right: 8px;
+}
+
+/* ========== SLIDE 1 - CARD INSTAGRAM ========== */
+.hero-instagram-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    max-width: 380px;
+    margin-left: auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.instagram-profile {
+    width: 100%;
+}
+
+.profile-header-row {
     display: flex;
     align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-    .hero {
-        height: auto;
-        min-height: 550px;
-        padding: 60px 0;
-    }
-    
-    .hero-content {
-        text-align: center;
-        max-width: 100%;
-    }
-    
-    .hero-content p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .hero-buttons {
-        justify-content: center;
-    }
-    
-    .hero-trust {
-        justify-content: center;
-    }
+.profile-avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--yellow);
 }
 
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 32px;
-    }
-    
-    .hero-content p {
-        font-size: 16px;
-    }
+.profile-stats-row {
+    display: flex;
+    gap: 20px;
+    flex: 1;
 }
 
-/* ============================================ */
-/* CARDS FLUTUANTES - SOBREPOSTOS AO HERO */
-/* ============================================ */
+.profile-stats-row .stat-item {
+    text-align: center;
+}
 
+.profile-stats-row .stat-item strong {
+    display: block;
+    font-size: 16px;
+    color: var(--text-dark);
+}
+
+.profile-stats-row .stat-item span {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.profile-username {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.profile-fullname {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.profile-bio p {
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: var(--text-dark);
+}
+
+.profile-link a {
+    font-size: 13px;
+    color: #00376b;
+    text-decoration: none;
+}
+
+/* ========== SLIDE 2 - VÍDEO COM BOTÃO SOBREPOSTO ========== */
+.hero-video-col {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.video-overlay-card {
+    position: relative;
+    max-width: 450px;
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.video-thumb {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.play-btn-overlay-large {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: var(--yellow);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-btn-overlay-large i {
+    font-size: 32px;
+    color: var(--purple);
+    margin-left: 5px;
+}
+
+.play-btn-overlay-large:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: white;
+}
+
+/* ========== SLIDE 3 - DEPOIMENTOS PRINT ========== */
+.testimonials-print-content {
+    text-align: center;
+    padding: 60px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.testimonials-print-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.2;
+}
+
+.testimonials-print-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.print-depo-card {
+    flex: 1;
+    min-width: 260px;
+    max-width: 320px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.print-depo-card:hover {
+    transform: translateY(-10px);
+}
+
+.print-depo-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.print-depo-card:hover img {
+    border-color: var(--yellow);
+}
+
+.testimonials-print-btn .btn-primary {
+    background: var(--yellow);
+    color: var(--purple);
+    font-size: 18px;
+    padding: 16px 36px;
+}
+
+.testimonials-print-btn .btn-primary:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* ========== CARDS FLUTUANTES ========== */
 .floating-cards {
     margin-top: -50px;
     position: relative;
@@ -277,7 +439,6 @@
     position: relative;
 }
 
-/* Card base */
 .pain-card {
     border-radius: 28px;
     padding: 40px 25px 45px;
@@ -292,7 +453,6 @@
     box-shadow: 0 35px 60px rgba(0, 0, 0, 0.3);
 }
 
-/* Cores individuais dos cards */
 .pain-card-blue {
     background: linear-gradient(135deg, #2DA8FF 0%, #1E88E5 100%);
 }
@@ -309,7 +469,6 @@
     background: linear-gradient(135deg, #D633A6 0%, #AD1457 100%);
 }
 
-/* Ícone */
 .pain-card-icon {
     margin-bottom: 25px;
 }
@@ -322,7 +481,6 @@
     filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
 }
 
-/* Títulos e textos dos cards */
 .pain-card-title {
     font-family: 'Fredoka', sans-serif;
     font-size: 26px;
@@ -355,10 +513,6 @@
     color: white;
     line-height: 1.5;
 }
-
-/* ============================================ */
-/* CONTEÚDO NORMAL (TÍTULO + TEXTO) */
-/* ============================================ */
 
 .pain-points {
     margin-top: 25px;
@@ -441,7 +595,6 @@
     margin-left: 8px;
 }
 
-/* Cores dos cards ebook */
 .card-blue { border-top: 4px solid var(--blue); }
 .card-green { border-top: 4px solid var(--green); }
 .card-orange { border-top: 4px solid var(--orange); }
@@ -777,31 +930,7 @@
     flex-wrap: wrap;
 }
 
-/* ========== EBOOKS BONUS ========== */
-.ebooks-bonus {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background: linear-gradient(135deg, #FFF8E7, #FFF);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--yellow);
-}
-
-.ebooks-bonus p {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    font-weight: 500;
-}
-
-.ebooks-bonus i {
-    margin-right: 8px;
-    color: var(--yellow);
-}
-
-/* ============================================ */
-/* EBOOKS PREMIUM */
-/* ============================================ */
-
+/* ========== EBOOKS PREMIUM ========== */
 .ebooks-premium {
     position: relative;
     width: 100%;
@@ -876,17 +1005,23 @@
     font-weight: 400;
 }
 
-.premium-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    position: relative;
-    z-index: 2;
-    margin-bottom: 40px;
+/* Swiper para Ebooks */
+.ebooks-swiper {
     width: 100%;
+    padding: 20px 10px 50px 10px;
+    overflow: hidden;
+    position: relative;
 }
 
-.premium-card {
+.ebooks-swiper .swiper-slide {
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.ebook-card {
+    width: 100%;
+    max-width: 280px;
     background-color: transparent;
     border-radius: 24px;
     overflow: hidden;
@@ -894,13 +1029,11 @@
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    width: 100%;
     height: 100%;
-    max-width: 260px;
     margin: 0 auto;
 }
 
-.premium-card:hover {
+.ebook-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.3);
 }
@@ -920,7 +1053,7 @@
     transition: transform 0.4s ease;
 }
 
-.premium-card:hover .card-image-top img {
+.ebook-card:hover .card-image-top img {
     transform: scale(1.05);
 }
 
@@ -946,12 +1079,6 @@
     border: 3px solid white;
 }
 
-.card-blue .card-content { background-color: #2EA7FF; }
-.card-green .card-content { background-color: #6CD34D; }
-.card-orange .card-content { background-color: #FF8A3D; }
-.card-pink .card-content { background-color: #C05C80; }
-.card-yellow .card-content { background-color: #d4e060; }
-
 .card-content {
     padding: 20px 20px 0 20px;
     border-radius: 0 0 24px 24px;
@@ -960,6 +1087,12 @@
     flex: 1;
     text-align: left;
 }
+
+.card-blue .card-content { background-color: #2EA7FF; }
+.card-green .card-content { background-color: #6CD34D; }
+.card-orange .card-content { background-color: #FF8A3D; }
+.card-pink .card-content { background-color: #C05C80; }
+.card-yellow .card-content { background-color: #d4e060; }
 
 .icon-circle {
     width: 60px;
@@ -1051,39 +1184,6 @@
     width: 100%;
 }
 
-.footer-ebook {
-    background-color: rgba(255, 255, 255, 0.95);
-    margin-top: auto;
-    padding: 14px;
-    border-radius: 16px;
-    text-align: center;
-    margin-bottom: 20px;
-    transition: all 0.3s;
-}
-
-.premium-card:hover .footer-ebook {
-    background-color: white;
-}
-
-.ebook-link {
-    text-decoration: none;
-    font-family: 'Fredoka', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    display: block;
-    transition: all 0.3s;
-}
-
-.card-blue .ebook-link { color: #2EA7FF; }
-.card-green .ebook-link { color: #6CD34D; }
-.card-orange .ebook-link { color: #FF8A3D; }
-.card-pink .ebook-link { color: #C05C80; }
-
-.ebook-link:hover {
-    text-decoration: underline;
-    transform: scale(1.02);
-}
-
 .ebooks-bonus-light {
     text-align: center;
     margin-top: 30px;
@@ -1109,110 +1209,7 @@
     font-size: 18px;
 }
 
-/* ============================================ */
-/* SWIPER CARROSSEL PARA EBOOKS */
-/* ============================================ */
-
-.ebooks-swiper {
-    width: 100%;
-    padding: 20px 10px 50px 10px;
-    overflow: hidden;
-    position: relative;
-}
-
-.ebooks-swiper .swiper-slide {
-    height: auto;
-    display: flex;
-    justify-content: center;
-}
-
-.ebook-card {
-    width: 100%;
-    max-width: 280px;
-    background-color: transparent;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.25);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 0 auto;
-}
-
-.ebook-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.3);
-}
-
-.ebook-card.card-blue .card-content { background-color: #2EA7FF; }
-.ebook-card.card-green .card-content { background-color: #6CD34D; }
-.ebook-card.card-orange .card-content { background-color: #FF8A3D; }
-.ebook-card.card-pink .card-content { background-color: #C05C80; }
-.ebook-card.card-yellow .card-content { background-color: #d4e060; }
-
-.ebooks-swiper .swiper-button-prev,
-.ebooks-swiper .swiper-button-next {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(8px);
-    border-radius: 50%;
-    transition: all 0.3s ease;
-}
-
-.ebooks-swiper .swiper-button-prev:hover,
-.ebooks-swiper .swiper-button-next:hover {
-    background: var(--yellow);
-}
-
-.ebooks-swiper .swiper-button-prev:after,
-.ebooks-swiper .swiper-button-next:after {
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-}
-
-.ebooks-swiper .swiper-button-prev:hover:after,
-.ebooks-swiper .swiper-button-next:hover:after {
-    color: var(--purple);
-}
-
-.ebooks-swiper .swiper-pagination {
-    bottom: 0;
-}
-
-.ebooks-swiper .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.5);
-    opacity: 1;
-}
-
-.ebooks-swiper .swiper-pagination-bullet-active {
-    background: var(--yellow);
-    width: 24px;
-    border-radius: 10px;
-}
-/* ============================================
-   ANIMAÇÕES E MICRO-INTERAÇÕES
-   ============================================ */
-
-/* Parallax suave no hero */
-.parallax-bg {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-@media (max-width: 768px) {
-    .parallax-bg {
-        background-attachment: scroll;
-    }
-}
-
-/* Hover lift (elevação suave) */
+/* ========== ANIMAÇÕES E MICRO-INTERAÇÕES ========== */
 .hover-lift {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1222,7 +1219,6 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Hover scale (zoom suave) */
 .hover-scale {
     transition: transform 0.3s ease;
 }
@@ -1231,7 +1227,6 @@
     transform: scale(1.03);
 }
 
-/* Hover zoom para imagens */
 .hover-zoom {
     transition: transform 0.4s ease, box-shadow 0.3s ease;
     cursor: pointer;
@@ -1242,17 +1237,6 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Botão com glow ao hover */
-.btn-hover-glow {
-    transition: all 0.3s ease;
-}
-
-.btn-hover-glow:hover {
-    box-shadow: 0 0 15px rgba(242, 190, 34, 0.5);
-    transform: translateY(-2px);
-}
-
-/* Pulse animation para badges */
 .pulse-badge {
     animation: pulseBadge 2s infinite;
 }
@@ -1266,7 +1250,6 @@
     }
 }
 
-/* Pulse animation para botões CTA */
 .pulse-animation {
     animation: pulseCta 2s infinite;
 }
@@ -1297,65 +1280,12 @@
     animation: btnPulse 1s infinite;
 }
 
-/* Scale animation para caixa amarela */
 .scale-animation {
     transition: transform 0.3s ease;
 }
 
 .scale-animation:hover {
     transform: scale(1.02);
-}
-
-/* Ícones com hover animado */
-.social-icon {
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-icon:hover {
-    transform: translateY(-3px) scale(1.1);
-}
-
-/* Testimonial print images */
-.testimonial-print {
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.testimonial-print-img {
-    max-width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.author-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 12px;
-    border: 2px solid var(--yellow);
-}
-
-.author {
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
-}
-
-.author h5 {
-    margin-bottom: 0;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.author p {
-    margin-bottom: 0;
-    font-size: 12px;
-    color: var(--text-light);
 }
 
 /* Video Modal */
@@ -1436,25 +1366,193 @@
     pointer-events: auto !important;
 }
 
-/* Gallery grid improvements */
-.about-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+/* ============================================
+   RESPONSIVIDADE DO HERO
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .hero-grid-2col {
+        gap: 40px;
+        padding: 80px 0;
+    }
+    
+    .hero-text-col h1 {
+        font-size: 38px;
+    }
+    
+    .hero-instagram-card {
+        max-width: 340px;
+    }
+    
+    .testimonials-print-title {
+        font-size: 34px;
+    }
+    
+    .slide-bg-1 {
+        background-position: 65% center;
+    }
 }
 
-.gallery-img {
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+@media (max-width: 768px) {
+    .hero-grid-2col {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 60px 0;
+        text-align: center;
+    }
+    
+    .hero-text-col h1 {
+        font-size: 32px;
+    }
+    
+    .hero-description {
+        font-size: 16px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .hero-trust {
+        justify-content: center;
+    }
+    
+    .hero-instagram-card {
+        margin: 0 auto;
+        max-width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+    }
+    
+    .profile-header-row {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-stats-row {
+        justify-content: center;
+    }
+    
+    .hero-video-col {
+        justify-content: center;
+    }
+    
+    .video-overlay-card {
+        max-width: 100%;
+    }
+    
+    .play-btn-overlay-large {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .play-btn-overlay-large i {
+        font-size: 24px;
+    }
+    
+    .testimonials-print-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
+    .testimonials-print-grid {
+        gap: 20px;
+    }
+    
+    .print-depo-card {
+        min-width: 240px;
+    }
+    
+    .testimonials-print-btn .btn-primary {
+        font-size: 16px;
+        padding: 14px 28px;
+    }
+    
+    .slide-background {
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .slide-bg-1 {
+        background-position: 60% center;
+        background-size: auto 100%;
+    }
+    
+    .slide-background::after {
+        background: linear-gradient(135deg, rgba(81, 68, 166, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
+    }
 }
 
-/* ============================================ */
-/* FUNDO GRADIENTE ROXO/LILÁS PARA SLIDE 2 (image.png) */
-/* ============================================ */
+@media (max-width: 480px) {
+    .hero-text-col h1 {
+        font-size: 28px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-outline-white {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hero-trust {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .profile-stats-row {
+        gap: 15px;
+    }
+    
+    .profile-stats-row .stat-item strong {
+        font-size: 14px;
+    }
+    
+    .profile-stats-row .stat-item span {
+        font-size: 10px;
+    }
+    
+    .testimonials-print-title {
+        font-size: 24px;
+    }
+    
+    .testimonials-print-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .print-depo-card {
+        max-width: 280px;
+        width: 100%;
+    }
+    
+    .slide-bg-1 {
+        background-position: 55% center;
+        background-size: auto 120%;
+    }
+}
 
+@media (max-width: 768px) {
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none !important;
+    }
+    
+    .swiper-pagination {
+        bottom: 10px !important;
+    }
+    
+    .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* Fundo gradiente roxo/lilás para fallback */
 .slide-bg-video-custom {
     position: absolute;
     top: 0;

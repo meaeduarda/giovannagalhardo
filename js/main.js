@@ -1,24 +1,18 @@
 // ============================================
-// MAIN JS - Mobile Menu, Cookie Modal, Smooth Scroll, Swiper
+// MAIN JS - Mobile Menu, Swiper, Modals
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ========== INICIALIZAÇÃO DO SWIPER ==========
-    function initSwiper() {
+    // ========== INICIALIZAÇÃO DOS SWIPERS ==========
+    function initSwipers() {
         if (typeof Swiper !== 'undefined') {
-            // Swiper do Hero (CORRIGIDO)
+            // Swiper do Hero (3 slides) - CONFIGURAÇÃO OTIMIZADA
             const heroSwiper = new Swiper('.hero-swiper', {
                 loop: true,
-                effect: 'fade',
-                fadeEffect: {
-                    crossFade: true
-                },
-                autoplay: {
-                    delay: 6000,
-                    disableOnInteraction: false,
-                },
-                speed: 1000,
+                effect: 'slide',
+                autoplay: { delay: 8000, disableOnInteraction: false },
+                speed: 800,
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
@@ -27,9 +21,20 @@ document.addEventListener('DOMContentLoaded', function () {
                     el: '.swiper-pagination',
                     clickable: true,
                 },
+                // Responsividade
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    },
+                    768: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    }
+                }
             });
 
-            // Swiper dos Ebooks (mantido igual)
+            // Swiper dos Ebooks
             const ebooksSwiper = new Swiper('.ebooks-swiper', {
                 slidesPerView: 1,
                 spaceBetween: 20,
@@ -42,25 +47,69 @@ document.addEventListener('DOMContentLoaded', function () {
                     clickable: true,
                 },
                 breakpoints: {
-                    640: {
-                        slidesPerView: 2,
-                        spaceBetween: 20,
-                    },
-                    1024: {
-                        slidesPerView: 4,
-                        spaceBetween: 25,
-                    }
+                    640: { slidesPerView: 2, spaceBetween: 20 },
+                    1024: { slidesPerView: 4, spaceBetween: 25 }
                 }
             });
 
-            console.log('Swipers inicializados com sucesso!');
+            // Swiper dos Prints (se existir)
+            const printsSwiperEl = document.querySelector('.prints-swiper');
+            if (printsSwiperEl) {
+                const printsSwiper = new Swiper('.prints-swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    centeredSlides: false,
+                    loop: false,
+                    autoplay: { delay: 5000, disableOnInteraction: false },
+                    navigation: {
+                        nextEl: '.prints-next',
+                        prevEl: '.prints-prev',
+                    },
+                    pagination: {
+                        el: '.prints-pagination',
+                        clickable: true,
+                    },
+                    breakpoints: {
+                        768: { slidesPerView: 2, spaceBetween: 20 },
+                        1024: { slidesPerView: 3, spaceBetween: 24 }
+                    }
+                });
+            }
+
+            console.log('Todos os Swipers inicializados!');
         } else {
-            console.log('Aguardando Swiper carregar...');
-            setTimeout(initSwiper, 100);
+            console.log('Aguardando Swiper...');
+            setTimeout(initSwipers, 100);
         }
     }
 
-    initSwiper();
+    initSwipers();
+
+    // ========== VÍDEO DO SLIDE 2 - BOTÃO SOBREPOSTO ==========
+    const heroVideoContainer = document.getElementById('heroVideoContainer');
+    const heroVideoBtn = document.getElementById('heroVideoBtn');
+
+    function playHeroVideoInline() {
+        if (heroVideoContainer) {
+            const videoId = 'dQw4w9WgXcQ'; // Substitua pelo ID do seu vídeo do YouTube
+            heroVideoContainer.innerHTML = `
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1" 
+                    title="Vídeo Giovanna Galhardo - Método de Estimulação Infantil" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                    style="aspect-ratio: 4/3; width: 100%; border-radius: 24px;">
+                </iframe>
+            `;
+        }
+    }
+
+    if (heroVideoBtn) {
+        heroVideoBtn.addEventListener('click', playHeroVideoInline);
+    }
 
     // ========== MOBILE MENU ==========
     const mobileToggle = document.querySelector('.mobile-toggle');
@@ -68,10 +117,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function toggleMobileMenu() {
         if (!mobileToggle || !menu) return;
-
         mobileToggle.classList.toggle('active');
         menu.classList.toggle('active');
-
         const spans = mobileToggle.querySelectorAll('span');
         if (menu.classList.contains('active')) {
             if (spans[0]) spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
@@ -84,22 +131,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', toggleMobileMenu);
-    }
+    if (mobileToggle) mobileToggle.addEventListener('click', toggleMobileMenu);
 
-    // Fechar menu ao clicar em link
     document.querySelectorAll('.menu a').forEach(link => {
         link.addEventListener('click', () => {
             if (window.innerWidth <= 900 && menu) {
                 menu.classList.remove('active');
-                if (mobileToggle) {
-                    mobileToggle.classList.remove('active');
-                    const spans = mobileToggle.querySelectorAll('span');
-                    if (spans[0]) spans[0].style.transform = 'none';
-                    if (spans[1]) spans[1].style.opacity = '1';
-                    if (spans[2]) spans[2].style.transform = 'none';
-                }
+                if (mobileToggle) mobileToggle.classList.remove('active');
+                const spans = mobileToggle.querySelectorAll('span');
+                if (spans[0]) spans[0].style.transform = 'none';
+                if (spans[1]) spans[1].style.opacity = '1';
+                if (spans[2]) spans[2].style.transform = 'none';
             }
         });
     });
@@ -108,18 +150,11 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            if (href !== '#' && href !== '' && href !== '#home') {
+            if (href && href !== '#' && href !== '#home' && href !== '#') {
                 const target = document.querySelector(href);
                 if (target) {
                     e.preventDefault();
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-
-                    if (window.innerWidth <= 900 && menu && menu.classList.contains('active')) {
-                        toggleMobileMenu();
-                    }
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             }
         });
@@ -132,29 +167,24 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateActiveMenu() {
         let current = '';
         const scrollPosition = window.scrollY + 100;
-
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
-
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                 current = section.getAttribute('id');
             }
         });
-
         navLinks.forEach(link => {
             link.classList.remove('active');
             const href = link.getAttribute('href').substring(1);
-            if (href === current) {
-                link.classList.add('active');
-            }
+            if (href === current) link.classList.add('active');
         });
     }
 
     window.addEventListener('scroll', updateActiveMenu);
     updateActiveMenu();
 
-    // ========== NAVBAR SCROLL COLOR CHANGE + LOGO TROCA ==========
+    // ========== NAVBAR SCROLL ==========
     const navbar = document.querySelector('.navbar');
     const logoImg = document.querySelector('.logo-img');
 
@@ -162,14 +192,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (navbar) {
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
-                if (logoImg) {
-                    logoImg.src = 'assets/logoggpurple1.png';
-                }
+                if (logoImg) logoImg.src = 'assets/logoggpurple1.png';
             } else {
                 navbar.classList.remove('scrolled');
-                if (logoImg) {
-                    logoImg.src = 'assets/logogg6.png';
-                }
+                if (logoImg) logoImg.src = 'assets/logogg6.png';
             }
         }
     }
@@ -177,86 +203,14 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', handleNavbarScroll);
     handleNavbarScroll();
 
-    // ========== COOKIE MODAL ==========
-    const cookieModal = document.getElementById('cookieModal');
-    const acceptBtn = document.getElementById('acceptCookies');
-    const declineBtn = document.getElementById('declineCookies');
-
-    const cookieChoice = localStorage.getItem('cookieChoice');
-
-    if (!cookieChoice && cookieModal) {
-        setTimeout(() => {
-            cookieModal.classList.remove('CookiePolicyModal--hide');
-        }, 1000);
-    }
-
-    function handleCookieAccept() {
-        localStorage.setItem('cookieChoice', 'accepted');
-        if (cookieModal) {
-            cookieModal.classList.add('CookiePolicyModal--hide');
-        }
-    }
-
-    function handleCookieDecline() {
-        localStorage.setItem('cookieChoice', 'declined');
-        if (cookieModal) {
-            cookieModal.classList.add('CookiePolicyModal--hide');
-        }
-    }
-
-    if (acceptBtn) {
-        acceptBtn.addEventListener('click', handleCookieAccept);
-    }
-
-    if (declineBtn) {
-        declineBtn.addEventListener('click', handleCookieDecline);
-    }
-
-    // ========== ANIMATION ON SCROLL ==========
-    const animatedElements = document.querySelectorAll('.card, .service-category, .testimonial, .plan-card');
-
-    animatedElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    });
-
-    function animateOnScroll() {
-        animatedElements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight;
-
-            if (elementPosition < screenPosition - 50) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
-        });
-    }
-
-    window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll();
-
-        // ========== INICIALIZAÇÃO DO AOS (ANIMAÇÕES) ==========
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100,
-            disable: 'mobile'
-        });
-        console.log('AOS inicializado com sucesso!');
-    }
-
-    // ========== VIDEO MODAL ==========
+    // ========== VIDEO MODAL (fallback) ==========
     const videoModal = document.getElementById('videoModal');
     const openVideoBtn = document.getElementById('openVideoModalBtn');
     const closeVideoBtn = document.querySelector('.video-modal-close');
     const videoIframe = document.getElementById('videoIframe');
+    const videoUrl = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1';
 
-    // URL do vídeo (coloque o link do seu vídeo aqui)
-    const videoUrl = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1';
-
-    function openVideoModal() {
+    function openVideoModalFunc() {
         if (videoModal && videoIframe) {
             videoIframe.src = videoUrl;
             videoModal.classList.add('show');
@@ -264,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function closeVideoModal() {
+    function closeVideoModalFunc() {
         if (videoModal && videoIframe) {
             videoIframe.src = '';
             videoModal.classList.remove('show');
@@ -272,29 +226,147 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    if (openVideoBtn) {
-        openVideoBtn.addEventListener('click', openVideoModal);
-    }
-
-    if (closeVideoBtn) {
-        closeVideoBtn.addEventListener('click', closeVideoModal);
-    }
-
-    // Fechar modal ao clicar fora do conteúdo
-    if (videoModal) {
-        videoModal.addEventListener('click', function(e) {
-            if (e.target === videoModal) {
-                closeVideoModal();
-            }
-        });
-    }
-
-    // Fechar modal com tecla ESC
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && videoModal && videoModal.classList.contains('show')) {
-            closeVideoModal();
-        }
+    if (openVideoBtn) openVideoBtn.addEventListener('click', openVideoModalFunc);
+    if (closeVideoBtn) closeVideoBtn.addEventListener('click', closeVideoModalFunc);
+    if (videoModal) videoModal.addEventListener('click', function(e) {
+        if (e.target === videoModal) closeVideoModalFunc();
     });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && videoModal && videoModal.classList.contains('show')) closeVideoModalFunc();
+    });
+
+    // ========== PRINT MODAL ==========
+    const printModal = document.getElementById('printModal');
+    const printModalClose = document.querySelector('.print-modal-close');
+    const printModalBody = document.getElementById('printModalBody');
+
+    const printContents = {
+        print1: `
+            <div class="print-card print-card-whatsapp" style="max-width: 100%; border-radius: 0;">
+                <div class="print-card-header">
+                    <div class="social-icon-bg whatsapp-bg"><i class="fab fa-whatsapp"></i></div>
+                    <span>WhatsApp</span>
+                </div>
+                <div class="print-card-content">
+                    <div class="message-bubble received">
+                        <div class="message-author"><strong>Carla M.</strong></div>
+                        <p>"Eu não sabia como ajudar meu filho. Depois do acompanhamento da Giovanna, ele começou a andar em 2 meses! ❤️"</p>
+                    </div>
+                    <div class="message-bubble received">
+                        <div class="message-author"><strong>Carla M.</strong></div>
+                        <p>"Estou muito emocionada! Recomendo demais 🙏"</p>
+                    </div>
+                    <div class="message-bubble received">
+                        <div class="message-author"><strong>Carla M.</strong></div>
+                        <p>"Hoje ele conseguiu subir escadas sozinho! Antes ele nem engatinhava direito. Giovanna mudou nossa vida!"</p>
+                    </div>
+                </div>
+                <div class="print-card-footer">
+                    <strong>Carla M. - mãe do Pedro (2 anos)</strong>
+                </div>
+            </div>
+        `,
+        print2: `
+            <div class="print-card print-card-instagram" style="max-width: 100%; border-radius: 0;">
+                <div class="print-card-header">
+                    <div class="social-icon-bg instagram-bg"><i class="fab fa-instagram"></i></div>
+                    <span>Instagram</span>
+                </div>
+                <div class="print-card-content">
+                    <div class="insta-post">
+                        <div class="insta-post-header">
+                            <strong>juliana_rodrigues</strong>
+                        </div>
+                        <div class="insta-post-image">
+                            <i class="fas fa-image"></i>
+                            <span>Evolução do Lucas</span>
+                        </div>
+                        <div class="insta-post-caption">
+                            <p>Hoje meu filho conseguiu sentar sozinho! 🥹 Há 3 meses ele nem sustentava a cabeça. Obrigada, @giovannagalhardo! Vocês precisam conhecer esse método 💜</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="print-card-footer">
+                    <strong>Juliana R. - mãe do Lucas (3 anos)</strong>
+                </div>
+            </div>
+        `,
+        print3: `
+            <div class="print-card print-card-facebook" style="max-width: 100%; border-radius: 0;">
+                <div class="print-card-header">
+                    <div class="social-icon-bg facebook-bg"><i class="fab fa-facebook-f"></i></div>
+                    <span>Facebook</span>
+                </div>
+                <div class="print-card-content">
+                    <div class="fb-post">
+                        <div class="fb-post-header">
+                            <strong>Patrícia Santos</strong>
+                            <p>Grupo Mães Especiais</p>
+                        </div>
+                        <div class="fb-post-message">
+                            <p>Gente, preciso compartilhar minha felicidade! Minha filha Sofia, que tem autismo, começou a fazer contato visual depois que comecei as atividades que a Giovanna ensinou. Não tenho palavras! 💜</p>
+                            <p>Em apenas 1 mês de acompanhamento, ela já está olhando nos olhos e interagindo mais. Recomendo de olhos fechados!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="print-card-footer">
+                    <strong>Patrícia S. - mãe da Sofia (5 anos)</strong>
+                </div>
+            </div>
+        `
+    };
+
+    function openPrintModal(printId) {
+        if (printModal && printModalBody && printContents[printId]) {
+            printModalBody.innerHTML = printContents[printId];
+            printModal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closePrintModal() {
+        if (printModal) {
+            printModal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+    }
+
+    document.querySelectorAll('.print-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const modalId = this.getAttribute('data-print-modal');
+            if (modalId) openPrintModal(modalId);
+        });
+    });
+
+    if (printModalClose) printModalClose.addEventListener('click', closePrintModal);
+    if (printModal) printModal.addEventListener('click', function(e) {
+        if (e.target === printModal) closePrintModal();
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && printModal && printModal.classList.contains('show')) closePrintModal();
+    });
+
+    // ========== AOS INIT ==========
+    if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 800, once: true, offset: 100, disable: false });
+    }
+
+    // ========== FIX PARA O SLIDE 3 - AJUSTE DE ALTURA ==========
+    function fixHeroHeight() {
+        const hero = document.querySelector('.hero');
+        const heroSlides = document.querySelectorAll('.hero-swiper .swiper-slide');
+        if (hero && heroSlides.length) {
+            const windowHeight = window.innerHeight;
+            hero.style.minHeight = windowHeight + 'px';
+            heroSlides.forEach(slide => {
+                slide.style.minHeight = windowHeight + 'px';
+            });
+        }
+    }
+
+    window.addEventListener('resize', fixHeroHeight);
+    fixHeroHeight();
 
     console.log('Site Giovanna Galhardo carregado com sucesso!');
 });
