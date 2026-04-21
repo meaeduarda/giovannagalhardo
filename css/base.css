@@ -169,17 +169,3 @@ section {
     background: var(--white);
     color: var(--purple);
 }
-
-.navbar {
-    margin-bottom: 0;
-    border-bottom: none;
-}
-
-.hero {
-    margin-top: 0;
-    padding-top: 0;
-}
-
-body {
-    background-color: var(--purple);
-}
