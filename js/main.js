@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // ========== INICIALIZAÇÃO DOS SWIPERS ==========
     function initSwipers() {
         if (typeof Swiper !== 'undefined') {
-            // Swiper do Hero (3 slides) - CONFIGURAÇÃO OTIMIZADA
+            // Swiper do Hero (3 slides)
             const heroSwiper = new Swiper('.hero-swiper', {
                 loop: true,
                 effect: 'slide',
@@ -20,17 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
-                },
-                // Responsividade
-                breakpoints: {
-                    0: {
-                        slidesPerView: 1,
-                        spaceBetween: 0
-                    },
-                    768: {
-                        slidesPerView: 1,
-                        spaceBetween: 0
-                    }
                 }
             });
 
@@ -75,6 +64,43 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
             }
+
+            // ========== SWIPER DOS DEPOIMENTOS ==========
+            // Configuração: 3 cards desktop | 2 cards tablet | 1 card mobile
+            const testimonialsSwiper = new Swiper('.testimonials-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 24,
+                loop: true,
+                autoplay: {
+                    delay: 6000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    // Mobile: 1 card
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 16,
+                    },
+                    // Tablet: 2 cards
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    // Desktop: 3 cards
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 24,
+                    }
+                }
+            });
 
             console.log('Todos os Swipers inicializados!');
         } else {
@@ -235,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.key === 'Escape' && videoModal && videoModal.classList.contains('show')) closeVideoModalFunc();
     });
 
-    // ========== PRINT MODAL ==========
+    // ========== PRINT MODAL (versão antiga - para prints1,2,3) ==========
     const printModal = document.getElementById('printModal');
     const printModalClose = document.querySelector('.print-modal-close');
     const printModalBody = document.getElementById('printModalBody');
@@ -347,26 +373,68 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.key === 'Escape' && printModal && printModal.classList.contains('show')) closePrintModal();
     });
 
+    // ========== MODAL DE DEPOIMENTOS COM PRINTS (versão nova - para depoimento1-5) ==========
+    const testimonialModal = document.getElementById('testimonialModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.querySelector('.modal-close');
+
+    // Mapeamento das imagens dos depoimentos
+    const depoimentoImages = {
+        'depoimento1': 'assets/depoimento1.png',
+        'depoimento2': 'assets/depoimento2.png',
+        'depoimento3': 'assets/depoimento3.png',
+        'depoimento4': 'assets/depoimento4.png',
+        'depoimento5': 'assets/depoimento5.png',
+        'depoimento6': 'assets/depoimento6.png',
+        'depoimento7': 'assets/depoimento7.png'
+    };
+
+    // Função para abrir o modal (disponível globalmente)
+    window.openPrintModal = function(depoimentoId) {
+        if (testimonialModal && modalImage && depoimentoImages[depoimentoId]) {
+            modalImage.src = depoimentoImages[depoimentoId];
+            testimonialModal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    // Função para fechar o modal
+    function closeTestimonialModal() {
+        if (testimonialModal) {
+            testimonialModal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Eventos do modal
+    if (modalClose) {
+        modalClose.addEventListener('click', closeTestimonialModal);
+    }
+
+    if (testimonialModal) {
+        testimonialModal.addEventListener('click', function(e) {
+            if (e.target === testimonialModal) {
+                closeTestimonialModal();
+            }
+        });
+    }
+
+    // Fechar com ESC (para ambos os modais)
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (testimonialModal && testimonialModal.classList.contains('show')) {
+                closeTestimonialModal();
+            }
+            if (printModal && printModal.classList.contains('show')) {
+                closePrintModal();
+            }
+        }
+    });
+
     // ========== AOS INIT ==========
     if (typeof AOS !== 'undefined') {
         AOS.init({ duration: 800, once: true, offset: 100, disable: false });
     }
-
-    // ========== FIX PARA O SLIDE 3 - AJUSTE DE ALTURA (COMENTADO - CAUSAVA BARRA BRANCA) ==========
-    // function fixHeroHeight() {
-    //     const hero = document.querySelector('.hero');
-    //     const heroSlides = document.querySelectorAll('.hero-swiper .swiper-slide');
-    //     if (hero && heroSlides.length) {
-    //         const windowHeight = window.innerHeight;
-    //         hero.style.minHeight = windowHeight + 'px';
-    //         heroSlides.forEach(slide => {
-    //             slide.style.minHeight = windowHeight + 'px';
-    //         });
-    //     }
-    // }
-    //
-    // window.addEventListener('resize', fixHeroHeight);
-    // fixHeroHeight();
-
+    
     console.log('Site Giovanna Galhardo carregado com sucesso!');
 });

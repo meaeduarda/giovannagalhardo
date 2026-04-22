@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/testimonials.css">
 </head>
 
 <body>
@@ -54,96 +55,111 @@
         </div>
     </header>
 
-<!-- HERO - COM 3 SLIDES NOVO PADRÃO -->
-<section class="hero" id="home">
-    <div class="swiper hero-swiper">
-        <div class="swiper-wrapper">
-            
-            <!-- ========== SLIDE 1 - PERFIL INSTAGRAM ========== -->
-            <div class="swiper-slide slide-profile">
-                <div class="slide-background slide-bg-1"></div>
-                <div class="container">
-                    <div class="hero-grid-2col">
-                        <!-- Coluna Esquerda - Texto Principal -->
-                        <div class="hero-text-col" data-aos="fade-right" data-aos-duration="800">
-                            <h1>Seu filho pode evoluir mais rápido com os estímulos certos — e você pode <span class="highlight">começar hoje em casa</span></h1>
-                            <p class="hero-description">Aprenda com uma fisioterapeuta especializada como estimular o desenvolvimento do seu filho com segurança, orientação e acompanhamento profissional.</p>
-                            <div class="hero-buttons">
-                                <a href="https://wa.me/5581995235494" class="btn-primary" target="_blank"><i class="fab fa-whatsapp"></i> Agende uma consultoria →</a>
-                                <a href="#ebooks" class="btn-outline-white"><i class="fas fa-book"></i> Ver Ebooks →</a>
+    <!-- HERO - COM 3 SLIDES NOVO PADRÃO -->
+    <section class="hero" id="home">
+        <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
+
+                <!-- ========== SLIDE 1 - PERFIL INSTAGRAM ========== -->
+                <div class="swiper-slide slide-profile">
+                    <div class="slide-background slide-bg-1"></div>
+                    <div class="container">
+                        <div class="hero-grid-2col">
+                            <!-- Coluna Esquerda - Texto Principal -->
+                            <div class="hero-text-col" data-aos="fade-right" data-aos-duration="800">
+                                <h1>Seu filho pode evoluir mais rápido com os estímulos certos — e você pode <span
+                                        class="highlight">começar hoje em casa</span></h1>
+                                <p class="hero-description">Aprenda com uma fisioterapeuta especializada como estimular
+                                    o desenvolvimento do seu filho com segurança, orientação e acompanhamento
+                                    profissional.</p>
+                                <div class="hero-buttons">
+                                    <a href="https://wa.me/5581995235494" class="btn-primary" target="_blank"><i
+                                            class="fab fa-whatsapp"></i> Agende uma consultoria →</a>
+                                    <a href="#ebooks" class="btn-outline-white"><i class="fas fa-book"></i> Ver Ebooks
+                                        →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== SLIDE 2 - VÍDEO COM BOTÃO SOBREPOSTO ========== -->
+                <div class="swiper-slide slide-video">
+                    <div class="slide-background slide-bg-2"></div>
+                    <div class="container">
+                        <div class="hero-grid-2col">
+                            <!-- Coluna Esquerda - Texto -->
+                            <div class="hero-text-col" data-aos="fade-right" data-aos-duration="800">
+                                <div class="hero-badge"><i class="fas fa-play-circle"></i> Conheça meu trabalho na
+                                    prática</div>
+                                <h1>Assista ao vídeo e entenda como <span class="highlight">posso ajudar no
+                                        desenvolvimento</span> do seu filho</h1>
+                                <p class="hero-description">Veja na prática como funciona meu método de estimulação
+                                    infantil e os resultados que já transformaram a vida de muitas famílias.</p>
+                                <div class="hero-buttons">
+                                    <a href="#sobre" class="btn-outline-white"><i class="fas fa-user-md"></i> Conheça
+                                        meu trabalho</a>
+                                </div>
+                                <div class="hero-trust">
+                                    <span><i class="fas fa-check-circle"></i> Método comprovado</span>
+                                    <span><i class="fas fa-star"></i> +500 mães atendidas</span>
+                                    <span><i class="fas fa-clock"></i> Resultados rápidos</span>
+                                </div>
+                            </div>
+
+                            <!-- Coluna Direita - Imagem com Botão Play Sobreposto -->
+                            <div class="hero-video-col" data-aos="fade-left" data-aos-duration="800">
+                                <div class="video-overlay-card" id="heroVideoContainer">
+                                    <img src="assets/foto_video.png" alt="Thumbnail do vídeo" class="video-thumb"
+                                        onerror="this.src='https://placehold.co/400x300/5144A6/white?text=Vídeo+Giovanna'">
+                                    <button class="play-btn-overlay-large" id="heroVideoBtn">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== SLIDE 3 - DEPOIMENTOS EM PRINT ========== -->
+                <div class="swiper-slide slide-testimonials-print">
+                    <div class="slide-background slide-bg-3"></div>
+                    <div class="container">
+                        <div class="testimonials-print-content" data-aos="fade-up" data-aos-duration="800">
+                            <h2 class="testimonials-print-title">Histórias reais de quem transformou sua maternidade com
+                                carinho e estratégia</h2>
+
+                            <div class="testimonials-print-grid">
+                                <div class="print-depo-card" data-aos="fade-up" data-aos-delay="0">
+                                    <img src="assets/depoimento1.png" alt="Depoimento 1"
+                                        onerror="this.src='https://placehold.co/280x400/F2BE22/5144A6?text=Depoimento+1'">
+                                </div>
+                                <div class="print-depo-card" data-aos="fade-up" data-aos-delay="150">
+                                    <img src="assets/depoimento2.png" alt="Depoimento 2"
+                                        onerror="this.src='https://placehold.co/280x400/6CD34D/white?text=Depoimento+2'">
+                                </div>
+                                <div class="print-depo-card" data-aos="fade-up" data-aos-delay="300">
+                                    <img src="assets/depoimento3.png" alt="Depoimento 3"
+                                        onerror="this.src='https://placehold.co/280x400/FF8A3D/white?text=Depoimento+3'">
+                                </div>
+                            </div>
+
+                            <div class="testimonials-print-btn" data-aos="fade-up" data-aos-delay="450">
+                                <a href="https://wa.me/5581995235494" class="btn-primary btn-large pulse-hover"
+                                    target="_blank">
+                                    <i class="fas fa-users"></i> Faça parte da comunidade de mães →
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- ========== SLIDE 2 - VÍDEO COM BOTÃO SOBREPOSTO ========== -->
-            <div class="swiper-slide slide-video">
-                <div class="slide-background slide-bg-2"></div>
-                <div class="container">
-                    <div class="hero-grid-2col">
-                        <!-- Coluna Esquerda - Texto -->
-                        <div class="hero-text-col" data-aos="fade-right" data-aos-duration="800">
-                            <div class="hero-badge"><i class="fas fa-play-circle"></i> Conheça meu trabalho na prática</div>
-                            <h1>Assista ao vídeo e entenda como <span class="highlight">posso ajudar no desenvolvimento</span> do seu filho</h1>
-                            <p class="hero-description">Veja na prática como funciona meu método de estimulação infantil e os resultados que já transformaram a vida de muitas famílias.</p>
-                            <div class="hero-buttons">
-                                <a href="#sobre" class="btn-outline-white"><i class="fas fa-user-md"></i> Conheça meu trabalho</a>
-                            </div>
-                            <div class="hero-trust">
-                                <span><i class="fas fa-check-circle"></i> Método comprovado</span>
-                                <span><i class="fas fa-star"></i> +500 mães atendidas</span>
-                                <span><i class="fas fa-clock"></i> Resultados rápidos</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Coluna Direita - Imagem com Botão Play Sobreposto -->
-                        <div class="hero-video-col" data-aos="fade-left" data-aos-duration="800">
-                            <div class="video-overlay-card" id="heroVideoContainer">
-                                <img src="assets/foto_video.png" alt="Thumbnail do vídeo" class="video-thumb" onerror="this.src='https://placehold.co/400x300/5144A6/white?text=Vídeo+Giovanna'">
-                                <button class="play-btn-overlay-large" id="heroVideoBtn">
-                                    <i class="fas fa-play"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ========== SLIDE 3 - DEPOIMENTOS EM PRINT ========== -->
-            <div class="swiper-slide slide-testimonials-print">
-                <div class="slide-background slide-bg-3"></div>
-                <div class="container">
-                    <div class="testimonials-print-content" data-aos="fade-up" data-aos-duration="800">
-                        <h2 class="testimonials-print-title">Histórias reais de quem transformou sua maternidade com carinho e estratégia</h2>
-                        
-                        <div class="testimonials-print-grid">
-                            <div class="print-depo-card" data-aos="fade-up" data-aos-delay="0">
-                                <img src="assets/depoimento1.png" alt="Depoimento 1" onerror="this.src='https://placehold.co/280x400/F2BE22/5144A6?text=Depoimento+1'">
-                            </div>
-                            <div class="print-depo-card" data-aos="fade-up" data-aos-delay="150">
-                                <img src="assets/depoimento2.png" alt="Depoimento 2" onerror="this.src='https://placehold.co/280x400/6CD34D/white?text=Depoimento+2'">
-                            </div>
-                            <div class="print-depo-card" data-aos="fade-up" data-aos-delay="300">
-                                <img src="assets/depoimento3.png" alt="Depoimento 3" onerror="this.src='https://placehold.co/280x400/FF8A3D/white?text=Depoimento+3'">
-                            </div>
-                        </div>
-                        
-                        <div class="testimonials-print-btn" data-aos="fade-up" data-aos-delay="450">
-                            <a href="https://wa.me/5581995235494" class="btn-primary btn-large pulse-hover" target="_blank">
-                                <i class="fas fa-users"></i> Faça parte da comunidade de mães →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
         </div>
-
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-pagination"></div>
-    </div>
-</section>
+    </section>
 
     <!-- MODAL DE VÍDEO COM VÍDEO FICTÍCIO PROFISSIONAL -->
     <div id="videoModal" class="video-modal">
@@ -214,11 +230,10 @@
             <div class="pain-cta" data-aos="fade-up" data-aos-delay="200">
                 <div class="pain-highlight scale-animation">
                     <p>Se você respondeu "sim" para qualquer um
-                        desses pontos, <strong>você não está sozinha</strong> — e existe um caminho seguro para mudar
-                        isso.</p>
+                        desses pontos, <strong>você não está sozinha</strong> — Participe da nossa comunidade exclusiva de mães no WhatsApp</p>
                 </div>
                 <a href="https://wa.me/5581995235494" class="btn-primary pulse-hover" target="_blank"><i
-                        class="fab fa-whatsapp"></i> Quero saber como posso ajudar meu filho →</a>
+                        class="fab fa-whatsapp"></i> Entrar na comunidade de mães →</a>
             </div>
         </div>
     </section>
@@ -260,20 +275,23 @@
                     </div>
                 </div>
                 <div class="about-gallery" data-aos="fade-left">
-                    <img src="assets/giovanna1.jpg" alt="Giovanna atendendo criança" class="gallery-img hover-zoom"
+                    <!-- 1. Atendimento -->
+                    <img src="assets/atendimento_giovanna.png" alt="Atendimento infantil" class="gallery-img hover-zoom"
                         onerror="this.src='https://placehold.co/300x300/4AA3FF/white?text=Atendimento'">
-                    <img src="assets/giovanna2.jpg" alt="Giovanna sorrindo" class="gallery-img hover-zoom"
-                        onerror="this.src='https://placehold.co/300x300/6CD34D/white?text=Profissional'">
-                    <img src="assets/giovanna3.jpg" alt="Giovanna em ambiente clínico" class="gallery-img hover-zoom"
-                        onerror="this.src='https://placehold.co/300x300/FF8A3D/white?text=Consultoria'">
-                    <img src="assets/giovanna4.jpg" alt="Giovanna com brinquedo terapêutico"
+                    <!-- 2. Profissional -->
+                    <img src="assets/giovanna_brinquedos.png" alt="Profissional com brinquedos"
                         class="gallery-img hover-zoom"
+                        onerror="this.src='https://placehold.co/300x300/6CD34D/white?text=Profissional'">
+                    <!-- 3. Consultoria -->
+                    <img src="assets/giovanna_simposio.png" alt="Consultoria" class="gallery-img hover-zoom"
+                        onerror="this.src='https://placehold.co/300x300/FF8A3D/white?text=Consultoria'">
+                    <!-- 4. Evolução -->
+                    <img src="assets/giovanna_consultoria_mães.png" alt="Evolução infantil" class="gallery-img hover-zoom"
                         onerror="this.src='https://placehold.co/300x300/FF4FB3/white?text=Evolução'">
                 </div>
             </div>
         </div>
     </section>
-
     <!-- EBOOKS - CARROSSEL SWIPER -->
     <section class="ebooks-premium" id="ebooks">
         <div class="wave-top">
@@ -505,86 +523,141 @@
         </div>
     </section>
 
-    <!-- DEPOIMENTOS - COM PRINTS REAIS -->
-    <section class="testimonials" id="depoimentos">
+    <!-- DEPOIMENTOS - COM CARROSSEL E MODAL -->
+    <section class="testimonials-section" id="depoimentos">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2><i class="fas fa-star"></i> Resultados reais de mães que confiaram</h2>
-                <p>Depoimentos de quem já transformou a jornada do seu filho</p>
+                <h2> O que famílias e profissionais dizem sobre o trabalho da Giovanna Galhardo</h2>
+                <p>Depoimentos reais de quem já vivenciou resultados no desenvolvimento das crianças</p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial hover-lift" data-aos="fade-up" data-aos-delay="0">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+
+            <div class="swiper testimonials-swiper" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper">
+
+                    <!-- Depoimento 1 - Mãe de Pedro -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Você é uma profissional incrível, estou muito feliz por ter
+                                encontrado uma pessoa como você que com certeza vai ajudar muito e influenciar no
+                                desenvolvimento do Pedro."</p>
+                            <div class="author">
+                                <img src="assets/perfil_depoimento.png" alt="Avatar" class="author-avatar-img">
+                                <div class="author-info">
+                                    <strong>Mãe de Pedro</strong>
+                                </div>
+                            </div>
+                            <button class="btn-ver-conversa" onclick="openPrintModal('depoimento1')"><i
+                                    class="fab fa-whatsapp"></i> Ver conversa</button>
+                        </div>
                     </div>
-                    <div class="testimonial-print">
-                        <img src="assets/print-whatsapp1.png" alt="Print WhatsApp depoimento"
-                            class="testimonial-print-img" onerror="this.style.display='none'">
+
+                    <!-- Depoimento 2 - Mãe de Manu -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Boa tarde, Giovanna. Vi todos os vídeos, muito bom. Eu já
+                                percebo melhora na postura, sentar e de equilíbrio, quando veste a roupa. As sessões
+                                estão sendo bastante positivas."</p>
+                            <div class="author">
+                                <img src="assets/perfil_depoimento.png" alt="Avatar" class="author-avatar-img">
+                                <div class="author-info">
+                                    <strong>Mãe de Manu</strong>
+                                </div>
+                            </div>
+                            <button class="btn-ver-conversa" onclick="openPrintModal('depoimento4')"><i
+                                    class="fab fa-whatsapp"></i> Ver conversa</button>
+                        </div>
                     </div>
-                    <p>"Eu não sabia como ajudar meu filho e hoje vejo uma evolução enorme. Foi um divisor de águas na
-                        nossa vida!"</p>
-                    <div class="author">
-                        <img src="assets/avatar-carla.jpg" alt="Carla M." class="author-avatar"
-                            onerror="this.src='https://placehold.co/50x50/FFD43B/5B3FD3?text=CM'">
-                        <div>
-                            <h5>Carla M.</h5>
-                            <p>mãe do Pedro (4 anos)</p>
+
+                    <!-- Depoimento 3 - Fisioterapeuta Pediátrica -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Acho tuas postagens massa e muitas vezes servem de aprendizado
+                                e inspiração para meus atendimentos."</p>
+                            <div class="author">
+                                <img src="assets/perfil_depoimento.png" alt="Avatar" class="author-avatar-img">
+                                <div class="author-info">
+                                    <strong>Fisioterapeuta Pediátrica</strong>
+                                </div>
+                            </div>
+                            <button class="btn-ver-conversa" onclick="openPrintModal('depoimento5')"><i
+                                    class="fab fa-whatsapp"></i> Ver conversa</button>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento 4 - Mãe de Suzanna -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Agora estou mais ciente. Você me ajudou muito. Sou mãe de
+                                primeira viagem. Fiquei aliviada agora."</p>
+                            <div class="author">
+                                <img src="assets/perfil_depoimento.png" alt="Avatar" class="author-avatar-img">
+                                <div class="author-info">
+                                    <strong>Mãe de Suzanna</strong>
+                                </div>
+                            </div>
+                            <button class="btn-ver-conversa" onclick="openPrintModal('depoimento6')"><i
+                                    class="fab fa-instagram"></i> Ver conversa</button>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento 5 - Mãe de Maria -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Ela tá bem melhor, eu recebo muitos elogios de você na escola
+                                dela. Todas as vezes que a diretora me vê, sempre fala que você está sendo um anjo na
+                                vida da Maria."</p>
+                            <div class="author">
+                                <img src="assets/perfil_depoimento.png" alt="Avatar" class="author-avatar-img">
+                                <div class="author-info">
+                                    <strong>Mãe da Maria</strong>
+                                </div>
+                            </div>
+                            <button class="btn-ver-conversa" onclick="openPrintModal('depoimento7')"><i
+                                    class="fab fa-whatsapp"></i> Ver conversa</button>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial hover-lift" data-aos="fade-up" data-aos-delay="150">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="testimonial-print">
-                        <img src="assets/print-whatsapp2.png" alt="Print WhatsApp depoimento"
-                            class="testimonial-print-img" onerror="this.style.display='none'">
-                    </div>
-                    <p>"O acompanhamento me trouxe segurança e clareza. Em poucos meses, meu filho já apresentou
-                        melhoras significativas."</p>
-                    <div class="author">
-                        <img src="assets/avatar-juliana.jpg" alt="Juliana R." class="author-avatar"
-                            onerror="this.src='https://placehold.co/50x50/6CD34D/white?text=JR'">
-                        <div>
-                            <h5>Juliana R.</h5>
-                            <p>mãe do Lucas (3 anos)</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial hover-lift" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="testimonial-print">
-                        <img src="assets/print-whatsapp3.png" alt="Print WhatsApp depoimento"
-                            class="testimonial-print-img" onerror="this.style.display='none'">
-                    </div>
-                    <p>"Finalmente encontrei uma profissional que entende as necessidades do meu filho. A evolução foi
-                        além do que eu esperava."</p>
-                    <div class="author">
-                        <img src="assets/avatar-patricia.jpg" alt="Patrícia S." class="author-avatar"
-                            onerror="this.src='https://placehold.co/50x50/FF8A3D/white?text=PS'">
-                        <div>
-                            <h5>Patrícia S.</h5>
-                            <p>mãe da Sofia (5 anos)</p>
-                        </div>
-                    </div>
-                </div>
+
+                <!-- Navegação do Swiper -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
+
+    <!-- MODAL PARA PRINTS DOS DEPOIMENTOS -->
+    <div id="testimonialModal" class="testimonial-modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <img id="modalImage" class="modal-image" src="" alt="Conversa real">
+        </div>
+    </div>
 
     <!-- CTA FINAL -->
     <section class="final-cta">
@@ -640,8 +713,7 @@
                 <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
                     <h4>Atendimento</h4>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Presencial: Recife/PE</li>
-                        <li><i class="fas fa-laptop"></i> Online: Brasil e exterior</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Presencial e Online</li>
                         <li><i class="fas fa-clock"></i> Horário flexível</li>
                         <li><i class="fas fa-heart"></i> Atendimento humanizado</li>
                     </ul>

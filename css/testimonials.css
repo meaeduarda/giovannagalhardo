@@ -1,0 +1,430 @@
+/* ============================================
+   TESTIMONIALS SECTION - Com Efeito Parallax
+   ============================================ */
+
+.testimonials-section {
+    position: relative;
+    padding: 100px 0;
+    overflow-x: hidden;
+    
+    /* Background com imagem */
+    background-image: url("../assets/section_testimonial.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Efeito Parallax */
+    background-attachment: fixed;
+}
+
+/* Overlay roxo suave para melhor contraste e profissionalismo */
+.testimonials-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    /* Overlay roxo/lilás translúcido - combina com a marca */
+    background: rgba(81, 68, 166, 0.75);
+    
+    z-index: 0;
+}
+
+/* Container principal fica acima do overlay */
+.testimonials-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Section Header - com texto branco para contrastar com fundo escuro */
+.testimonials-section .section-header h2,
+.testimonials-section .section-header p {
+    color: #FFFFFF;
+}
+
+.testimonials-section .section-header h2 i {
+    color: #F2BE22;
+}
+
+/* Rating badge - fundo branco com leve transparência */
+.rating-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 48px;
+    padding: 16px 24px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 60px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    backdrop-filter: blur(4px);
+}
+
+.rating-badge .stars-container {
+    display: flex;
+    gap: 4px;
+}
+
+.rating-badge .stars-container i {
+    color: #F2BE22;
+    font-size: 18px;
+}
+
+.rating-badge .rating-value {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #5144A6;
+}
+
+.rating-badge .rating-count {
+    font-size: 14px;
+    color: #4B5563;
+}
+
+/* Swiper - Configuração base */
+.testimonials-swiper {
+    padding: 20px 10px 50px 10px;
+    overflow: hidden;
+}
+
+.testimonials-swiper .swiper-slide {
+    height: auto;
+}
+
+/* Card de Depoimento - Fundo branco para legibilidade */
+.testimonial-card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 28px 24px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(81, 68, 166, 0.1);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Aspas decorativas */
+.quote-icon {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    opacity: 0.12;
+}
+
+.quote-icon i {
+    font-size: 48px;
+    color: #5144A6;
+}
+
+/* Estrelas */
+.testimonial-card .stars {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.testimonial-card .stars i {
+    color: #F2BE22;
+    font-size: 16px;
+}
+
+/* Texto do depoimento */
+.testimonial-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #1F2937;
+    margin-bottom: 24px;
+    flex: 1;
+    font-style: italic;
+}
+
+/* Autor - com imagem de avatar */
+.author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(81, 68, 166, 0.15);
+}
+
+/* Avatar como imagem */
+.author-avatar-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid #5144A6;
+}
+
+.author-info strong {
+    display: block;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 16px;
+    color: #5144A6;
+    margin-bottom: 4px;
+}
+
+.author-info small {
+    font-size: 12px;
+    color: #6B7280;
+}
+
+/* Botão Ver Conversa */
+.btn-ver-conversa {
+    background: transparent;
+    border: 2px solid #5144A6;
+    border-radius: 40px;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: #5144A6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.btn-ver-conversa:hover {
+    background: #5144A6;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+/* Navegação do Swiper - ajustada para fundo escuro */
+.testimonials-swiper .swiper-button-prev,
+.testimonials-swiper .swiper-button-next {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    color: #5144A6;
+    transition: all 0.3s ease;
+}
+
+.testimonials-swiper .swiper-button-prev:after,
+.testimonials-swiper .swiper-button-next:after {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.testimonials-swiper .swiper-button-prev:hover,
+.testimonials-swiper .swiper-button-next:hover {
+    background: #5144A6;
+    color: #FFFFFF;
+}
+
+.testimonials-swiper .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.6);
+    opacity: 1;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+    background: #F2BE22;
+}
+
+/* ============================================
+   MODAL PARA PRINTS
+   ============================================ */
+
+.testimonial-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-modal.show {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+    animation: modalFadeIn 0.3s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #F2BE22;
+}
+
+.modal-image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ============================================
+   RESPONSIVIDADE DO TESTIMONIALS
+   (Desativa parallax no mobile para melhor performance)
+   ============================================ */
+
+/* Tablet e Mobile - desativa o efeito parallax */
+@media (max-width: 1023px) {
+    .testimonials-section {
+        background-attachment: scroll;
+        background-position: center;
+    }
+}
+
+/* Tablet: ajustes finos */
+@media (max-width: 1023px) and (min-width: 769px) {
+    .testimonials-section {
+        padding: 70px 0;
+    }
+    
+    .testimonial-card {
+        padding: 24px 20px;
+    }
+    
+    .testimonial-text {
+        font-size: 14px;
+    }
+    
+    .author-avatar-img {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .rating-badge {
+        padding: 14px 22px;
+    }
+    
+    .rating-badge .stars-container i {
+        font-size: 16px;
+    }
+    
+    .rating-badge .rating-value {
+        font-size: 20px;
+    }
+}
+
+/* Mobile: ajustes */
+@media (max-width: 768px) {
+    .testimonials-section {
+        padding: 50px 0;
+        background-attachment: scroll;
+    }
+    
+    .testimonials-section::before {
+        background: rgba(81, 68, 166, 0.85);
+    }
+    
+    .testimonial-card {
+        padding: 20px 18px;
+    }
+    
+    .testimonial-text {
+        font-size: 14px;
+    }
+    
+    .rating-badge {
+        padding: 12px 20px;
+        gap: 8px;
+        margin-bottom: 32px;
+    }
+    
+    .rating-badge .stars-container i {
+        font-size: 14px;
+    }
+    
+    .rating-badge .rating-value {
+        font-size: 18px;
+    }
+    
+    .rating-badge .rating-count {
+        font-size: 12px;
+    }
+    
+    /* Esconde setas no mobile para melhor experiência de swipe */
+    .testimonials-swiper .swiper-button-prev,
+    .testimonials-swiper .swiper-button-next {
+        display: none;
+    }
+    
+    .testimonials-swiper {
+        padding: 10px 5px 40px 5px;
+    }
+    
+    .author-avatar-img {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .testimonials-section {
+        padding: 40px 0;
+    }
+    
+    .testimonial-card {
+        padding: 18px 16px;
+    }
+    
+    .quote-icon i {
+        font-size: 36px;
+    }
+    
+    .author-avatar-img {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .btn-ver-conversa {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+    
+    .author-info strong {
+        font-size: 14px;
+    }
+}
