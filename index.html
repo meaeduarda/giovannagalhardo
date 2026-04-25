@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/testimonials.css">
+    <link rel="stylesheet" href="css/certificates.css">
 </head>
 
 <body>
@@ -43,7 +44,7 @@
                 <a href="#home" class="active">Início</a>
                 <a href="#sobre">Sobre</a>
                 <a href="#ebooks">Ebooks</a>
-                <a href="#cursos">Cursos</a>
+                <!--<a href="#cursos">Cursos</a>-->
                 <a href="#servicos">Atendimento</a>
                 <a href="#contato">Contato</a>
             </nav>
@@ -167,7 +168,7 @@
             <span class="video-modal-close">&times;</span>
             <div class="video-container">
                 <iframe id="videoIframe" width="100%" height="400"
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1"
+                    src=""
                     title="Vídeo Giovanna Galhardo - Método de Estimulação Infantil" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
@@ -219,8 +220,7 @@
             </div>
         </div>
     </section>
-
-    <!-- SEÇÃO  -->
+    <!-- SEÇÃO - Você se identifica com isso? -->
     <section class="pain-points" id="dor">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -236,6 +236,16 @@
                 <a href="https://wa.me/5581995235494" class="btn-primary pulse-hover" target="_blank"><i
                         class="fab fa-whatsapp"></i> Entrar na comunidade de mães →</a>
             </div>
+        </div>
+
+        <!-- ONDA SEPARADORA -->
+        <div class="wave-divider">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,0 C300,80 600,20 900,40 
+                   C1100,55 1300,90 1440,60 
+                   L1440,120 L0,120 Z" fill="#FFFFFF">
+                </path>
+            </svg>
         </div>
     </section>
 
@@ -273,6 +283,11 @@
                             <span class="stat-number">98%</span>
                             <span class="stat-label"><i class="fas fa-thumbs-up"></i> Aprovam o método</span>
                         </div>
+                        <div class="about-portfolio-btn">
+                            <a href="docs/portifolio_giovanna.pdf" target="_blank" class="btn-outline btn-large">
+                                Acesse meu portfólio completo →
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="about-gallery" data-aos="fade-left">
@@ -294,6 +309,184 @@
             </div>
         </div>
     </section>
+    <!--SEÇÃO: CERTIFICADOS E FORMAÇÕES -->
+    <section class="certificates-section" id="certificados">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2> Certificados e Formações</h2>
+                <p>Formação contínua para oferecer o melhor cuidado e resultados</p>
+            </div>
+
+            <div class="swiper certificates-swiper" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper">
+
+                    <!-- Certificado 1 -->
+                    <div class="swiper-slide">
+                        <div class="certificate-card" data-cert-image="assets/certificates/certificado_teoria_cognitiva2.png">
+                            <div class="certificate-img-wrapper">
+                                <img src="assets/certificates/certificado_teoria_cognitiva.png" alt="Certificado" class="certificate-img">
+                                <div class="certificate-overlay">
+                                    <div class="zoom-icon">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="certificate-info">
+                                <h3 class="certificate-title">Teoria Cognitiva Comportamental</h3>
+                                <button class="btn-ver-certificado"
+                                    onclick="event.stopPropagation(); openCertModalFromBtn(this)">
+                                    </i> Ver certificado
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <!-- Certificado 2 -->
+                    <div class="swiper-slide">
+                        <div class="certificate-card" data-cert-image="assets/certificates/certificado_fisioterapia_ortopedica2.png">
+                            <div class="certificate-img-wrapper">
+                                <img src="assets/certificates/certificado_fisioterapia_ortopedica.png" alt="Certificado" class="certificate-img">
+                                <div class="certificate-overlay">
+                                    <div class="zoom-icon">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="certificate-info">
+                                <h3 class="certificate-title">Fisioterapia Ortopédica</h3>   
+                                <button class="btn-ver-certificado"
+                                    onclick="event.stopPropagation(); openCertModalFromBtn(this)">
+                                    </i> Ver certificado
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Certificado 2 -->
+                    <div class="swiper-slide">
+                        <div class="certificate-card" data-cert-image="assets/certificates/certificado_capacitacao_aba2.png">
+                            <div class="certificate-img-wrapper">
+                                <img src="assets/certificates/certificado_capacitacao_aba.png" alt="Certificado" class="certificate-img">
+                                <div class="certificate-overlay">
+                                    <div class="zoom-icon">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="certificate-info">
+                                <h3 class="certificate-title">Capacitação em ABA</h3>
+                                <button class="btn-ver-certificado"
+                                    onclick="event.stopPropagation(); openCertModalFromBtn(this)">
+                                    </i> Ver certificado
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificado 3 -->
+                    <div class="swiper-slide">
+                        <div class="certificate-card" data-cert-image="assets/certificates/bondagens_terapeuticas2.png">
+                            <div class="certificate-img-wrapper">
+                                <img src="assets/certificates/bondagens_terapeuticas.png" alt="Certificado" class="certificate-img">
+                                <div class="certificate-overlay">
+                                    <div class="zoom-icon">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="certificate-info">
+                                <h3 class="certificate-title">Bondagens Terapêuticas</h3>
+                                <button class="btn-ver-certificado"
+                                    onclick="event.stopPropagation(); openCertModalFromBtn(this)">
+                                   </i> Ver certificado
+                                </button>
+                            </div>
+                        </div>     
+                    </div>
+
+                    <!-- Certificado 4 -->
+                    <div class="swiper-slide">
+                        <div class="certificate-card" data-cert-image="assets/certificates/certificado_aplicador_aba2.png">
+                            <div class="certificate-img-wrapper">
+                                <img src="assets/certificates/certificado_aplicador_aba.png" alt="Certificado" class="certificate-img">
+                                <div class="certificate-overlay">
+                                    <div class="zoom-icon">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="certificate-info">
+                                <h3 class="certificate-title">Aplicador ABA</h3>
+                                <button class="btn-ver-certificado"
+                                    onclick="event.stopPropagation(); openCertModalFromBtn(this)">
+                                     Ver certificado
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificado 5 -->
+                    <div class="swiper-slide">
+                        <div class="certificate-card" data-cert-image="assets/certificates/monitoria_anatomia2.png">
+                            <div class="certificate-img-wrapper">
+                                <img src="assets/certificates/monitoria_anatomia.png" alt="Certificado" class="certificate-img">
+                                <div class="certificate-overlay">
+                                    <div class="zoom-icon">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="certificate-info">
+                                <h3 class="certificate-title">Monitoria Anatomia Humana</h3>
+                                <button class="btn-ver-certificado"
+                                    onclick="event.stopPropagation(); openCertModalFromBtn(this)">
+                                    </i> Ver certificado
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificado 6 -->
+                    <div class="swiper-slide">
+                        <div class="certificate-card" data-cert-image="assets/certificates/certificado_dry_needling2.png">
+                            <div class="certificate-img-wrapper">
+                                <img src="assets/certificates/certificado_dry_needling.png" alt="Certificado" class="certificate-img">
+                                <div class="certificate-overlay">
+                                    <div class="zoom-icon">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="certificate-info">
+                                <h3 class="certificate-title">Imersão em Dry Needling</h3>
+                                <button class="btn-ver-certificado"
+                                    onclick="event.stopPropagation(); openCertModalFromBtn(this)">
+                                     Ver certificado
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Navegação do Swiper -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL PARA CERTIFICADOS -->
+    <div id="certificateModal" class="certificate-modal">
+        <div class="certificate-modal-content">
+            <span class="certificate-modal-close">&times;</span>
+            <img id="certificateModalImage" class="certificate-modal-image" src="" alt="Certificado">
+            <div class="certificate-modal-caption" id="certificateModalCaption"></div>
+        </div>
+    </div>
     <!-- EBOOKS  -->
     <section class="ebooks-premium" id="ebooks">
         <div class="wave-top">
@@ -707,7 +900,7 @@
                     <h4>Produtos</h4>
                     <ul>
                         <li><a href="#ebooks"><i class="fas fa-chevron-right"></i> Ebooks</a></li>
-                        <li><a href="#cursos"><i class="fas fa-chevron-right"></i> Cursos</a></li>
+                        <!--<li><a href="#cursos"><i class="fas fa-chevron-right"></i> Cursos</a></li>  -->
                         <li><a href="#servicos"><i class="fas fa-chevron-right"></i> Consultorias</a></li>
                         <li><a href="#servicos"><i class="fas fa-chevron-right"></i> Atendimentos</a></li>
                     </ul>

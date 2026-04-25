@@ -438,3 +438,108 @@ document.addEventListener('DOMContentLoaded', function () {
     
     console.log('Site Giovanna Galhardo carregado com sucesso!');
 });
+
+// CERTIFICADOS 
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializa Swiper dos Certificados - MESMA CONFIGURAÇÃO DOS DEPOIMENTOS
+    const certificatesSwiper = new Swiper('.certificates-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        navigation: {
+            nextEl: '.certificates-swiper .swiper-button-next',
+            prevEl: '.certificates-swiper .swiper-button-prev',
+        },
+        pagination: {
+            el: '.certificates-swiper .swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            480: {
+                slidesPerView: 1.2,
+                spaceBetween: 16,
+            },
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 2.5,
+                spaceBetween: 24,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            }
+        }
+    });
+
+    // Modal para Certificados
+    const certModal = document.getElementById('certificateModal');
+    const certModalImage = document.getElementById('certificateModalImage');
+    const certModalCaption = document.getElementById('certificateModalCaption');
+    const certCloseBtn = document.querySelector('.certificate-modal-close');
+
+    function openCertModal(imageSrc, title) {
+        certModalImage.src = imageSrc;
+        certModalCaption.textContent = title;
+        certModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCertModal() {
+        certModal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    // Função global para ser chamada pelo botão
+    window.openCertModalFromBtn = function(btn) {
+        const card = btn.closest('.certificate-card');
+        if (card) {
+            const imgSrc = card.getAttribute('data-cert-image');
+            const title = card.querySelector('.certificate-title')?.innerText || 'Certificado';
+            if (imgSrc) openCertModal(imgSrc, title);
+        }
+    };
+
+    // Evento de clique no card inteiro
+    const certCards = document.querySelectorAll('.certificate-card');
+    certCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Se clicou no botão, não faz nada (o botão já chama a função)
+            if (e.target.closest('.btn-ver-certificado')) return;
+            
+            const imgSrc = this.getAttribute('data-cert-image');
+            const title = this.querySelector('.certificate-title')?.innerText || 'Certificado';
+            if (imgSrc) openCertModal(imgSrc, title);
+        });
+
+        // Overlay de zoom também abre o modal
+        const overlay = card.querySelector('.certificate-overlay');
+        if (overlay) {
+            overlay.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const imgSrc = card.getAttribute('data-cert-image');
+                const title = card.querySelector('.certificate-title')?.innerText || 'Certificado';
+                if (imgSrc) openCertModal(imgSrc, title);
+            });
+        }
+    });
+
+    // Fechar modal
+    if (certCloseBtn) certCloseBtn.addEventListener('click', closeCertModal);
+    
+    certModal.addEventListener('click', function(e) {
+        if (e.target === certModal) closeCertModal();
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && certModal.classList.contains('show')) closeCertModal();
+    });
+});
