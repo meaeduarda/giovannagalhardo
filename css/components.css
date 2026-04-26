@@ -426,13 +426,14 @@
     transform: translateY(-3px);
 }
 
-/* ========== CARDS FLUTUANTES ========== */
+/* ========== CARDS FLUTUANTES - EFEITO PREMIUM SUTIL ========== */
 .floating-cards {
-    margin-top: -50px;
+    margin-top: 0;
     position: relative;
     z-index: 10;
     background: transparent;
     overflow-x: hidden;
+    padding: 60px 0 20px;
 }
 
 .pain-cards-grid {
@@ -446,16 +447,106 @@
     border-radius: 28px;
     padding: 40px 25px 45px;
     text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     cursor: pointer;
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
 }
 
+/* HOVER - elevação suave */
 .pain-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 35px 60px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15), 0 5px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* ÍCONE - escala suave */
+.pain-card-icon {
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    width: 100%;
+}
+
+.pain-card:hover .pain-card-icon {
+    transform: scale(1.08);
+}
+
+.card-icon-img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+/* TÍTULO - escala + cor + efeito de brilho */
+.pain-card-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+    transition: all 0.3s ease;
+}
+
+.pain-card:hover .pain-card-title {
+    transform: scale(1.03);
+    letter-spacing: -0.2px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* DIVISOR - expansão */
+.pain-card-divider {
+    width: 60px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.4);
+    margin: 0 auto 20px auto;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.pain-card:hover .pain-card-divider {
+    width: 90px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* TEXTO - leve elevação + cor mais vibrante */
+.pain-card-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.5;
+    transition: all 0.3s ease;
+}
+
+.pain-card:hover .pain-card-text {
+    transform: translateY(-2px);
+    color: rgba(255, 255, 255, 1);
+    font-weight: 500;
+}
+
+/* EFEITO SHINE - luz passando (opcional, mas muito elegante) */
+.pain-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+    pointer-events: none;
+    border-radius: 28px;
+}
+
+.pain-card:hover::after {
+    left: 100%;
+}
+
+/* CORES DOS CARDS */
 .pain-card-blue {
     background: linear-gradient(135deg, #2DA8FF 0%, #1E88E5 100%);
 }
@@ -472,27 +563,6 @@
     background: linear-gradient(135deg, #D633A6 0%, #AD1457 100%);
 }
 
-.pain-card-icon {
-    margin-bottom: 25px;
-}
-
-.card-icon-img {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto;
-    display: block;
-    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
-}
-
-.pain-card-title {
-    font-family: 'Fredoka', sans-serif;
-    font-size: 26px;
-    font-weight: 500;
-    color: white;
-    margin-bottom: 10px;
-    letter-spacing: -0.3px;
-}
-
 .pain-card-sub {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
@@ -501,68 +571,84 @@
     margin-bottom: 20px;
 }
 
-.pain-card-divider {
-    width: 60px;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.5);
-    margin: 0 auto 20px auto;
-    border-radius: 4px;
+/* Responsividade */
+@media (max-width: 1024px) {
+    .pain-card {
+        padding: 35px 20px 40px;
+    }
+    
+    .pain-card-title {
+        font-size: 22px;
+    }
+    
+    .pain-card-text {
+        font-size: 14px;
+    }
+    
+    .pain-card:hover .pain-card-title {
+        transform: scale(1.02);
+    }
 }
 
-.pain-card-text {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: white;
-    line-height: 1.5;
+@media (max-width: 768px) {
+    .pain-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .pain-card-title {
+        font-size: 20px;
+    }
+    
+    .pain-card:hover .pain-card-title {
+        transform: scale(1.01);
+    }
+    
+    .pain-card:hover .pain-card-text {
+        transform: translateY(-1px);
+    }
 }
-
-.pain-points {
-    background: #F8F9FC;  
-    padding: 100px 0 0 0;
-    position: relative;
-    margin-bottom: 0;
-}
-
-.pain-points::after {
-    display: none;
-}
-
-.about {
-    background: #FFFFFF;  /* fundo branco */
-    padding: 120px 0;
-    position: relative;
-}
-
-/* Onda separadora entre as seções */
+/* ========== ONDAS PADRONIZADAS ========== */
 .wave-divider {
     position: relative;
     width: 100%;
     line-height: 0;
-    margin-top: 60px;
-    margin-bottom: -1px;
-    background: transparent; 
+    margin: 0;
+    padding: 0;
+    background: transparent;
 }
 
 .wave-divider svg {
     display: block;
     width: 100%;
     height: 60px;
-    background: transparent;  
+    background: transparent;
 }
 
-/* Ajuste responsivo da onda */
+/* Variações de cores das ondas */
+.wave-light svg path {
+    fill: #FFFFFF;
+}
+
+.wave-gray svg path {
+    fill: #F8F9FC;
+}
+
+.wave-purple svg path {
+    fill: #5144A6;
+}
+
+.wave-purple-top svg path {
+    fill: #5839a6;
+}
+
+.wave-light-bottom svg path {
+    fill: #FFFFFF;
+}
+
+/* Ajuste responsivo das ondas */
 @media (max-width: 768px) {
     .wave-divider svg {
         height: 40px;
-    }
-    
-    .pain-points {
-        padding: 80px 0 0 0;
-    }
-    
-    .about {
-        padding: 80px 0;
     }
 }
 
@@ -570,16 +656,7 @@
     .wave-divider svg {
         height: 30px;
     }
-    
-    .pain-points {
-        padding: 60px 0 0 0;
-    }
-    
-    .about {
-        padding: 60px 0;
-    }
 }
-
 
 .pain-cta {
     text-align: center;
@@ -662,10 +739,25 @@
 .card-pink { border-top: 4px solid var(--pink); }
 
 /* ========== ABOUT SECTION ========== */
+
+.about {
+    background: var(--purple);
+    padding: 120px 0;
+    position: relative;
+}
+
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+}
+
+.about .section-header h2 {
+    color: #FFFFFF;
+}
+
+.about .section-header p {
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .about-text p {
@@ -674,20 +766,20 @@
     line-height: 1.7;
     margin-bottom: 20px;
     font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .about-highlight {
-    background: var(--bg-light);
-    padding: 20px;
-    border-radius: var(--radius-md);
-    margin: 20px 0;
-    border-left: 4px solid var(--purple);
+    background: rgba(255, 255, 255, 0.12);
+    border-left: 4px solid var(--yellow);
+    backdrop-filter: blur(4px);
 }
 
 .about-highlight p {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    color: #FFFFFF;
 }
 
 .about-stats {
@@ -695,6 +787,10 @@
     gap: 40px;
     margin-top: 30px;
     flex-wrap: wrap;
+}
+
+.about-highlight i {
+    color: var(--yellow);
 }
 
 .stat {
@@ -705,20 +801,21 @@
     font-family: 'Fredoka', sans-serif;
     font-size: 36px;
     font-weight: 600;
-    color: var(--purple);
+    color: var(--yellow);
     display: block;
     letter-spacing: 0.5px;
 }
 
 .stat-label {
     font-family: 'Poppins', sans-serif;
-    color: var(--text-light);
     font-size: 14px;
     font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .stat-label i {
     margin-right: 4px;
+    color: var(--yellow);
 }
 
 .about-gallery {
@@ -732,6 +829,21 @@
     width: 100%;
     aspect-ratio: 1;
     object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.about-gallery img:hover {
+    border-color: var(--yellow);
+}
+
+.about .btn-outline {
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+}
+
+.about .btn-outline:hover {
+    background: var(--yellow);
+    color: var(--purple);
 }
 
 /* ========== COURSES SECTION ========== */
@@ -857,6 +969,11 @@
 }
 
 /* ========== SERVICES SECTION ========== */
+.services {
+    background: #FFFFFF;
+    padding: 80px 0;
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -991,6 +1108,39 @@
     flex-wrap: wrap;
 }
 
+/* ===== CTA COMUNIDADE (principal) ===== */
+.cta-main {
+    margin-top: 25px;
+    text-align: center;
+}
+
+/* Texto pequeno abaixo do botão principal */
+.cta-small-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Texto explicando a comunidade */
+.community-highlight-text {
+    margin-top: 12px;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* ===== CTA SECUNDÁRIA (consultoria) ===== */
+.cta-secondary {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Texto acima do botão secundário */
+.secondary-text {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
 /* ========== EBOOKS PREMIUM ========== */
 .ebooks-premium {
     position: relative;
@@ -1001,16 +1151,9 @@
     margin: 0;
 }
 
+/* Remove as ondas internas do ebooks-premium pois agora usamos as externas */
 .ebooks-premium::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: #FFFFFF;
-    border-radius: 50% 50% 0 0 / 30px 30px 0 0;
-    z-index: 1;
+    content: none;
 }
 
 .wave-top {

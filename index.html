@@ -20,9 +20,6 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <!-- AOS CSS (animações) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <!-- CSS -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
@@ -162,24 +159,16 @@
         </div>
     </section>
 
-    <!-- MODAL DE VÍDEO COM VÍDEO FICTÍCIO PROFISSIONAL -->
-    <div id="videoModal" class="video-modal">
-        <div class="video-modal-content">
-            <span class="video-modal-close">&times;</span>
-            <div class="video-container">
-                <iframe id="videoIframe" width="100%" height="400"
-                    src=""
-                    title="Vídeo Giovanna Galhardo - Método de Estimulação Infantil" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-    </div>
 
     <!-- CARDS FLUTUANTES (com stagger animation) -->
     <section class="floating-cards">
         <div class="container">
+            <!-- TÍTULO ADICIONADO ACIMA DOS CARDS -->
+            <div class="section-header" data-aos="fade-up">
+                <h2>Seu filho está passando por alguma dessas situações?</h2>
+                <p>Essas são dúvidas comuns entre muitas mães</p>
+            </div>
+
             <div class="pain-cards-grid">
                 <div class="pain-card pain-card-blue" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
                     <div class="pain-card-icon">
@@ -220,44 +209,59 @@
             </div>
         </div>
     </section>
-    <!-- SEÇÃO - Você se identifica com isso? -->
+
+
+    <!-- SEÇÃO CTA / PAIN POINTS -->
     <section class="pain-points" id="dor">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <h2>Você se identifica com isso?</h2>
-                <p>Se alguma dessas situações parece familiar, você está no lugar certo</p>
+                <p>Se alguma dessas situações parece familiar, você está no lugar certo.</p>
             </div>
-            <div class="pain-cta" data-aos="fade-up" data-aos-delay="200">
-                <div class="pain-highlight scale-animation">
-                    <p>Se você respondeu "sim" para qualquer um
-                        desses pontos, <strong>você não está sozinha</strong> — Participe da nossa comunidade exclusiva
-                        de mães no WhatsApp</p>
-                </div>
-                <a href="https://wa.me/5581995235494" class="btn-primary pulse-hover" target="_blank"><i
-                        class="fab fa-whatsapp"></i> Entrar na comunidade de mães →</a>
-            </div>
-        </div>
 
-        <!-- ONDA SEPARADORA -->
-        <div class="wave-divider">
-            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-                <path d="M0,0 C300,80 600,20 900,40 
-                   C1100,55 1300,90 1440,60 
-                   L1440,120 L0,120 Z" fill="#FFFFFF">
-                </path>
-            </svg>
+            <div class="pain-cta" data-aos="fade-up" data-aos-delay="200">
+                <!-- Destaque emocional -->
+                <div class="pain-highlight scale-animation">
+                    <p>
+                        Se você respondeu <strong>"sim"</strong> para qualquer um
+                        desses pontos, <strong>você não está sozinha.</strong>
+                    </p>
+                    <p class="community-highlight-text">
+                        Criamos uma <strong>comunidade exclusiva de mães</strong>
+                        onde você recebe orientação, apoio e informações práticas
+                        para estimular o desenvolvimento do seu filho com segurança.
+                    </p>
+                </div>
+
+                <!-- CTA principal -->
+                <div class="cta-main">
+                    <a href="https://wa.me/5581995235494" class="btn-primary btn-large pulse-hover" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Entrar na comunidade de mães →
+                    </a>
+                </div>
+
+                <!-- CTA secundária -->
+                <div class="cta-secondary">
+                    <a href="https://wa.me/5581995235494" class="btn-outline" target="_blank">
+                        <i class="fas fa-calendar-alt"></i>
+                        Agendar consultoria
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
+
 
     <!-- SOBRE -->
     <section class="about" id="sobre">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header">
                 <h2>Quem vai te orientar nessa jornada</h2>
                 <p>Conheça a profissional por trás do método</p>
             </div>
             <div class="about-content">
-                <div class="about-text" data-aos="fade-right">
+                <div class="about-text">
                     <p><strong>Olá, eu me chamo Giovanna Galhardo,</strong> sou fisioterapeuta e atuo na prevenção,
                         diagnóstico e tratamento de disfunções físicas e no desenvolvimento funcional de crianças e
                         adultos.</p>
@@ -283,36 +287,34 @@
                             <span class="stat-number">98%</span>
                             <span class="stat-label"><i class="fas fa-thumbs-up"></i> Aprovam o método</span>
                         </div>
-                        <div class="about-portfolio-btn">
-
-                             <!-- 
-                            <a href="docs/portifolio_giovanna.pdf" target="_blank" class="btn-outline btn-large">
+                        <div class="about-portfolio-btn" style="margin-top: 20px; width: 100%;">
+                            <a href="docs/portifolio_giovanna.pdf" target="_blank" class="btn-outline">
                                 Acesse meu portfólio completo →
                             </a>
-                            -->
                         </div>
                     </div>
                 </div>
-                <div class="about-gallery" data-aos="fade-left">
-                    <!-- 1. Atendimento -->
+                <div class="about-gallery">
                     <img src="assets/atendimento_giovanna.png" alt="Atendimento infantil"
                         class="gallery-img hover-zoom">
-
-                    <!-- 2. Profissional -->
                     <img src="assets/giovanna_brinquedos.png" alt="Profissional com brinquedos"
                         class="gallery-img hover-zoom">
-
-                    <!-- 3. Consultoria -->
                     <img src="assets/giovanna_simposio.png" alt="Consultoria" class="gallery-img hover-zoom">
-
-                    <!-- 4. Evolução -->
                     <img src="assets/giovanna_consultoria_maes.png" alt="Evolução infantil"
                         class="gallery-img hover-zoom">
                 </div>
             </div>
         </div>
     </section>
-    <!--SEÇÃO: CERTIFICADOS E FORMAÇÕES -->
+
+    <!-- ONDA ENTRE SOBRE E CERTIFICADOS -->
+    <div class="wave-divider wave-gray">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,0 C300,80 600,20 900,40 C1100,55 1300,90 1440,60 L1440,120 L0,120 Z" fill="#F5F7FB"></path>
+        </svg>
+    </div>
+
+    <!-- SEÇÃO: CERTIFICADOS E FORMAÇÕES -->
     <section class="certificates-section" id="certificados">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -322,12 +324,13 @@
 
             <div class="swiper certificates-swiper" data-aos="fade-up" data-aos-delay="200">
                 <div class="swiper-wrapper">
-
                     <!-- Certificado 1 -->
                     <div class="swiper-slide">
-                        <div class="certificate-card" data-cert-image="assets/certificates/certificado_teoria_cognitiva2.png">
+                        <div class="certificate-card"
+                            data-cert-image="assets/certificates/certificado_teoria_cognitiva2.png">
                             <div class="certificate-img-wrapper">
-                                <img src="assets/certificates/certificado_teoria_cognitiva.png" alt="Certificado" class="certificate-img">
+                                <img src="assets/certificates/certificado_teoria_cognitiva.png" alt="Certificado"
+                                    class="certificate-img">
                                 <div class="certificate-overlay">
                                     <div class="zoom-icon">
                                         <i class="fas fa-search-plus"></i>
@@ -338,18 +341,19 @@
                                 <h3 class="certificate-title">Teoria Cognitiva Comportamental</h3>
                                 <button class="btn-ver-certificado"
                                     onclick="event.stopPropagation(); openCertModalFromBtn(this)">
-                                    </i> Ver certificado
+                                    Ver certificado
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    
                     <!-- Certificado 2 -->
                     <div class="swiper-slide">
-                        <div class="certificate-card" data-cert-image="assets/certificates/certificado_fisioterapia_ortopedica2.png">
+                        <div class="certificate-card"
+                            data-cert-image="assets/certificates/certificado_fisioterapia_ortopedica2.png">
                             <div class="certificate-img-wrapper">
-                                <img src="assets/certificates/certificado_fisioterapia_ortopedica.png" alt="Certificado" class="certificate-img">
+                                <img src="assets/certificates/certificado_fisioterapia_ortopedica.png" alt="Certificado"
+                                    class="certificate-img">
                                 <div class="certificate-overlay">
                                     <div class="zoom-icon">
                                         <i class="fas fa-search-plus"></i>
@@ -357,21 +361,22 @@
                                 </div>
                             </div>
                             <div class="certificate-info">
-                                <h3 class="certificate-title">Fisioterapia Ortopédica</h3>   
+                                <h3 class="certificate-title">Fisioterapia Ortopédica</h3>
                                 <button class="btn-ver-certificado"
                                     onclick="event.stopPropagation(); openCertModalFromBtn(this)">
-                                    </i> Ver certificado
+                                    Ver certificado
                                 </button>
                             </div>
                         </div>
                     </div>
 
-
-                    <!-- Certificado 2 -->
+                    <!-- Certificado 3 -->
                     <div class="swiper-slide">
-                        <div class="certificate-card" data-cert-image="assets/certificates/certificado_capacitacao_aba2.png">
+                        <div class="certificate-card"
+                            data-cert-image="assets/certificates/certificado_capacitacao_aba2.png">
                             <div class="certificate-img-wrapper">
-                                <img src="assets/certificates/certificado_capacitacao_aba.png" alt="Certificado" class="certificate-img">
+                                <img src="assets/certificates/certificado_capacitacao_aba.png" alt="Certificado"
+                                    class="certificate-img">
                                 <div class="certificate-overlay">
                                     <div class="zoom-icon">
                                         <i class="fas fa-search-plus"></i>
@@ -382,38 +387,41 @@
                                 <h3 class="certificate-title">Capacitação em ABA</h3>
                                 <button class="btn-ver-certificado"
                                     onclick="event.stopPropagation(); openCertModalFromBtn(this)">
-                                    </i> Ver certificado
+                                    Ver certificado
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Certificado 3 -->
+                    <!-- Certificado 4 -->
                     <div class="swiper-slide">
                         <div class="certificate-card" data-cert-image="assets/certificates/bondagens_terapeuticas2.png">
                             <div class="certificate-img-wrapper">
-                                <img src="assets/certificates/bondagens_terapeuticas.png" alt="Certificado" class="certificate-img">
+                                <img src="assets/certificates/bondagens_terapeuticas.png" alt="Certificado"
+                                    class="certificate-img">
                                 <div class="certificate-overlay">
                                     <div class="zoom-icon">
                                         <i class="fas fa-search-plus"></i>
                                     </div>
-                                </div> 
+                                </div>
                             </div>
                             <div class="certificate-info">
                                 <h3 class="certificate-title">Bondagens Terapêuticas</h3>
                                 <button class="btn-ver-certificado"
                                     onclick="event.stopPropagation(); openCertModalFromBtn(this)">
-                                   </i> Ver certificado
+                                    Ver certificado
                                 </button>
                             </div>
-                        </div>     
+                        </div>
                     </div>
 
-                    <!-- Certificado 4 -->
+                    <!-- Certificado 5 -->
                     <div class="swiper-slide">
-                        <div class="certificate-card" data-cert-image="assets/certificates/certificado_aplicador_aba2.png">
+                        <div class="certificate-card"
+                            data-cert-image="assets/certificates/certificado_aplicador_aba2.png">
                             <div class="certificate-img-wrapper">
-                                <img src="assets/certificates/certificado_aplicador_aba.png" alt="Certificado" class="certificate-img">
+                                <img src="assets/certificates/certificado_aplicador_aba.png" alt="Certificado"
+                                    class="certificate-img">
                                 <div class="certificate-overlay">
                                     <div class="zoom-icon">
                                         <i class="fas fa-search-plus"></i>
@@ -424,17 +432,18 @@
                                 <h3 class="certificate-title">Aplicador ABA</h3>
                                 <button class="btn-ver-certificado"
                                     onclick="event.stopPropagation(); openCertModalFromBtn(this)">
-                                     Ver certificado
+                                    Ver certificado
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Certificado 5 -->
+                    <!-- Certificado 6 -->
                     <div class="swiper-slide">
                         <div class="certificate-card" data-cert-image="assets/certificates/monitoria_anatomia2.png">
                             <div class="certificate-img-wrapper">
-                                <img src="assets/certificates/monitoria_anatomia.png" alt="Certificado" class="certificate-img">
+                                <img src="assets/certificates/monitoria_anatomia.png" alt="Certificado"
+                                    class="certificate-img">
                                 <div class="certificate-overlay">
                                     <div class="zoom-icon">
                                         <i class="fas fa-search-plus"></i>
@@ -445,17 +454,19 @@
                                 <h3 class="certificate-title">Monitoria Anatomia Humana</h3>
                                 <button class="btn-ver-certificado"
                                     onclick="event.stopPropagation(); openCertModalFromBtn(this)">
-                                    </i> Ver certificado
+                                    Ver certificado
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Certificado 6 -->
+                    <!-- Certificado 7 -->
                     <div class="swiper-slide">
-                        <div class="certificate-card" data-cert-image="assets/certificates/certificado_dry_needling2.png">
+                        <div class="certificate-card"
+                            data-cert-image="assets/certificates/certificado_dry_needling2.png">
                             <div class="certificate-img-wrapper">
-                                <img src="assets/certificates/certificado_dry_needling.png" alt="Certificado" class="certificate-img">
+                                <img src="assets/certificates/certificado_dry_needling.png" alt="Certificado"
+                                    class="certificate-img">
                                 <div class="certificate-overlay">
                                     <div class="zoom-icon">
                                         <i class="fas fa-search-plus"></i>
@@ -466,15 +477,13 @@
                                 <h3 class="certificate-title">Imersão em Dry Needling</h3>
                                 <button class="btn-ver-certificado"
                                     onclick="event.stopPropagation(); openCertModalFromBtn(this)">
-                                     Ver certificado
+                                    Ver certificado
                                 </button>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
-                <!-- Navegação do Swiper -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-pagination"></div>
@@ -490,14 +499,16 @@
             <div class="certificate-modal-caption" id="certificateModalCaption"></div>
         </div>
     </div>
-    <!-- EBOOKS  -->
-    <section class="ebooks-premium" id="ebooks">
-        <div class="wave-top">
-            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-                <path d="M0,0 C300,80 600,20 900,40 C1100,55 1300,90 1440,60 L1440,0 L0,0 Z" fill="#FFFFFF"></path>
-            </svg>
-        </div>
 
+    <!-- ONDA ENTRE CERTIFICADOS E EBOOKS -->
+    <div class="wave-divider wave-purple-top">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,0 C300,80 600,20 900,40 C1100,55 1300,90 1440,60 L1440,120 L0,120 Z" fill="#5839a6"></path>
+        </svg>
+    </div>
+
+    <!-- EBOOKS PREMIUM -->
+    <section class="ebooks-premium" id="ebooks">
         <div class="container">
             <div class="section-header-light" data-aos="fade-up">
                 <div class="offer-tag-light"><i class="fas fa-fire"></i> Ebook digital - Acesso imediato</div>
@@ -516,9 +527,6 @@
                             </div>
                             <div class="card-content">
                                 <div>
-                                    <div class="icon-circle">
-                                        <i class="fas fa-baby-carriage"></i>
-                                    </div>
                                     <h3>Atividades para o "sentar" do bebê</h3>
                                     <p>Aprenda exercícios simples para estimular o sentar com segurança</p>
                                 </div>
@@ -546,9 +554,6 @@
                             </div>
                             <div class="card-content">
                                 <div>
-                                    <div class="icon-circle">
-                                        <i class="fas fa-baby"></i>
-                                    </div>
                                     <h3>Fase recém nascido: Desenvolvimento Neuropsicomotor</h3>
                                     <p>Aprenda os cuidados essenciais e como estimular o desenvolvimento do bebê</p>
                                 </div>
@@ -576,9 +581,6 @@
                             </div>
                             <div class="card-content">
                                 <div>
-                                    <div class="icon-circle">
-                                        <i class="fas fa-brain"></i>
-                                    </div>
                                     <h3>Desenvolvimento Neuropsicomotor: conceito</h3>
                                     <p>Entenda como a criança se desenvolve e aprenda a identificar cada fase</p>
                                 </div>
@@ -606,9 +608,6 @@
                             </div>
                             <div class="card-content">
                                 <div>
-                                    <div class="icon-circle">
-                                        <i class="fas fa-child"></i>
-                                    </div>
                                     <h3>Atividades para o "rolar" do bebê</h3>
                                     <p>Aprenda atividades simples para estimular o rolar de forma segura e natural</p>
                                 </div>
@@ -636,9 +635,6 @@
                             </div>
                             <div class="card-content">
                                 <div>
-                                    <div class="icon-circle">
-                                        <i class="fas fa-gamepad"></i>
-                                    </div>
                                     <h3>Guia prático de atividades infantis</h3>
                                     <p>Atividades simples para estimular o desenvolvimento motor de forma lúdica</p>
                                 </div>
@@ -671,7 +667,14 @@
         </div>
     </section>
 
-    <!-- SERVIÇOS (com hover animations) -->
+    <!-- ONDA ENTRE EBOOKS E SERVIÇOS -->
+    <div class="wave-divider wave-light-bottom">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,0 C300,80 600,20 900,40 C1100,55 1300,90 1440,60 L1440,120 L0,120 Z" fill="#FFFFFF"></path>
+        </svg>
+    </div>
+
+    <!-- SERVIÇOS -->
     <section class="services" id="servicos">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -721,7 +724,7 @@
         </div>
     </section>
 
-    <!-- DEPOIMENTOS - COM CARROSSEL E MODAL -->
+    <!-- DEPOIMENTOS -->
     <section class="testimonials-section" id="depoimentos">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -731,7 +734,6 @@
 
             <div class="swiper testimonials-swiper" data-aos="fade-up" data-aos-delay="200">
                 <div class="swiper-wrapper">
-
                     <!-- Depoimento 1 - Mãe de Pedro -->
                     <div class="swiper-slide">
                         <div class="testimonial-card">
@@ -841,7 +843,6 @@
                     </div>
                 </div>
 
-                <!-- Navegação do Swiper -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-pagination"></div>
@@ -882,12 +883,6 @@
                         <h3>Giovanna<span>Galhardo</span></h3>
                         <p>Fisioterapeuta Especialista</p>
                     </div>
-                    <div class="footer-contact">
-                        <p><i class="fab fa-whatsapp"></i> WhatsApp: <strong>(81) 99523-5494</strong></p>
-                        <p><i class="far fa-envelope"></i> Email: <a
-                                href="mailto:geojac2112@gmail.com">geojac2112@gmail.com</a></p>
-                        <p><i class="fab fa-instagram"></i> Instagram: <a href="#">@giovannagalhardo</a></p>
-                    </div>
                 </div>
                 <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
                     <h4>Links Rápidos</h4>
@@ -903,7 +898,6 @@
                     <h4>Produtos</h4>
                     <ul>
                         <li><a href="#ebooks"><i class="fas fa-chevron-right"></i> Ebooks</a></li>
-                        <!--<li><a href="#cursos"><i class="fas fa-chevron-right"></i> Cursos</a></li>  -->
                         <li><a href="#servicos"><i class="fas fa-chevron-right"></i> Consultorias</a></li>
                         <li><a href="#servicos"><i class="fas fa-chevron-right"></i> Atendimentos</a></li>
                     </ul>

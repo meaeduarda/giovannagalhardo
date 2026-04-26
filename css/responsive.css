@@ -51,9 +51,6 @@
         grid-template-columns: repeat(2, 1fr);
     }
     
-    /* REMOVIDO: .testimonials-grid - pois agora usa Swiper */
-    /* O Swiper já gerencia sua própria responsividade */
-    
     .cta-content h2 {
         font-size: 30px;
     }
@@ -73,7 +70,8 @@
     }
     
     .floating-cards {
-        margin-top: -120px;
+        margin-top: 0;
+        padding: 50px 0 20px;
     }
     
     .card-icon-img {
@@ -111,7 +109,20 @@
     }
     
     .ebooks-premium {
-        border-radius: 0 0 30px 30px / 0 0 20px 20px;
+        border-radius: 0;
+    }
+    
+    /* Ajuste de padding das seções */
+    .pain-points {
+        padding: 50px 0 70px;
+    }
+    
+    .about {
+        padding: 80px 0;
+    }
+    
+    .services {
+        padding: 60px 0;
     }
 }
 
@@ -143,8 +154,6 @@
     .services-grid {
         grid-template-columns: 1fr;
     }
-    
-    /* REMOVIDO: .testimonials-grid - pois agora usa Swiper */
     
     h1 {
         font-size: 32px;
@@ -227,20 +236,15 @@
         padding: 0 0 160px;
     }
     
-    .hero::after {
-        height: 60px;
-        border-top-left-radius: 50% 60px;
-        border-top-right-radius: 50% 60px;
-        bottom: -30px;
-    }
-    
     .floating-cards {
-        margin-top: -100px;
+        margin-top: 0;
         overflow-x: hidden;
+        padding: 40px 0 20px;
     }
     
     .pain-points {
-        margin-top: 60px;
+        margin-top: 0;
+        padding: 40px 0 60px;
     }
     
     .pain-card-title {
@@ -316,7 +320,20 @@
     }
     
     .ebooks-premium {
-        border-radius: 0 0 20px 20px / 0 0 15px 15px;
+        border-radius: 0;
+    }
+    
+    /* Ajuste das seções */
+    .about {
+        padding: 60px 0;
+    }
+    
+    .services {
+        padding: 50px 0;
+    }
+    
+    .final-cta {
+        padding: 60px 0;
     }
 }
 
@@ -432,5 +449,26 @@
     
     .footer-ebook {
         margin-bottom: 16px;
+    }
+    
+    /* Ajuste de padding das seções */
+    .floating-cards {
+        padding: 30px 0 15px;
+    }
+    
+    .pain-points {
+        padding: 30px 0 50px;
+    }
+    
+    .about {
+        padding: 40px 0;
+    }
+    
+    .services {
+        padding: 40px 0;
+    }
+    
+    .final-cta {
+        padding: 50px 0;
     }
 }
