@@ -436,6 +436,45 @@ document.addEventListener('DOMContentLoaded', function () {
         AOS.init({ duration: 800, once: true, offset: 100, disable: false });
     }
     
+    // ========== WHATSAPP FLOATING BUTTON ==========
+    const whatsappFloat = document.getElementById('whatsappFloat');
+    const closeBubble = document.getElementById('closeBubble');
+    const bubble = document.getElementById('whatsappBubble');
+
+    function handleWhatsappVisibility() {
+        if (whatsappFloat) {
+            if (window.scrollY > 300) {
+                whatsappFloat.classList.add('show');
+            } else {
+                whatsappFloat.classList.remove('show');
+            }
+        }
+    }
+
+    // Mostrar após 1.5 segundos
+    if (whatsappFloat) {
+        setTimeout(() => {
+            whatsappFloat.classList.add('show');
+        }, 1500);
+    }
+
+    // Evento de scroll
+    window.addEventListener('scroll', handleWhatsappVisibility);
+
+    // Fechar balão ao clicar no X
+    if (closeBubble && bubble) {
+        closeBubble.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            bubble.style.opacity = '0';
+            bubble.style.transform = 'scale(0.8)';
+            bubble.style.transition = 'all 0.3s ease';
+            setTimeout(() => {
+                bubble.style.display = 'none';
+            }, 300);
+        });
+    }
+    
     console.log('Site Giovanna Galhardo carregado com sucesso!');
 });
 

@@ -27,9 +27,24 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/testimonials.css">
     <link rel="stylesheet" href="css/certificates.css">
+    <link rel="stylesheet" href="css/whatsapp-float.css">
 </head>
 
 <body>
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <div class="whatsapp-float" id="whatsappFloat">
+        <div class="whatsapp-bubble" id="whatsappBubble">
+            <button class="bubble-close" id="closeBubble" aria-label="Fechar mensagem">
+                <i class="fas fa-times"></i>
+            </button>
+            <i class="fas fa-comment-dots" style="margin-right: 6px; color: #25D366;"></i>
+            Fale comigo no WhatsApp!
+            <div class="bubble-arrow"></div>
+        </div>
+        <a href="https://wa.me/5581995235494" target="_blank" rel="noopener noreferrer" class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
     <!-- HEADER - NAVBAR -->
     <header class="navbar">
@@ -39,6 +54,7 @@
             </div>
             <nav class="menu">
                 <a href="#home" class="active">Início</a>
+                <a href="#dor">Dúvidas</a>
                 <a href="#sobre">Sobre</a>
                 <a href="#ebooks">Ebooks</a>
                 <!--<a href="#cursos">Cursos</a>-->
@@ -888,17 +904,16 @@
                     <h4>Links Rápidos</h4>
                     <ul>
                         <li><a href="#home"><i class="fas fa-chevron-right"></i> Início</a></li>
-                        <li><a href="#sobre"><i class="fas fa-chevron-right"></i> Sobre</a></li>
                         <li><a href="#dor"><i class="fas fa-chevron-right"></i> Dúvidas</a></li>
+                        <li><a href="#sobre"><i class="fas fa-chevron-right"></i> Sobre</a></li>
                         <li><a href="#ebooks"><i class="fas fa-chevron-right"></i> Ebooks</a></li>
-                        <li><a href="#politica"><i class="fas fa-chevron-right"></i> Política de Privacidade</a></li>
                     </ul>
                 </div>
                 <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
                     <h4>Produtos</h4>
                     <ul>
                         <li><a href="#ebooks"><i class="fas fa-chevron-right"></i> Ebooks</a></li>
-                        <li><a href="#servicos"><i class="fas fa-chevron-right"></i> Consultorias</a></li>
+                        <li><a href="#dor"><i class="fas fa-chevron-right"></i> Consultorias</a></li>
                         <li><a href="#servicos"><i class="fas fa-chevron-right"></i> Atendimentos</a></li>
                     </ul>
                 </div>
@@ -914,9 +929,9 @@
             <div class="footer-bottom" data-aos="fade-up">
                 <p>&copy; 2026 Giovanna Galhardo - Fisioterapeuta. Todos os direitos reservados.</p>
                 <div class="footer-social">
-                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/fisioo.pediatria?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <!--<a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>-->
+                    <!--<a href="#" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>-->
                     <a href="https://wa.me/5581995235494" target="_blank" class="social-icon"><i
                             class="fab fa-whatsapp"></i></a>
                 </div>
