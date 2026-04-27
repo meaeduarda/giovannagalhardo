@@ -69,103 +69,33 @@
         </div>
     </header>
 
-    <!-- HERO - COM 3 SLIDES NOVO PADRÃO -->
-    <section class="hero" id="home">
-        <div class="swiper hero-swiper">
+    <!-- HERO - BANNERS RESPONSIVOS DESKTOP / MOBILE -->
+    <section class="hero hero-banners" id="home" aria-label="Banners principais">
+        <div class="swiper banner-swiper">
             <div class="swiper-wrapper">
 
-                <!-- ========== SLIDE 1 - PERFIL INSTAGRAM ========== -->
-                <div class="swiper-slide slide-profile">
-                    <div class="slide-background slide-bg-1"></div>
-                    <div class="container">
-                        <div class="hero-grid-2col">
-                            <!-- Coluna Esquerda - Texto Principal -->
-                            <div class="hero-text-col" data-aos="fade-right" data-aos-duration="800">
-                                <h1>Seu filho pode evoluir mais rápido com os estímulos certos — e você pode <span
-                                        class="highlight">começar hoje em casa</span></h1>
-                                <p class="hero-description">Aprenda com uma fisioterapeuta especializada como estimular
-                                    o desenvolvimento do seu filho com segurança, orientação e acompanhamento
-                                    profissional.</p>
-                                <div class="hero-buttons">
-                                    <a href="https://wa.me/5581995235494" class="btn-primary" target="_blank"><i
-                                            class="fab fa-whatsapp"></i> Agende uma consultoria →</a>
-                                    <a href="#ebooks" class="btn-outline-white"><i class="fas fa-book"></i> Ver Ebooks
-                                        →</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- BANNER 1 -->
+                <div class="swiper-slide">
+                    <a href="https://meaeduarda.github.io/giovannagalhardo/" class="hero-banner-link" target="_blank"
+                        rel="noopener noreferrer" aria-label="Acessar banner 1">
+                        <picture class="hero-banner-picture">
+                            <source media="(max-width: 768px)" srcset="assets/banners/banner_1_mobile.png">
+                            <img src="assets/banners/banner_1_destop.png" alt="Banner principal Giovanna Galhardo 1"
+                                class="hero-banner-img" fetchpriority="high">
+                        </picture>
+                    </a>
                 </div>
 
-                <!-- ========== SLIDE 2 - VÍDEO COM BOTÃO SOBREPOSTO ========== -->
-                <div class="swiper-slide slide-video">
-                    <div class="slide-background slide-bg-2"></div>
-                    <div class="container">
-                        <div class="hero-grid-2col">
-                            <!-- Coluna Esquerda - Texto -->
-                            <div class="hero-text-col" data-aos="fade-right" data-aos-duration="800">
-                                <div class="hero-badge"><i class="fas fa-play-circle"></i> Conheça meu trabalho na
-                                    prática</div>
-                                <h1>Assista ao vídeo e entenda como <span class="highlight">posso ajudar no
-                                        desenvolvimento</span> do seu filho</h1>
-                                <p class="hero-description">Veja na prática como funciona meu método de estimulação
-                                    infantil e os resultados que já transformaram a vida de muitas famílias.</p>
-                                <div class="hero-buttons">
-                                    <a href="#sobre" class="btn-outline-white"><i class="fas fa-user-md"></i> Conheça
-                                        meu trabalho</a>
-                                </div>
-                                <div class="hero-trust">
-                                    <span><i class="fas fa-check-circle"></i> Método comprovado</span>
-                                    <span><i class="fas fa-star"></i> +500 mães atendidas</span>
-                                    <span><i class="fas fa-clock"></i> Resultados rápidos</span>
-                                </div>
-                            </div>
-
-                            <!-- Coluna Direita - Imagem com Botão Play Sobreposto -->
-                            <div class="hero-video-col" data-aos="fade-left" data-aos-duration="800">
-                                <div class="video-overlay-card" id="heroVideoContainer">
-                                    <img src="assets/foto_video.png" alt="Thumbnail do vídeo" class="video-thumb"
-                                        onerror="this.src='https://placehold.co/400x300/5144A6/white?text=Vídeo+Giovanna'">
-                                    <button class="play-btn-overlay-large" id="heroVideoBtn">
-                                        <i class="fas fa-play"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ========== SLIDE 3 - DEPOIMENTOS EM PRINT ========== -->
-                <div class="swiper-slide slide-testimonials-print">
-                    <div class="slide-background slide-bg-3"></div>
-                    <div class="container">
-                        <div class="testimonials-print-content" data-aos="fade-up" data-aos-duration="800">
-                            <h2 class="testimonials-print-title">Histórias reais de quem transformou sua maternidade com
-                                carinho e estratégia</h2>
-
-                            <div class="testimonials-print-grid">
-                                <div class="print-depo-card" data-aos="fade-up" data-aos-delay="0">
-                                    <img src="assets/depoimento1.png" alt="Depoimento 1"
-                                        onerror="this.src='https://placehold.co/280x400/F2BE22/5144A6?text=Depoimento+1'">
-                                </div>
-                                <div class="print-depo-card" data-aos="fade-up" data-aos-delay="150">
-                                    <img src="assets/depoimento2.png" alt="Depoimento 2"
-                                        onerror="this.src='https://placehold.co/280x400/6CD34D/white?text=Depoimento+2'">
-                                </div>
-                                <div class="print-depo-card" data-aos="fade-up" data-aos-delay="300">
-                                    <img src="assets/depoimento3.png" alt="Depoimento 3"
-                                        onerror="this.src='https://placehold.co/280x400/FF8A3D/white?text=Depoimento+3'">
-                                </div>
-                            </div>
-
-                            <div class="testimonials-print-btn" data-aos="fade-up" data-aos-delay="450">
-                                <a href="https://wa.me/5581995235494" class="btn-primary btn-large pulse-hover"
-                                    target="_blank">
-                                    <i class="fas fa-users"></i> Faça parte da comunidade de mães →
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <!-- BANNER 2 -->
+                <div class="swiper-slide">
+                    <a href="https://meaeduarda.github.io/giovannagalhardo/" class="hero-banner-link" target="_blank"
+                        rel="noopener noreferrer" aria-label="Acessar banner 2">
+                        <picture class="hero-banner-picture">
+                            <source media="(max-width: 768px)" srcset="assets/banners/banner_2_mobile.png">
+                            <img src="assets/banners/banner_2_destop.png" alt="Banner principal Giovanna Galhardo 2"
+                                class="hero-banner-img" loading="lazy">
+                        </picture>
+                    </a>
                 </div>
             </div>
 

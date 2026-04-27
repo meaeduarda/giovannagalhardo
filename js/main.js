@@ -7,32 +7,39 @@ document.addEventListener('DOMContentLoaded', function () {
     // ========== INICIALIZAÇÃO DOS SWIPERS ==========
     function initSwipers() {
         if (typeof Swiper !== 'undefined') {
-            // Swiper do Hero (3 slides)
-            const heroSwiper = new Swiper('.hero-swiper', {
-                loop: true,
-                effect: 'slide',
-                autoplay: { delay: 8000, disableOnInteraction: false },
-                speed: 800,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                }
-            });
+            // Swiper do Hero - Banners responsivos
+            const bannerSwiperEl = document.querySelector('.banner-swiper');
+            if (bannerSwiperEl) {
+                const bannerSwiper = new Swiper('.banner-swiper', {
+                    loop: true,
+                    effect: 'slide',
+                    speed: 700,
+                    autoplay: {
+                        delay: 5000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true
+                    },
+                    navigation: {
+                        nextEl: '.banner-swiper .swiper-button-next',
+                        prevEl: '.banner-swiper .swiper-button-prev',
+                    },
+                    pagination: {
+                        el: '.banner-swiper .swiper-pagination',
+                        clickable: true,
+                    }
+                });
+            }
 
             // Swiper dos Ebooks
             const ebooksSwiper = new Swiper('.ebooks-swiper', {
                 slidesPerView: 1,
                 spaceBetween: 20,
                 navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: '.ebooks-swiper .swiper-button-next',
+                    prevEl: '.ebooks-swiper .swiper-button-prev',
                 },
                 pagination: {
-                    el: '.swiper-pagination',
+                    el: '.ebooks-swiper .swiper-pagination',
                     clickable: true,
                 },
                 breakpoints: {
@@ -76,11 +83,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     disableOnInteraction: false,
                 },
                 navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: '.testimonials-swiper .swiper-button-next',
+                    prevEl: '.testimonials-swiper .swiper-button-prev',
                 },
                 pagination: {
-                    el: '.swiper-pagination',
+                    el: '.testimonials-swiper .swiper-pagination',
                     clickable: true,
                 },
                 breakpoints: {
