@@ -1,0 +1,128 @@
+/* =========================================================
+   POP-UP DO VÍDEO DO BANNER
+   Arquivo: css/video_banner.css
+   ========================================================= */
+
+.video-banner-open {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    text-align: inherit;
+}
+
+.video-banner-open:focus-visible {
+    outline: 3px solid #5144A6;
+    outline-offset: 4px;
+}
+
+.video-banner-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100vw;
+    height: 100vh;
+}
+
+.video-banner-modal.is-active {
+    display: flex;
+}
+
+.video-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+}
+
+.video-banner-content {
+    position: relative;
+    z-index: 1;
+    width: min(960px, calc(100vw - 40px));
+    background: #000;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+.video-banner-player {
+    display: block;
+    width: 100%;
+    max-height: 80vh;
+    background: #000;
+}
+
+.video-banner-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: #111;
+    font-size: 30px;
+    line-height: 42px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.video-banner-close:hover,
+.video-banner-close:focus-visible {
+    background: #ffffff;
+    transform: scale(1.06);
+    outline: none;
+}
+
+body.video-banner-no-scroll {
+    overflow: hidden;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .video-banner-modal {
+        padding: 0;
+        background: #000;
+        height: 100dvh;
+    }
+
+    .video-banner-overlay {
+        background: #000;
+    }
+
+    .video-banner-content {
+        width: 100%;
+        height: 100dvh;
+        max-height: 100dvh;
+        border-radius: 0;
+        box-shadow: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .video-banner-player {
+        width: 100%;
+        height: 100%;
+        max-height: 100dvh;
+        object-fit: contain;
+    }
+
+    .video-banner-close {
+        top: 12px;
+        right: 12px;
+        width: 42px;
+        height: 42px;
+        font-size: 30px;
+        line-height: 42px;
+        background: rgba(255, 255, 255, 0.9);
+    }
+}

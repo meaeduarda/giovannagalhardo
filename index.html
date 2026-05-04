@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="css/testimonials.css">
     <link rel="stylesheet" href="css/certificates.css">
     <link rel="stylesheet" href="css/whatsapp-float.css">
+    <link rel="stylesheet" href="css/video_banner.css">
+
 </head>
 
 <body>
@@ -76,11 +78,11 @@
 
                 <!-- BANNER 1 -->
                 <div class="swiper-slide">
-                    <a href="#ebooks" class="hero-banner-link" target="_blank"
-                        rel="noopener noreferrer" aria-label="Acessar banner 1">
+                    <a href="#ebooks" class="hero-banner-link" target="_blank" rel="noopener noreferrer"
+                        aria-label="Acessar banner 1">
                         <picture class="hero-banner-picture">
                             <source media="(max-width: 768px)" srcset="assets/banners/banner_1_mobile.png">
-                            <img src="assets/banners/banner_1_destop.png" alt="Banner principal Giovanna Galhardo 1"
+                            <img src="assets/banners/banner_1_desktop.png" alt="Banner principal Giovanna Galhardo 1"
                                 class="hero-banner-img" fetchpriority="high">
                         </picture>
                     </a>
@@ -88,14 +90,14 @@
 
                 <!-- BANNER 2 -->
                 <div class="swiper-slide">
-                    <a href="https://meaeduarda.github.io/giovannagalhardo/" class="hero-banner-link" target="_blank"
-                        rel="noopener noreferrer" aria-label="Acessar banner 2">
+                    <button type="button" class="hero-banner-link video-banner-open"
+                        aria-label="Abrir vídeo do banner 2">
                         <picture class="hero-banner-picture">
                             <source media="(max-width: 768px)" srcset="assets/banners/banner_2_mobile.png">
-                            <img src="assets/banners/banner_2_destop.png" alt="Banner principal Giovanna Galhardo 2"
+                            <img src="assets/banners/banner_2_desktop.png" alt="Banner principal Giovanna Galhardo 2"
                                 class="hero-banner-img" loading="lazy">
                         </picture>
-                    </a>
+                    </button>
                 </div>
             </div>
 
@@ -104,6 +106,23 @@
             <div class="swiper-pagination"></div>
         </div>
     </section>
+
+    <!-- POP-UP DO VÍDEO - FORA DO SWIPER -->
+    <div id="videoBannerModal" class="video-banner-modal" aria-hidden="true">
+        <div class="video-banner-overlay" data-video-close></div>
+
+        <div class="video-banner-content" role="dialog" aria-modal="true" aria-label="Vídeo do banner">
+            <button type="button" class="video-banner-close" data-video-close aria-label="Fechar vídeo">
+                &times;
+            </button>
+
+            <video id="videoBannerPlayer" class="video-banner-player" controls preload="metadata" playsinline>
+                <source src="assets/videos/video_banner.mp4" type="video/mp4">
+                Seu navegador não suporta a reprodução deste vídeo.
+            </video>
+        </div>
+    </div>
+
 
 
     <!-- CARDS FLUTUANTES (com stagger animation) -->
@@ -181,7 +200,8 @@
 
                 <!-- CTA principal -->
                 <div class="cta-main">
-                    <a href="https://chat.whatsapp.com/KlJWrFfvCPt9Iielj8MKzl?mode=gi_t" class="btn-primary btn-large pulse-hover" target="_blank">
+                    <a href="https://chat.whatsapp.com/KlJWrFfvCPt9Iielj8MKzl?mode=gi_t"
+                        class="btn-primary btn-large pulse-hover" target="_blank">
                         <i class="fab fa-whatsapp"></i>
                         Entrar na comunidade de mães →
                     </a>
@@ -208,7 +228,8 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Se você sente que está fazendo o seu melhor, mas ainda não sabe se está estimulando da forma certa, saiba que isso é mais comum do que parece.</p>
+                    <p>Se você sente que está fazendo o seu melhor, mas ainda não sabe se está estimulando da forma
+                        certa, saiba que isso é mais comum do que parece.</p>
                     <p><strong>Olá, eu me chamo Giovanna Galhardo,</strong> sou fisioterapeuta e atuo na prevenção,
                         diagnóstico e tratamento de disfunções físicas e no desenvolvimento funcional de crianças e
                         adultos.</p>
@@ -853,7 +874,8 @@
             <div class="footer-bottom" data-aos="fade-up">
                 <p>&copy; 2026 Giovanna Galhardo - Fisioterapeuta. Todos os direitos reservados.</p>
                 <div class="footer-social">
-                    <a href="https://www.instagram.com/fisioo.pediatria?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/fisioo.pediatria?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
                     <!--<a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>-->
                     <!--<a href="#" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>-->
                     <a href="https://wa.me/5581995235494" target="_blank" class="social-icon"><i
@@ -866,6 +888,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/video_banner.js"></script>
 </body>
 
 </html>
