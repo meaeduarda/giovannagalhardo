@@ -78,11 +78,21 @@
 
                 <!-- BANNER 1 -->
                 <div class="swiper-slide">
-                    <a href="#ebooks" class="hero-banner-link" target="_blank" rel="noopener noreferrer"
-                        aria-label="Acessar banner 1">
+                    <a href="#ebooks" class="hero-banner-link" aria-label="Acessar banner 1">
                         <picture class="hero-banner-picture">
-                            <source media="(max-width: 768px)" srcset="assets/banners/banner_1_mobile.png">
-                            <img src="assets/banners/banner_1_desktop.png" alt="Banner principal Giovanna Galhardo 1"
+                            <!-- Mobile WebP -->
+                            <source media="(max-width: 768px)" srcset="assets/banners/banner_1_mobile.webp"
+                                type="image/webp">
+
+                            <!-- Mobile PNG fallback -->
+                            <source media="(max-width: 768px)" srcset="assets/banners/banner_1_mobile.png"
+                                type="image/png">
+
+                            <!-- Desktop WebP -->
+                            <source srcset="assets/banners/banner_1_desktop.webp" type="image/webp">
+
+                            <!-- Desktop PNG fallback -->
+                            <img src="assets/banners/banner_1_destop.png" alt="Banner principal Giovanna Galhardo 1"
                                 class="hero-banner-img" fetchpriority="high">
                         </picture>
                     </a>
@@ -93,8 +103,19 @@
                     <button type="button" class="hero-banner-link video-banner-open"
                         aria-label="Abrir vídeo do banner 2">
                         <picture class="hero-banner-picture">
-                            <source media="(max-width: 768px)" srcset="assets/banners/banner_2_mobile.png">
-                            <img src="assets/banners/banner_2_desktop.png" alt="Banner principal Giovanna Galhardo 2"
+                            <!-- Mobile WebP -->
+                            <source media="(max-width: 768px)" srcset="assets/banners/banner_2_mobile.webp"
+                                type="image/webp">
+
+                            <!-- Mobile PNG fallback -->
+                            <source media="(max-width: 768px)" srcset="assets/banners/banner_2_mobile.png"
+                                type="image/png">
+
+                            <!-- Desktop WebP -->
+                            <source srcset="assets/banners/banner_2_desktop.webp" type="image/webp">
+
+                            <!-- Desktop PNG fallback -->
+                            <img src="assets/banners/banner_2_destop.png" alt="Banner principal Giovanna Galhardo 2"
                                 class="hero-banner-img" loading="lazy">
                         </picture>
                     </button>
