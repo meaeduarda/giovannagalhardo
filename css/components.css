@@ -773,6 +773,10 @@
     background: rgba(255, 255, 255, 0.12);
     border-left: 4px solid var(--yellow);
     backdrop-filter: blur(4px);
+
+    padding: 18px 24px 18px 28px;
+    border-radius: 12px;
+    margin: 28px 0;
 }
 
 .about-highlight p {
@@ -1221,6 +1225,33 @@
     height: auto;
     display: flex;
     justify-content: center;
+}
+
+.ebooks-swiper .swiper-button-prev,
+.ebooks-swiper .swiper-button-next {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+
+    color: #F2BE22;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    transition: all 0.3s ease;
+}
+
+.ebooks-swiper .swiper-button-prev:hover,
+.ebooks-swiper .swiper-button-next:hover {
+    background: white;
+    transform: scale(1.08);
+}
+
+.ebooks-swiper .swiper-button-prev::after,
+.ebooks-swiper .swiper-button-next::after {
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .ebook-card {
@@ -1868,10 +1899,6 @@
         display: none !important;
     }
 }
-
-/* ============================================
-   CORREÇÃO DAS SETAS DO HERO BANNER
-   ============================================ */
 
 .hero-banners .banner-swiper {
     position: relative;
